@@ -119,8 +119,7 @@ namespace Gestion_de_Stock.Forms
             if (Application.OpenForms.OfType<FrmCreerDevis>().FirstOrDefault() != null)
                 Application.OpenForms.OfType<FrmCreerDevis>().First().clientBindingSource.DataSource = db.Clients.Where(x => x.Status == Status.Active).Select(x => new { x.Code, x.RaisonSociale, x.Adresse, x.Ville }).ToList();
 
-            if (Application.OpenForms.OfType<FrmCreeBonDeSorties>().FirstOrDefault() != null)
-                Application.OpenForms.OfType<FrmCreeBonDeSorties>().First().clientBindingSource.DataSource = db.Clients.Where(x => x.Status == Status.Active).Select(x => new { x.Code, x.RaisonSociale, x.Adresse, x.Ville }).ToList();
+
 
             if (Application.OpenForms.OfType<FrmCreerFacture>().FirstOrDefault() != null)
                 Application.OpenForms.OfType<FrmCreerFacture>().First().clientBindingSource.DataSource = db.Clients.Where(x => x.Status == Status.Active).Select(x => new { x.Code, x.RaisonSociale, x.Adresse, x.Ville }).ToList();

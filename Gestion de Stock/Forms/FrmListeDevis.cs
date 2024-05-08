@@ -339,8 +339,7 @@ namespace Gestion_de_Stock.Forms
                 db.SaveChanges();
                 XtraMessageBox.Show("Creation Bon De Commande terminer avec succès", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //waiting Form 
-                if (Application.OpenForms.OfType<FrmListeBonDeSorties>().FirstOrDefault() != null)
-                    Application.OpenForms.OfType<FrmListeBonDeSorties>().First().bonDeCommandeBindingSource.DataSource = db.BonDeSorties.Include("Client").Include("ligneBonDeSortie").OrderByDescending(x => x.DateCreation).ToList();
+              
 
             }
         }

@@ -231,12 +231,6 @@
     <Compile Include="Forms\FrmArticleChutes.Designer.cs">
       <DependentUpon>FrmArticleChutes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmBSVersBL.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmBSVersBL.Designer.cs">
-      <DependentUpon>FrmBSVersBL.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FrmClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,30 +255,6 @@
     <Compile Include="Forms\FrmCoffreChequeEmis.Designer.cs">
       <DependentUpon>FrmCoffreChequeEmis.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmCreeBonDeLivraisonSaisieLibre.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmCreeBonDeLivraisonSaisieLibre.Designer.cs">
-      <DependentUpon>FrmCreeBonDeLivraisonSaisieLibre.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmCreeBonDeLivraison.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmCreeBonDeLivraison.Designer.cs">
-      <DependentUpon>FrmCreeBonDeLivraison.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmCreeBonDeSortiesSaisieLibre.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmCreeBonDeSortiesSaisieLibre.Designer.cs">
-      <DependentUpon>FrmCreeBonDeSortiesSaisieLibre.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmCreeBonDeSorties.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmCreeBonDeSorties.Designer.cs">
-      <DependentUpon>FrmCreeBonDeSorties.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FrmCreerDevis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,12 +278,6 @@
     </Compile>
     <Compile Include="Forms\FrmDetailsAchats.Designer.cs">
       <DependentUpon>FrmDetailsAchats.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmDetailsBondeLivraison.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmDetailsBondeLivraison.Designer.cs">
-      <DependentUpon>FrmDetailsBondeLivraison.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmDetailsBonDeSorties.cs">
       <SubType>Form</SubType>
@@ -429,24 +393,6 @@
     <Compile Include="Forms\FrmListeAlimentation.Designer.cs">
       <DependentUpon>FrmListeAlimentation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmListeBonDeSortiesSaisieLibre.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmListeBonDeSortiesSaisieLibre.Designer.cs">
-      <DependentUpon>FrmListeBonDeSortiesSaisieLibre.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmListeBonDeSorties.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmListeBonDeSorties.Designer.cs">
-      <DependentUpon>FrmListeBonDeSorties.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmListeBonLivraisonSaisieLibre.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmListeBonLivraisonSaisieLibre.Designer.cs">
-      <DependentUpon>FrmListeBonLivraisonSaisieLibre.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FrmListeDepenses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -554,12 +500,6 @@
     </Compile>
     <Compile Include="Forms\FrmWaitForm.Designer.cs">
       <DependentUpon>FrmWaitForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmListeBonLivraison.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmListeBonLivraison.Designer.cs">
-      <DependentUpon>FrmListeBonLivraison.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmBerurierArticleChute.cs">
       <SubType>Form</SubType>
@@ -693,18 +633,6 @@
     <Compile Include="Repport\RapportAchatHistorique.Designer.cs">
       <DependentUpon>RapportAchatHistorique.cs</DependentUpon>
     </Compile>
-    <Compile Include="Repport\RapportBondeLivraisonSansPrix.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Repport\RapportBondeLivraisonSansPrix.Designer.cs">
-      <DependentUpon>RapportBondeLivraisonSansPrix.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Repport\RapportBondeLivraison.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Repport\RapportBondeLivraison.Designer.cs">
-      <DependentUpon>RapportBondeLivraison.cs</DependentUpon>
-    </Compile>
     <Compile Include="Repport\DevisClient.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -819,9 +747,6 @@
     <EmbeddedResource Include="Forms\FrmArticleChutes.resx">
       <DependentUpon>FrmArticleChutes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmBSVersBL.resx">
-      <DependentUpon>FrmBSVersBL.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmClient.resx">
       <DependentUpon>FrmClient.cs</DependentUpon>
     </EmbeddedResource>
@@ -834,18 +759,6 @@
     <EmbeddedResource Include="Forms\FrmCoffreChequeRecus.resx">
       <DependentUpon>FrmCoffreChequeRecus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmCreeBonDeLivraisonSaisieLibre.resx">
-      <DependentUpon>FrmCreeBonDeLivraisonSaisieLibre.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmCreeBonDeLivraison.resx">
-      <DependentUpon>FrmCreeBonDeLivraison.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmCreeBonDeSortiesSaisieLibre.resx">
-      <DependentUpon>FrmCreeBonDeSortiesSaisieLibre.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmCreeBonDeSorties.resx">
-      <DependentUpon>FrmCreeBonDeSorties.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmCreerDevis.resx">
       <DependentUpon>FrmCreerDevis.cs</DependentUpon>
     </EmbeddedResource>
@@ -857,9 +770,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmDetailsAchats.resx">
       <DependentUpon>FrmDetailsAchats.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmDetailsBondeLivraison.resx">
-      <DependentUpon>FrmDetailsBondeLivraison.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmDetailsBonDeSorties.resx">
       <DependentUpon>FrmDetailsBonDeSorties.cs</DependentUpon>
@@ -915,15 +825,6 @@
     <EmbeddedResource Include="Forms\FrmListeAchats.resx">
       <DependentUpon>FrmListeAchats.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmListeBonDeSortiesSaisieLibre.resx">
-      <DependentUpon>FrmListeBonDeSortiesSaisieLibre.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmListeBonDeSorties.resx">
-      <DependentUpon>FrmListeBonDeSorties.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmListeBonLivraisonSaisieLibre.resx">
-      <DependentUpon>FrmListeBonLivraisonSaisieLibre.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmListeDepenses.resx">
       <DependentUpon>FrmListeDepenses.cs</DependentUpon>
     </EmbeddedResource>
@@ -978,9 +879,6 @@
     <EmbeddedResource Include="Forms\FrmWaitForm.resx">
       <DependentUpon>FrmWaitForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmListeBonLivraison.resx">
-      <DependentUpon>FrmListeBonLivraison.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmBerurierArticleChute.resx">
       <DependentUpon>FrmBerurierArticleChute.cs</DependentUpon>
     </EmbeddedResource>
@@ -1021,12 +919,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Repport\RapportAchatHistorique.resx">
       <DependentUpon>RapportAchatHistorique.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Repport\RapportBondeLivraisonSansPrix.resx">
-      <DependentUpon>RapportBondeLivraisonSansPrix.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Repport\RapportBondeLivraison.resx">
-      <DependentUpon>RapportBondeLivraison.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Repport\DevisClient.resx">
       <DependentUpon>DevisClient.cs</DependentUpon>

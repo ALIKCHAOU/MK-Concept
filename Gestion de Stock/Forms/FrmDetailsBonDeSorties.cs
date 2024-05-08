@@ -108,8 +108,7 @@ namespace Gestion_de_Stock.Forms
                 }
                 SplashScreenManager.CloseForm();
                 //waiting Form 
-                if (Application.OpenForms.OfType<FrmListeBonDeSorties>().FirstOrDefault() != null)
-                    Application.OpenForms.OfType<FrmListeBonDeSorties>().First().bonDeCommandeBindingSource.DataSource = db.BonDeSorties.Include("Client").Include("ligneBonDeSortie").OrderByDescending(x => x.DateCreation).ToList();
+            
                 XtraMessageBox.Show(" le Bon De Commande e a été  Modifier", "Configuration de l'application", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 

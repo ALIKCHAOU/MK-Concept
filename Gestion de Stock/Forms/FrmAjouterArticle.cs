@@ -186,8 +186,7 @@ namespace Gestion_de_Stock.Forms
             if (Application.OpenForms.OfType<FrmCreerDevis>().FirstOrDefault() != null)
                 Application.OpenForms.OfType<FrmCreerDevis>().First().SearchLookUpPack.DataSource = db.Packs.Select(x => new { x.Code, x.Designation, x.Quantity}).ToList();
 
-            if (Application.OpenForms.OfType<FrmCreeBonDeSorties>().FirstOrDefault() != null)
-                Application.OpenForms.OfType<FrmCreeBonDeSorties>().First().SearchLookUpPack.DataSource = db.Packs.Select(x => new { x.Code,  x.Designation, x.Quantity }).ToList();
+   
 
             if (Application.OpenForms.OfType<FrmCreerFacture>().FirstOrDefault() != null)
                 Application.OpenForms.OfType<FrmCreerFacture>().First().SearchLookUpPack.DataSource = db.Packs.Select(x => new { x.Code, x.Designation, x.Quantity }).ToList();

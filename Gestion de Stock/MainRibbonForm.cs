@@ -164,32 +164,6 @@ namespace Gestion_de_Stock
             Formshow(Gestion_de_Stock.Forms.FrmAjouterArticle.InstanceFrmPack);
         }
 
-        private void barbtnMouvementStock_ItemClick(object sender, ItemClickEventArgs e)
-        {
-          
-        }
-
-       
-
-
-       
-
-        private void barBtnBondeCommandeVente_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Formshow(Gestion_de_Stock.Forms.FrmCreeBonDeSorties.InstanceFrmCreerBonDeCommande);
-        }
-
-        private void barBtnListeBondeCommandesVente_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Formshow(Gestion_de_Stock.Forms.FrmListeBonDeSorties.InstanceFrmListeBonDeCommande);
-        }
-
-      
-
-    
-
-     
-
         private void barBtnListeFactures_ItemClick(object sender, ItemClickEventArgs e)
         {
             Formshow(Gestion_de_Stock.Forms.FrmListeFactures.InstanceFrmListeFactures);
@@ -328,7 +302,7 @@ namespace Gestion_de_Stock
 
         private void barBtnCrrerBondeLivraisons_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Formshow(Forms.FrmCreeBonDeLivraison.InstanceFrmCreerBonDeCommande);
+          
         }
 
       
@@ -364,34 +338,8 @@ namespace Gestion_de_Stock
             Formshow(Gestion_de_Stock.Forms.FrmEtatStock.InstanceFrmEtatStock);
         }
 
-        private void barButtonItem10_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Formshow(Gestion_de_Stock.Forms.FrmCreeBonDeSortiesSaisieLibre.InstanceFrmCreerBonDeCommande); 
-        }
+    
 
-        private void barButtonItem10_ItemClick_1(object sender, ItemClickEventArgs e)
-        {
-            Formshow(Gestion_de_Stock.Forms.FrmListeBonDeSortiesSaisieLibre.InstanceFrmListeBonDeCommande);
-        }
-
-        private void barBondeLivraisonSaisieLibre_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Formshow(Gestion_de_Stock.Forms.FrmCreeBonDeLivraisonSaisieLibre.InstanceFrmCreerBonDeLivraisonSaisieLibre);
-        }
-
-        private void barListeBondeLivraisonSaisieLibre_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Formshow(Gestion_de_Stock.Forms.FrmListeBonLivraisonSaisieLibre.InstanceFrmListeBonLivraison);
-        }
-
-        private void barListedesBondeLivraisons_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Formshow(FrmListeBonLivraison.InstanceFrmListeBonDeCommande);
-        }
-
-        private void barBtnProduction_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
+    
     }
 }

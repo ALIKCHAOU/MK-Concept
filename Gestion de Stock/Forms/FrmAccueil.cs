@@ -159,15 +159,9 @@ namespace Gestion_de_Stock.Forms
             Formshow(Gestion_de_Stock.Forms.FrmListeFactures.InstanceFrmListeFactures);
         }
 
-        private void BtnCreerBonSortie_ItemClick(object sender, TileItemEventArgs e)
-        {
-            Formshow(Gestion_de_Stock.Forms.FrmCreeBonDeSorties.InstanceFrmCreerBonDeCommande);
-        }
+    
 
-        private void btnListeBonSortie_ItemClick(object sender, TileItemEventArgs e)
-        {
-            Formshow(Gestion_de_Stock.Forms.FrmListeBonDeSorties.InstanceFrmListeBonDeCommande);
-        }
+     
 
         private void BtnListeVentes_ItemClick(object sender, TileItemEventArgs e)
         {
