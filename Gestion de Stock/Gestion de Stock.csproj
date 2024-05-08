@@ -501,6 +501,10 @@
     <Compile Include="Migrations\202405081514195_remouve unite produits.designer.cs">
       <DependentUpon>202405081514195_remouve unite produits.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202405081617238_update Application  .cs" />
+    <Compile Include="Migrations\202405081617238_update Application  .designer.cs">
+      <DependentUpon>202405081617238_update Application  .cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Achat.cs" />
     <Compile Include="Model\Alimentation.cs" />
@@ -809,6 +813,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202405081514195_remouve unite produits.resx">
       <DependentUpon>202405081514195_remouve unite produits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405081617238_update Application  .resx">
+      <DependentUpon>202405081617238_update Application  .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
