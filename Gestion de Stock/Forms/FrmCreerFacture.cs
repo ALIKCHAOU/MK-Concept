@@ -114,28 +114,7 @@ namespace Gestion_de_Stock.Forms
                 Vente.LigneVentes.Add(LF);
 
 
-            }
-            foreach (var L in Vente.LigneVentes)
-            {
-
-                Article Pack = db.Articles.FirstOrDefault(x => x.Designation.Equals(L.NomArticle));
-                int PackQuantity = Pack.Quantity; // Stock Disponible 
-
-                int QtyRequired = L.Quantity;
-                if (QtyRequired <= 0)
-                {
-
-                    XtraMessageBox.Show("Quantité Article Invalide ", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                if (QtyRequired > PackQuantity && Pack.GereStock)
-                {
-                    decimal MissedQty = decimal.Subtract(QtyRequired, PackQuantity);
-                    XtraMessageBox.Show("Article  : " + Pack.Designation + " Quantité Manquante :" + MissedQty, "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-            }
+            }          
             Vente.MontantRegle = 0m;
             Vente.EtatVente = EtatVente.NonReglee;
             Vente.MontantReglement = Vente.TotalTTC;
@@ -255,23 +234,6 @@ namespace Gestion_de_Stock.Forms
             }
         }
 
-        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            if (!gridView1.IsNewItemRow(gridView1.FocusedRowHandle))
-            {
-                // get price of current Pack 
-
-                string DesignationPack = gridView1.GetFocusedRowCellValue("Description").ToString();
-                pack = db.Articles.FirstOrDefault(x => x.Designation.Equals(DesignationPack));
-                repositoryItemComboBoxListePrice.Items.Clear();
-                repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVenteGros1);
-                repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVenteGros2);
-                repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVentepublic);
-                repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVenteRevendeur);
-                //gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "PrixHT", repositoryItemComboBoxListePrice.Items[0]);
-                //gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "Qty", 1);
-                //gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "Description", pack.Designation); 
-            }
-        }
+      
     }
 }
