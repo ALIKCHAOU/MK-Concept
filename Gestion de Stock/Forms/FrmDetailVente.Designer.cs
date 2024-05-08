@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDetailVente));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
@@ -44,8 +42,6 @@
             this.Remise = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gTVA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GTotalLigneTTC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ButtonRetour = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.BtnRetour = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -59,7 +55,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ligneVenteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnRetour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -107,8 +102,6 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.BtnRetour});
             this.gridControl1.Size = new System.Drawing.Size(754, 330);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -127,8 +120,7 @@
             this.colTotal,
             this.Remise,
             this.gTVA,
-            this.GTotalLigneTTC,
-            this.ButtonRetour});
+            this.GTotalLigneTTC});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
@@ -227,26 +219,6 @@
             this.GTotalLigneTTC.Visible = true;
             this.GTotalLigneTTC.VisibleIndex = 6;
             // 
-            // ButtonRetour
-            // 
-            this.ButtonRetour.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonRetour.AppearanceHeader.Options.UseFont = true;
-            this.ButtonRetour.Caption = "Retour";
-            this.ButtonRetour.ColumnEdit = this.BtnRetour;
-            this.ButtonRetour.Name = "ButtonRetour";
-            this.ButtonRetour.Visible = true;
-            this.ButtonRetour.VisibleIndex = 7;
-            // 
-            // BtnRetour
-            // 
-            this.BtnRetour.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.BtnRetour.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
-            this.BtnRetour.Name = "BtnRetour";
-            this.BtnRetour.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.BtnRetour.Click += new System.EventHandler(this.BtnRetour_Click);
-            // 
             // layoutControlGroup2
             // 
             this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -311,7 +283,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ligneVenteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnRetour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -339,7 +310,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn Remise;
         private DevExpress.XtraGrid.Columns.GridColumn gTVA;
         private DevExpress.XtraGrid.Columns.GridColumn GTotalLigneTTC;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit BtnRetour;
-        private DevExpress.XtraGrid.Columns.GridColumn ButtonRetour;
     }
 }

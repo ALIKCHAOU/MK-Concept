@@ -94,30 +94,14 @@ namespace Gestion_de_Stock.Forms
                        List<Coffrecheque> ListCoffrecheques = db.CoffreCheques.Where(x=>x.Nature== NatureMouvement.Salarié).ToList();
                       ListeDeponses.AddRange(ConvertToListeDeponses(ListCoffrecheques));
                 }
-                if (searchLookUpFournisseur.Text == "LeasingCamion1")
-                {
-                    ListeDeponses = db.Depenses.Where(x => x.Nature == NatureMouvement.LeasingCamion1).ToList();
-                    List<Coffrecheque> ListCoffrecheques = db.CoffreCheques.Where(x => x.Nature == NatureMouvement.LeasingCamion1).ToList();
-                    ListeDeponses.AddRange(ConvertToListeDeponses(ListCoffrecheques));
-                }
-                if (searchLookUpFournisseur.Text == "LeasingCamion2")
-                {
-                    ListeDeponses = db.Depenses.Where(x => x.Nature == NatureMouvement.LeasingCamion2).ToList();
-                    List<Coffrecheque> ListCoffrecheques = db.CoffreCheques.Where(x => x.Nature == NatureMouvement.LeasingCamion2).ToList();
-                    ListeDeponses.AddRange(ConvertToListeDeponses(ListCoffrecheques));
-                }
+              
                 if (searchLookUpFournisseur.Text == "STEG")
                 {
                     ListeDeponses = db.Depenses.Where(x => x.Nature == NatureMouvement.STEG).ToList();
                     List<Coffrecheque> ListCoffrecheques = db.CoffreCheques.Where(x => x.Nature == NatureMouvement.STEG).ToList();
                     ListeDeponses.AddRange(ConvertToListeDeponses(ListCoffrecheques));
                 }
-                if (searchLookUpFournisseur.Text == "Piece")
-                {
-                    ListeDeponses = db.Depenses.Where(x => x.Nature == NatureMouvement.Piece).ToList();
-                    List<Coffrecheque> ListCoffrecheques = db.CoffreCheques.Where(x => x.Nature == NatureMouvement.Piece).ToList();
-                    ListeDeponses.AddRange(ConvertToListeDeponses(ListCoffrecheques));
-                }
+              
                 if (searchLookUpFournisseur.Text == "Autre")
                 {
                     ListeDeponses = db.Depenses.Where(x => x.Nature == NatureMouvement.Autre).ToList();

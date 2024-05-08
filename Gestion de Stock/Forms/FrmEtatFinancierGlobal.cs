@@ -80,23 +80,17 @@ namespace Gestion_de_Stock.Forms
             List<Coffrecheque> ListCoffrechequesSalarie = db.CoffreCheques.Where(x => x.Nature == NatureMouvement.Salarié).ToList();
             ListeDeponsesSalarie.AddRange(ConvertToListeDeponses(ListCoffrechequesSalarie));
 
-            List<Depense> ListeDeponsesLeasingCamion1 = db.Depenses.Where(x => x.Nature == NatureMouvement.LeasingCamion1).ToList();
-            List<Coffrecheque> ListCoffrechequesLeasingCamion1 = db.CoffreCheques.Where(x => x.Nature == NatureMouvement.LeasingCamion1).ToList();
-            ListeDeponsesLeasingCamion1.AddRange(ConvertToListeDeponses(ListCoffrechequesLeasingCamion1));
+          
 
 
-            List<Depense> ListeDeponsesLeasingCamion2 = db.Depenses.Where(x => x.Nature == NatureMouvement.LeasingCamion2).ToList();
-            List<Coffrecheque> ListCoffrechequeLeasingCamion2s = db.CoffreCheques.Where(x => x.Nature == NatureMouvement.LeasingCamion2).ToList();
-            ListeDeponsesLeasingCamion2.AddRange(ConvertToListeDeponses(ListCoffrechequeLeasingCamion2s));
+       
 
 
             List<Depense> ListeDeponsesSTEG = db.Depenses.Where(x => x.Nature == NatureMouvement.STEG).ToList();
             List<Coffrecheque> ListCoffrechequesSTEG = db.CoffreCheques.Where(x => x.Nature == NatureMouvement.STEG).ToList();
             ListeDeponsesSTEG.AddRange(ConvertToListeDeponses(ListCoffrechequesSTEG));
 
-            List<Depense> ListeDeponsesPiece = db.Depenses.Where(x => x.Nature == NatureMouvement.Piece).ToList();
-            List<Coffrecheque> ListCoffrechequePieces = db.CoffreCheques.Where(x => x.Nature == NatureMouvement.Piece).ToList();
-            ListeDeponsesPiece.AddRange(ConvertToListeDeponses(ListCoffrechequePieces));
+          
 
 
             List<Depense> ListeDeponsesAutre = db.Depenses.Where(x => x.Nature == NatureMouvement.Autre).ToList();
@@ -109,10 +103,9 @@ namespace Gestion_de_Stock.Forms
             if (datefin.ToString("dd/MM/yyyy").Equals("01/01/0001"))
             {
                 ListeDeponsesSalarie = ListeDeponsesSalarie.Where(x => x.DateCreation.CompareTo(DateMin) >= 0).ToList();
-                    ListeDeponsesLeasingCamion1 = ListeDeponsesLeasingCamion1.Where(x => x.DateCreation.CompareTo(DateMin) >= 0).ToList();
-                ListeDeponsesLeasingCamion2 = ListeDeponsesLeasingCamion2.Where(x => x.DateCreation.CompareTo(DateMin) >= 0).ToList();
+      
                 ListeDeponsesSTEG = ListeDeponsesSTEG.Where(x => x.DateCreation.CompareTo(DateMin) >= 0).ToList();
-                ListeDeponsesPiece = ListeDeponsesPiece.Where(x => x.DateCreation.CompareTo(DateMin) >= 0).ToList();
+              
                 ListeDeponsesAutre = ListeDeponsesAutre.Where(x => x.DateCreation.CompareTo(DateMin) >= 0).ToList();
                 ListeAchats = db.Achats.Where(x => x.DateCreation.CompareTo(DateMin) >= 0).ToList();
                 ListeVentes = db.Vente.Where(x => x.Date.CompareTo(DateMin) >= 0).ToList();
@@ -122,20 +115,19 @@ namespace Gestion_de_Stock.Forms
             else
             {
                 ListeDeponsesSalarie = ListeDeponsesSalarie.Where(x => x.DateCreation.CompareTo(DateMin) >= 0 && x.DateCreation.CompareTo(datefin) <= 0).ToList();
-                ListeDeponsesLeasingCamion1 = ListeDeponsesLeasingCamion1.Where(x => x.DateCreation.CompareTo(DateMin) >= 0 && x.DateCreation.CompareTo(datefin) <= 0).ToList();
-                ListeDeponsesLeasingCamion2 = ListeDeponsesLeasingCamion2.Where(x => x.DateCreation.CompareTo(DateMin) >= 0 && x.DateCreation.CompareTo(datefin) <= 0).ToList();
+             
                 ListeDeponsesSTEG = ListeDeponsesSTEG.Where(x => x.DateCreation.CompareTo(DateMin) >= 0 && x.DateCreation.CompareTo(datefin) <= 0).ToList();
-                ListeDeponsesPiece = ListeDeponsesPiece.Where(x => x.DateCreation.CompareTo(DateMin) >= 0 && x.DateCreation.CompareTo(datefin) <= 0).ToList();
+               
                 ListeDeponsesAutre = ListeDeponsesAutre.Where(x => x.DateCreation.CompareTo(DateMin) >= 0 && x.DateCreation.CompareTo(datefin) <= 0).ToList();
                 ListeAchats = db.Achats.Where(x => x.DateCreation.CompareTo(DateMin) >= 0 && x.DateCreation.CompareTo(datefin) <= 0).ToList();
                 ListeVentes = db.Vente.Where(x => x.Date.CompareTo(DateMin) >= 0 && x.Date.CompareTo(datefin) <= 0).ToList();
                 RapportEtatFinancierGlobal.Parameters["Au"].Value = datefin;
             }
             RapportEtatFinancierGlobal.Parameters["Salarie"].Value = ListeDeponsesSalarie.Sum(x=>x.Montant);
-            RapportEtatFinancierGlobal.Parameters["LeasingCamion1"].Value = ListeDeponsesLeasingCamion1.Sum(x => x.Montant);
-            RapportEtatFinancierGlobal.Parameters["LeasingCamion2"].Value = ListeDeponsesLeasingCamion2.Sum(x => x.Montant);
+           
+           
             RapportEtatFinancierGlobal.Parameters["STEG"].Value = ListeDeponsesSTEG.Sum(x => x.Montant);
-            RapportEtatFinancierGlobal.Parameters["Piece"].Value = ListeDeponsesPiece.Sum(x => x.Montant);
+
             RapportEtatFinancierGlobal.Parameters["Autre"].Value = ListeDeponsesAutre.Sum(x => x.Montant);
             // Achats
             RapportEtatFinancierGlobal.Parameters["TotaldesAchatsRegle"].Value = ListeAchats.Sum(x => x.MontantRegle);

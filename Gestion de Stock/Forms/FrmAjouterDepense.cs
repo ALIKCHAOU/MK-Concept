@@ -227,18 +227,7 @@ namespace Gestion_de_Stock.Forms
                             {
                                 D.Nature = NatureMouvement.STEG;
                             }
-                            if (comboBoxNature.SelectedItem.ToString().Equals("Piece"))
-                            {
-                                D.Nature = NatureMouvement.Piece;
-                            }
-                            if (comboBoxNature.SelectedItem.ToString().Equals("LeasingCamion1"))
-                            {
-                                D.Nature = NatureMouvement.LeasingCamion1;
-                            }
-                            if (comboBoxNature.SelectedItem.ToString().Equals("LeasingCamion2"))
-                            {
-                                D.Nature = NatureMouvement.LeasingCamion2;
-                            }
+                       
                             D.Montant = Montant;
                             D.ModePaiement = "Espèce";
                             D.Commentaire = TxtCommentaire.Text;
@@ -475,19 +464,7 @@ namespace Gestion_de_Stock.Forms
                 if (comboBoxNature.SelectedItem.ToString().Equals("STEG"))
                 {
                     Cheque.Nature = NatureMouvement.STEG;
-                }
-                if (comboBoxNature.SelectedItem.ToString().Equals("Piece"))
-                {
-                    Cheque.Nature = NatureMouvement.Piece;
-                }
-                if (comboBoxNature.SelectedItem.ToString().Equals("LeasingCamion1"))
-                {
-                    Cheque.Nature = NatureMouvement.LeasingCamion1;
-                }
-                if (comboBoxNature.SelectedItem.ToString().Equals("LeasingCamion2"))
-                {
-                    Cheque.Nature = NatureMouvement.LeasingCamion2;
-                }
+                }            
                 Cheque.DateEcheance = dateEchance.DateTime;
                 Cheque.Commentaire = TxtCommentaire.Text;
                 db.CoffreCheques.Add(Cheque);

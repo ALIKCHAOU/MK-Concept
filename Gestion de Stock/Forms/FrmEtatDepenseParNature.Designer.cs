@@ -192,12 +192,8 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.searchLookUpFournisseur.Properties.Items.AddRange(new object[] {
             "Salarié",
-            "Prélèvement",
             "STEG",
-            "Piece",
-            "Autre",
-            "LeasingCamion1",
-            "LeasingCamion2"});
+            "Autre"});
             this.searchLookUpFournisseur.Properties.NullText = "[EditValue is null]";
             this.searchLookUpFournisseur.Properties.PopupSizeable = true;
             this.searchLookUpFournisseur.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
@@ -341,7 +337,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmEtatDepenseParNature";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Etat Depense Par Nature";
+            this.Text = "Etat Dépense Par Nature";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmEtatDepenseParNature_FormClosed_1);
             this.Load += new System.EventHandler(this.FrmEtatDepenseParNature_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

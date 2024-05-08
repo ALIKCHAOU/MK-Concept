@@ -71,7 +71,7 @@ namespace Gestion_de_Stock.Model
         public DbSet<LigneVente> LigneVentes { get; set; }
 
  
-        public DbSet<ArticleChute> ArticleChutes { get; set; }
+       
         
 
 

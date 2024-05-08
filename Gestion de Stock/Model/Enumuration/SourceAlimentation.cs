@@ -17,7 +17,7 @@ namespace Gestion_de_Stock.Model.Enumuration
         Attijari,
         Service,
         Vente,
-        Autre,
-        AnnulationAvance
+        Autre
+       
     }
 }
