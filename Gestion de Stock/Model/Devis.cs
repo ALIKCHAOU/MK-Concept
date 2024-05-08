@@ -22,12 +22,12 @@ namespace Gestion_de_Stock.Model
             if (lastCode == 0)
             {
                 Code = "DV00000001";
-                Reference = "DEVIS/MK Concept/00000001";
+                Reference = "DEVIS/MK CONCEPT/00000001";
             }
             else
             {
                 Code = "DV" + (lastCode+1).ToString("D8");
-                Reference = "DEVIS/MK Concept/" + (lastCode+1).ToString("D8");
+                Reference = "DEVIS/MK CONCEPT/" + (lastCode+1).ToString("D8");
             }
 
         }
@@ -56,10 +56,7 @@ namespace Gestion_de_Stock.Model
         public int TVA { get; set; } = 19;
 
         public decimal Total_DevisHT { get; set; }
-        // 1 %
-        public decimal FODEC { get { return decimal.Divide(Total_DevisHT, 100); } }
-
-        public decimal Total_DevisHTFODEC { get { return decimal.Add(Total_DevisHT, FODEC); } }
+       
 
         public decimal Total_DevisTTC { get; set; }
 
@@ -67,7 +64,7 @@ namespace Gestion_de_Stock.Model
         {
             get
             {
-                return decimal.Round(decimal.Divide(decimal.Multiply(Total_DevisHTFODEC, TVA), 100), 3);
+                return decimal.Round(decimal.Divide(decimal.Multiply(Total_DevisHT, TVA), 100), 3);
             }
         }
 

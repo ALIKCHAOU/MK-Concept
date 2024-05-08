@@ -59,7 +59,6 @@
             this.ColRemise = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SearchLookUpPack = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
-            this.packBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPrixHT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemComboBoxListePrice = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -75,7 +74,6 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.matierePremiereBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -109,7 +107,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ligneDevisBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchLookUpPack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.packBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBoxListePrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonDelete)).BeginInit();
@@ -121,7 +118,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matierePremiereBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -402,7 +398,7 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colDescription, DevExpress.Data.ColumnSortOrder.Ascending)});
-            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
+
             // 
             // ColRemise
             // 
@@ -420,7 +416,6 @@
             this.colDescription.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colDescription.AppearanceHeader.Options.UseFont = true;
             this.colDescription.Caption = "Description";
-            this.colDescription.ColumnEdit = this.SearchLookUpPack;
             this.colDescription.FieldName = "Description";
             this.colDescription.MinWidth = 200;
             this.colDescription.Name = "colDescription";
@@ -434,17 +429,12 @@
             this.SearchLookUpPack.AutoHeight = false;
             this.SearchLookUpPack.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.SearchLookUpPack.DataSource = this.packBindingSource;
             this.SearchLookUpPack.DisplayMember = "Designation";
             this.SearchLookUpPack.Name = "SearchLookUpPack";
             this.SearchLookUpPack.NullText = "Sélectionner Article";
             this.SearchLookUpPack.ValueMember = "Designation";
             this.SearchLookUpPack.View = this.repositoryItemSearchLookUpEdit1View;
             this.SearchLookUpPack.EditValueChanged += new System.EventHandler(this.SearchLookUpPack_EditValueChanged);
-            // 
-            // packBindingSource
-            // 
-            this.packBindingSource.DataSource = typeof(Gestion_de_Stock.Model.Article);
             // 
             // repositoryItemSearchLookUpEdit1View
             // 
@@ -605,10 +595,6 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // matierePremiereBindingSource
-            // 
-           // this.matierePremiereBindingSource.DataSource = typeof(Gestion_de_Stock.Model.MatierePremiere);
-            // 
             // FrmCreerDevis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -652,7 +638,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ligneDevisBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchLookUpPack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.packBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBoxListePrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonDelete)).EndInit();
@@ -664,7 +649,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matierePremiereBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
 
@@ -711,11 +695,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         public System.Windows.Forms.BindingSource clientBindingSource;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
-        private System.Windows.Forms.BindingSource matierePremiereBindingSource;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit1View;
         public DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit SearchLookUpPack;
         public DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBoxListePrice;
         public DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        public System.Windows.Forms.BindingSource packBindingSource;
     }
 }

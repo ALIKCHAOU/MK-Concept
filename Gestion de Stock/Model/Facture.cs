@@ -21,12 +21,12 @@ namespace Gestion_de_Stock.Model
             if (lastCode == 0)
             {
                 Code = "F00000001";
-                Reference = "Facture/MK Concept/00000001";
+                Reference = "Facture/MK CONCEPT/00000001";
             }
             else
             {
                 Code = "F" + (lastCode+1).ToString("D8");
-                Reference = "Facture/MK Concept/" + (lastCode+1).ToString("D8");
+                Reference = "Facture/MK CONCEPT/" + (lastCode+1).ToString("D8");
             }
         }
         [Key]
@@ -45,15 +45,12 @@ namespace Gestion_de_Stock.Model
         public int TVA { get; set; } = 19;
 
         public decimal Total_FactureHT { get; set; }
-         // 1 %
-        public decimal FODEC { get { return decimal.Divide(Total_FactureHT,100);  } }
-
-        public decimal Total_FactureHTFODEC { get { return decimal.Add(Total_FactureHT, FODEC); } }
+      
 
         public decimal Total_FactureTTC { get; set; }
 
         public decimal TOTALTVA { get {
-                return decimal.Round(decimal.Divide(decimal.Multiply(Total_FactureHTFODEC, TVA),100) ,3) ;
+                return decimal.Round(decimal.Divide(decimal.Multiply(Total_FactureHT, TVA),100) ,3) ;
             } }
 
         public ICollection<ligneFacture> ligneFactures { get; set; }

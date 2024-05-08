@@ -138,8 +138,7 @@ namespace Gestion_de_Stock.Forms
 
             string Currency = "TND";
             RFIpression.Parameters["TotalDevis"].Value = GetDevisDB.Total_DevisHT + " " + Currency;
-            RFIpression.Parameters["FODEC"].Value = GetDevisDB.FODEC + " " + Currency;
-            RFIpression.Parameters["Total_DevisHTFODEC"].Value = GetDevisDB.Total_DevisHTFODEC + " " + Currency;
+         
             decimal Timber = db.Societes.FirstOrDefault().Timber;
             RFIpression.Parameters["Timbre"].Value = Timber.ToString() + " " + Currency;
 
@@ -195,7 +194,7 @@ namespace Gestion_de_Stock.Forms
                 Facture.Client = DevisDB.Client;
                 Facture.TVA = DevisDB.TVA;
                 Facture.Total_FactureHT = DevisDB.Total_DevisHT;                    
-                Facture.Total_FactureTTC = decimal.Add(Facture.Total_FactureHTFODEC, Facture.TOTALTVA);
+                Facture.Total_FactureTTC = decimal.Add(Facture.Total_FactureHT, Facture.TOTALTVA);
                 Facture.ligneFactures = new List<ligneFacture>();
                 foreach (var LD in DevisDB.ligneDevis)
                 {

@@ -124,24 +124,7 @@ namespace Gestion_de_Stock.Forms
 
         }
 
-        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            if (!gridView1.IsNewItemRow(gridView1.FocusedRowHandle))
-            {
-                // get price of current Pack 
-
-                string DesignationPack = gridView1.GetFocusedRowCellValue("Description").ToString();
-                pack = db.Articles.FirstOrDefault(x => x.Designation.Equals(DesignationPack));
-                repositoryItemComboBoxListePrice.Items.Clear();
-                repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVenteGros1);
-                repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVenteGros2);
-                repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVentepublic);
-                repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVenteRevendeur);
-                //gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "PrixHT", repositoryItemComboBoxListePrice.Items[0]);
-                //gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "Qty", 1);
-                //gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "Description", pack.Designation); 
-            }
-        }
+      
 
         private void SearchLookUpPack_EditValueChanged(object sender, EventArgs e)
         {

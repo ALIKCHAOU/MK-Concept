@@ -57,7 +57,7 @@ namespace Gestion_de_Stock.Forms
             TxTReference.Text = D.Reference;
             TXTTVA.Text = "19";
             dateEditValidite.DateTime = DateTime.Now.AddDays(7);
-            SearchLookUpPack.DataSource = db.Articles.Select(x => new { x.Code, x.Designation,x.Quantity, x.PrixdeVenteRevendeur, x.PrixdeVentepublic,x.PrixdeVenteGros1,x.PrixdeVenteGros2 }).ToList();
+
 
 
         }
@@ -108,7 +108,7 @@ namespace Gestion_de_Stock.Forms
                 devis.FileName = filePath;
             }
             devis.Total_DevisHT = ListeGrid.Sum(x => x.TotalLigneHT);
-            devis.Total_DevisTTC = decimal.Add(devis.Total_DevisHTFODEC, devis.TOTALTVA);// ListeGrid.Sum(x => x.TotalLigneTTC);
+            devis.Total_DevisTTC = decimal.Add(devis.Total_DevisHT, devis.TOTALTVA);// ListeGrid.Sum(x => x.TotalLigneTTC);
             db.Devis.Add(devis);
             db.SaveChanges();
             XtraMessageBox.Show("Devis e a été  Ajouter", "Configuration de l'application", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -198,23 +198,6 @@ namespace Gestion_de_Stock.Forms
 
       
 
-        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            if (!gridView1.IsNewItemRow(gridView1.FocusedRowHandle))
-            {
-                // get price of current Pack 
-
-                string DesignationPack = gridView1.GetFocusedRowCellValue("Description").ToString();
-                pack = db.Articles.FirstOrDefault(x => x.Designation.Equals(DesignationPack));
-                repositoryItemComboBoxListePrice.Items.Clear();
-                repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVenteGros1);
-                repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVenteGros2);
-                repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVentepublic);
-                repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVenteRevendeur);
-                //gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "PrixHT", repositoryItemComboBoxListePrice.Items[0]);
-                //gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "Qty", 1);
-                //gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "Description", pack.Designation); 
-            }
-        }
+      
     }
 }

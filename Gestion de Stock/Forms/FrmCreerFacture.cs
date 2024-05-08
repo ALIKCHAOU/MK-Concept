@@ -160,7 +160,7 @@ namespace Gestion_de_Stock.Forms
             Facture.Client = client;
             Facture.TVA = 19;
             Facture.Total_FactureHT = Vente.TotalTTC;
-            Facture.Total_FactureTTC = decimal.Add(Facture.Total_FactureHTFODEC, Facture.TOTALTVA);
+            Facture.Total_FactureTTC = decimal.Add(Facture.Total_FactureHT, Facture.TOTALTVA);
             Facture.ligneFactures = new List<ligneFacture>();
             Facture.ligneFactures = ListeGrid;          
             Facture.Client = client;

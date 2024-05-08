@@ -173,8 +173,7 @@ namespace Gestion_de_Stock.Forms
         
             string Currency = "TND";
             RFIpression.Parameters["TotalFacture"].Value = GetFactureDB.Total_FactureHT + " " + Currency;
-            RFIpression.Parameters["FODEC"].Value = GetFactureDB.FODEC + " " + Currency;
-            RFIpression.Parameters["Total_FactureHTFODEC"].Value = GetFactureDB.Total_FactureHTFODEC + " " + Currency;
+          
             decimal Timber = db.Societes.FirstOrDefault().Timber;
             RFIpression.Parameters["Timbre"].Value = Timber.ToString() + " " + Currency;
             
