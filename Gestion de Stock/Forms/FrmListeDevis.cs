@@ -353,5 +353,149 @@ namespace Gestion_de_Stock.Forms
         {
 
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            db = new Model.ApplicationContext();
+            int FocusedRowHandle = gridView1.FocusedRowHandle;
+            int count = gridView1.SelectedRowsCount;
+            // si la ligne n'est pas seléctionner
+            if (count == 0)
+            {
+                XtraMessageBox.Show("Merci de sélectionner une ligne", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+
+                var D = gridView1.GetFocusedRow() as Devis;
+                Devis devis = db.Devis.Include("Client").Include("ligneDevis").FirstOrDefault(x => x.Code.Equals(D.Code));
+                Vente Vente = new Vente();
+                Vente.IntituleClient = devis.Client.RaisonSociale;
+                Vente.NumClient = devis.Client.Code;
+              
+                Vente.TotalHT = devis.Total_DevisHT;
+                Vente.TotalTTC = devis.Total_DevisTTC;
+                Vente.LigneVentes = new List<LigneVente>();
+                foreach (var LD in devis.ligneDevis)
+                {
+                    LigneVente LF = new LigneVente();
+                    LF.NomArticle = LD.Description;
+                    LF.PrixHT = LD.PrixHT;
+                    LF.Metrage = LD.Metrage;
+                    LF.Quantity = LD.Qty;
+                    LF.Remise = LD.Remise;
+                    LF.TVA = LD.TVA;
+                    Vente.LigneVentes.Add(LF);
+
+                }            
+                Vente.MontantRegle = 0m;
+                Vente.EtatVente = EtatVente.NonReglee;
+                Vente.MontantReglement = Vente.TotalTTC;
+                db.Vente.Add(Vente);
+                db.SaveChanges();
+                Vente.Numero = "V" + (Vente.Id).ToString("D8");
+                db.SaveChanges();
+                XtraMessageBox.Show("creation Vente terminée avec succès", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //waiting Form 
+                if (Application.OpenForms.OfType<FrmListeVente>().FirstOrDefault() != null)
+                    Application.OpenForms.OfType<FrmListeVente>().First().venteBindingSource.DataSource = db.Vente.ToList();
+
+            
+         
+
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            db = new Model.ApplicationContext();
+            int FocusedRowHandle = gridView1.FocusedRowHandle;
+            int count = gridView1.SelectedRowsCount;
+            // si la ligne n'est pas seléctionner
+            if (count == 0)
+            {
+                XtraMessageBox.Show("Merci de sélectionner une ligne", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+
+                var D = gridView1.GetFocusedRow() as Devis;
+                Devis devis = db.Devis.Include("Client").Include("ligneDevis").FirstOrDefault(x => x.Code.Equals(D.Code));
+
+
+
+
+
+                Vente Vente = new Vente();
+                Vente.IntituleClient = devis.Client.RaisonSociale;
+                Vente.NumClient = devis.Client.Code;
+        
+                Vente.TotalHT = devis.Total_DevisHT;
+                Vente.TotalTTC = devis.Total_DevisTTC;
+                Vente.LigneVentes = new List<LigneVente>();
+                foreach (var LD in devis.ligneDevis)
+                {
+                    LigneVente LF = new LigneVente();
+                    LF.NomArticle = LD.Description;
+                    LF.PrixHT = LD.PrixHT;
+                    LF.Metrage = LD.Metrage;
+                    LF.Quantity = LD.Qty;
+                    LF.Remise = LD.Remise;
+                    LF.TVA = LD.TVA;
+                    Vente.LigneVentes.Add(LF);
+
+
+                }
+            
+                Vente.MontantRegle = 0m;
+                Vente.EtatVente = EtatVente.NonReglee;
+                Vente.MontantReglement = Vente.TotalTTC;
+                db.Vente.Add(Vente);
+                db.SaveChanges();
+                Vente.Numero = "V" + (Vente.Id).ToString("D8");
+                db.SaveChanges();
+
+                //waiting Form 
+                if (Application.OpenForms.OfType<FrmListeVente>().FirstOrDefault() != null)
+                    Application.OpenForms.OfType<FrmListeVente>().First().venteBindingSource.DataSource = db.Vente.ToList();
+
+
+                Facture Facture = new Facture();
+                Facture.NumeoDocument = devis.Code;
+                Facture.Client = devis.Client;
+                Societe societe = db.Societes.FirstOrDefault();
+
+                Facture.TVA = societe != null ? societe.TVA :  19;
+                Facture.Total_FactureHT = devis.Total_DevisHT;
+                Facture.Total_FactureTTC = decimal.Add(Facture.Total_FactureHT, Facture.TOTALTVA);
+                Facture.ligneFactures = new List<ligneFacture>();
+                foreach (var LD in devis.ligneDevis)
+                {
+                    ligneFacture LF = new ligneFacture();
+                    LF.Description = LD.Description;
+                    LF.PrixHT = LD.PrixHT;
+                    LF.Qty = LD.Qty;
+                    LF.Remise = LD.Remise;
+                    LF.TVA = societe != null ? societe.TVA : 19;
+                    Facture.ligneFactures.Add(LF);
+
+                }              
+                Facture.Client = devis.Client;
+                db.Factures.Add(Facture);
+                db.SaveChanges();
+                XtraMessageBox.Show("Création Facture terminer avec succès", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //waiting Form 
+                if (Application.OpenForms.OfType<FrmListeFactures>().FirstOrDefault() != null)
+                    Application.OpenForms.OfType<FrmListeFactures>().First().factureBindingSource.DataSource = db.Factures.Include("Client").Include("ligneFactures").OrderByDescending(x => x.DateCreation).ToList();
+
+            }
+
+
+
+
+        }
     }
+    
 }

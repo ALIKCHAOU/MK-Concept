@@ -207,5 +207,10 @@ namespace Gestion_de_Stock.Forms
             DateTime DateMaxJour = DateFin.DateTime.Date.AddDays(1).AddSeconds(-1);
             factureBindingSource.DataSource = db.Factures.Where(x => x.DateFacture.CompareTo(DateMin) >= 0 && x.DateFacture.CompareTo(DateMaxJour) <= 0).OrderByDescending(x => x.DateCreation).ToList();
         }
+
+        private void ConvertirenVente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

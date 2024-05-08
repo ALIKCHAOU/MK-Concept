@@ -75,7 +75,6 @@
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel11 = new DevExpress.XtraReports.UI.XRLabel();
             this.Complement = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
@@ -84,8 +83,6 @@
             this.CodePostale = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.Telephone = new DevExpress.XtraReports.Parameters.Parameter();
-            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
-            this.matFiscal = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
             this.NomSociete = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
@@ -95,14 +92,14 @@
             this.xrLine4 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
+            this.matFiscal = new DevExpress.XtraReports.Parameters.Parameter();
             this.TotalEnChiffre = new DevExpress.XtraReports.Parameters.Parameter();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.xrTable3 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow7 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell18 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.FODEC = new DevExpress.XtraReports.Parameters.Parameter();
-            this.Total_DevisHTFODEC = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrTableRow18 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell32 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell33 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -120,6 +117,8 @@
             this.xrTableCell42 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell43 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrLabel24 = new DevExpress.XtraReports.UI.XRLabel();
+            this.FODEC = new DevExpress.XtraReports.Parameters.Parameter();
+            this.Total_DevisHTFODEC = new DevExpress.XtraReports.Parameters.Parameter();
             this.ligneAchatsTableAdapter1 = new Gestion_de_Stock.GestiondeStockMedDataSetORGTableAdapters.LigneAchatsTableAdapter();
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
@@ -620,12 +619,10 @@
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel2,
             this.xrLabel11,
             this.xrLabel10,
             this.xrLabel9,
             this.xrLabel1,
-            this.xrLabel6,
             this.xrLabel8,
             this.xrLabel12,
             this.xrLabel13,
@@ -634,24 +631,11 @@
             this.xrTable2,
             this.xrTable1,
             this.xrLabel3,
-            this.xrPictureBox1});
+            this.xrPictureBox1,
+            this.xrLabel7});
             this.ReportHeader.HeightF = 446.3615F;
             this.ReportHeader.Name = "ReportHeader";
             this.ReportHeader.StylePriority.UseBorderWidth = false;
-            // 
-            // xrLabel2
-            // 
-            this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(545.32F, 287.7849F);
-            this.xrLabel2.Multiline = true;
-            this.xrLabel2.Name = "xrLabel2";
-            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(164.4499F, 55F);
-            this.xrLabel2.StylePriority.UseFont = false;
-            this.xrLabel2.StylePriority.UsePadding = false;
-            this.xrLabel2.StylePriority.UseTextAlignment = false;
-            this.xrLabel2.Text = "\r\nMatricule Fiscale : \r\n\r\n                   ";
-            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLabel11
             // 
@@ -717,23 +701,6 @@
             // 
             this.Telephone.Name = "Telephone";
             this.Telephone.Visible = false;
-            // 
-            // xrLabel6
-            // 
-            this.xrLabel6.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding(this.matFiscal, "Text", "")});
-            this.xrLabel6.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(590.9664F, 228.2849F);
-            this.xrLabel6.Name = "xrLabel6";
-            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(152.2564F, 23F);
-            this.xrLabel6.StylePriority.UseFont = false;
-            // 
-            // matFiscal
-            // 
-            this.matFiscal.Description = "Parameter1";
-            this.matFiscal.Name = "matFiscal";
-            this.matFiscal.Visible = false;
             // 
             // xrLabel8
             // 
@@ -828,6 +795,23 @@
             this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
             this.xrPictureBox1.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.xrPictureBox1_BeforePrint);
             // 
+            // xrLabel7
+            // 
+            this.xrLabel7.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding(this.MatriculeFiscale, "Text", "Matricule Fiscale : {0}")});
+            this.xrLabel7.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(468.8624F, 228.2849F);
+            this.xrLabel7.Name = "xrLabel7";
+            this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel7.SizeF = new System.Drawing.SizeF(271.1375F, 23F);
+            this.xrLabel7.StylePriority.UseFont = false;
+            // 
+            // matFiscal
+            // 
+            this.matFiscal.Description = "Parameter1";
+            this.matFiscal.Name = "matFiscal";
+            this.matFiscal.Visible = false;
+            // 
             // TotalEnChiffre
             // 
             this.TotalEnChiffre.Description = "TotalEnChiffre";
@@ -906,18 +890,6 @@
             this.xrTableCell18.StylePriority.UseFont = false;
             this.xrTableCell18.StylePriority.UsePadding = false;
             this.xrTableCell18.Weight = 2.2152845006611588D;
-            // 
-            // FODEC
-            // 
-            this.FODEC.Description = "FODEC";
-            this.FODEC.Name = "FODEC";
-            this.FODEC.Visible = false;
-            // 
-            // Total_DevisHTFODEC
-            // 
-            this.Total_DevisHTFODEC.Description = "Total_DevisHTFODEC";
-            this.Total_DevisHTFODEC.Name = "Total_DevisHTFODEC";
-            this.Total_DevisHTFODEC.Visible = false;
             // 
             // xrTableRow18
             // 
@@ -1011,7 +983,7 @@
             this.xrTableCell36.StylePriority.UseFont = false;
             this.xrTableCell36.StylePriority.UsePadding = false;
             this.xrTableCell36.StylePriority.UseTextAlignment = false;
-            this.xrTableCell36.Text = "Timber";
+            this.xrTableCell36.Text = "Tim";
             this.xrTableCell36.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrTableCell36.Weight = 1.0649975038322828D;
             // 
@@ -1119,6 +1091,18 @@
             this.xrLabel24.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel24.SizeF = new System.Drawing.SizeF(332.1401F, 22.99999F);
             this.xrLabel24.StylePriority.UseFont = false;
+            // 
+            // FODEC
+            // 
+            this.FODEC.Description = "FODEC";
+            this.FODEC.Name = "FODEC";
+            this.FODEC.Visible = false;
+            // 
+            // Total_DevisHTFODEC
+            // 
+            this.Total_DevisHTFODEC.Description = "Total_DevisHTFODEC";
+            this.Total_DevisHTFODEC.Name = "Total_DevisHTFODEC";
+            this.Total_DevisHTFODEC.Visible = false;
             // 
             // ligneAchatsTableAdapter1
             // 
@@ -1419,12 +1403,10 @@
         private DevExpress.XtraReports.Parameters.Parameter NomSociete;
         private DevExpress.XtraReports.Parameters.Parameter Email;
         private DevExpress.XtraReports.Parameters.Parameter matFiscal;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel2;
         private DevExpress.XtraReports.UI.XRLabel xrLabel11;
         private DevExpress.XtraReports.UI.XRLabel xrLabel10;
         private DevExpress.XtraReports.UI.XRLabel xrLabel9;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel6;
         private DevExpress.XtraReports.UI.XRLabel xrLabel8;
         private DevExpress.XtraReports.UI.XRLabel xrLabel12;
         private DevExpress.XtraReports.UI.XRLabel xrLabel13;
@@ -1463,5 +1445,6 @@
         private DevExpress.XtraReports.Parameters.Parameter FODEC;
         private DevExpress.XtraReports.Parameters.Parameter Total_DevisHTFODEC;
         private DevExpress.XtraReports.Parameters.Parameter Timbre;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel7;
     }
 }

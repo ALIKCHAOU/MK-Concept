@@ -128,16 +128,11 @@ namespace Gestion_de_Stock.Forms
                 Application.OpenForms.OfType<FrmListeVente>().First().venteBindingSource.DataSource = db.Vente.ToList();
 
        
-
-
-
-
-
-
             Facture Facture = new Facture();
             Facture.NumeoDocument = "";
             Facture.Client = client;
-            Facture.TVA = 19;
+            Societe societe= db.Societes.FirstOrDefault();            
+            Facture.TVA = societe != null ? societe.TVA : 19;
             Facture.Total_FactureHT = Vente.TotalTTC;
             Facture.Total_FactureTTC = decimal.Add(Facture.Total_FactureHT, Facture.TOTALTVA);
             Facture.ligneFactures = new List<ligneFacture>();
