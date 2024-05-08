@@ -1,0 +1,33 @@
+possibilité de supprimé ou modifié vente    (liste des ventes)  c'est bon 
+
+possibilité de supprimé ou modifié pointage (liste des pointages) c'est bon 
+
+Ajouter Matricule // liste des Salariers c'est bon 
+
+
+liste salariées: ajouté totale montant réglée et reste à reglée (  c'est bon => Voir Fichier ci-joint)
+*possibilite'de modifier ou de suprimer dépense par cheque :blocage de confirmation si le numero de cheque et la meme**double saisi**
+*liste des achats: possibilite' dajouter la date de chaque achat
+*etat client:tableau de suivi des reglements client:ajouter le non de client aulieu de quantite'vendue
+production journaliére:enregistrer : mise à jour non pas un nouveau enregistrement à chaque fois que je modifie(voir capture d'ecran)
+
+
+
+possibilité de supprimé ou modifié dépense  (liste des dépenses)
+
+(etat de sana vente avec reglement)
+
+
+base de données:
+v00000021     annulée vente le 13/04/2023 : non réglée 575dt (c'est bon )
+v00000004     validée vente salah dali le 02/04/2023 0dt (c'est bon )
+v00000025      habib makni vente 2000dt 15/04 :annulé (c'est bon )
+
+v00000020      habib makni vente 1650dt 12/04 : 1430 (Remise Vente)
+D00000143      salarié jileni 300dt==>150dt
+
+supprimé cheques: 4000251/2/3/4/5 double saisie
+
+
+
+

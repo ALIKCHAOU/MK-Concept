@@ -1,0 +1,16 @@
+  --10230.000
+  update [GestiondeStockYessin].[dbo].[Ventes]
+  set   MontantReglement=10230.000
+  ,  MontantRegle=10230.000
+    where  Numero='V00001200' 
+
+   update [GestiondeStockYessin].[dbo].[HistoriquePaiementVentes]
+  set  [MontantReglement]=10230.000
+      ,[MontantRegle]=10230.000
+  where  NumVente='V00001200'
+
+  update [GestiondeStockYessin].[dbo].[Ventes]
+
+   set  [TotalHT]=1439.200
+      ,TotalTTC=1439.200
+  where  Numero='V00000014' 
