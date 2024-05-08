@@ -290,10 +290,7 @@ namespace Gestion_de_Stock.Forms
                     db.Vente.Remove(VenteDb);
                     db.SaveChanges();
                     XtraMessageBox.Show(" la Vente a été  Supprimer", "Configuration de l'application", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (Application.OpenForms.OfType<FrmMvtStockPack>().FirstOrDefault() != null)
-                    {
-                        Application.OpenForms.OfType<FrmMvtStockPack>().First().mouvementStockPackBindingSource.DataSource = db.MouvementStockPacks.OrderByDescending(x => x.Date).ToList();
-                    }
+                 
 
                     if (Application.OpenForms.OfType<FrmAjouterArticle>().FirstOrDefault() != null)
                     {

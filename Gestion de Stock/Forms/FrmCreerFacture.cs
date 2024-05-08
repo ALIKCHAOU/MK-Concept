@@ -180,8 +180,6 @@ namespace Gestion_de_Stock.Forms
             //waiting Form  mise a jour des interfaces 
             //waiting Form  mise a jour des interfaces 
 
-            if (Application.OpenForms.OfType<FrmMvtStockPack>().FirstOrDefault() != null)
-                Application.OpenForms.OfType<FrmMvtStockPack>().First().mouvementStockPackBindingSource.DataSource = db.MouvementStockPacks.OrderByDescending(x => x.Date).ToList();
 
 
 
@@ -206,8 +204,6 @@ namespace Gestion_de_Stock.Forms
 
             //waiting Form  mise a jour des interfaces 
 
-            if (Application.OpenForms.OfType<FrmMvtStockPack>().FirstOrDefault() != null)
-                Application.OpenForms.OfType<FrmMvtStockPack>().First().mouvementStockPackBindingSource.DataSource = db.MouvementStockPacks.OrderByDescending(x => x.Date).ToList();
            
             XtraMessageBox.Show("Facture e a été  Ajouter", "Configuration de l'application", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

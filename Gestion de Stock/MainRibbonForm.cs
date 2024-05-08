@@ -169,20 +169,7 @@ namespace Gestion_de_Stock
             Formshow(Gestion_de_Stock.Forms.FrmMouvementStockMatierePremiere.InstanceFrmMouvementStock);
         }
 
-        private void barBtnProduction_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Formshow(Gestion_de_Stock.Forms.FrmProductions.InstanceFrmProduction);
-        }
-
-        private void barBtnListeProduction_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Formshow(Gestion_de_Stock.FrmListeProduction.InstanceFrmListeProduction);
-        }
-
-        private void barbtnMouvementStockPack_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Formshow(Gestion_de_Stock.Forms.FrmMvtStockPack.InstanceFrmMvtStockPack);
-        }
+       
 
 
        
@@ -296,7 +283,7 @@ namespace Gestion_de_Stock
 
         private void barBtnEtatdeProduction_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FormshowNotParent(Forms.FrmEtatProduction.InstanceFrmEtatProduction);
+            
         }
 
         private void barListedesventes_ItemClick(object sender, ItemClickEventArgs e)
@@ -306,7 +293,7 @@ namespace Gestion_de_Stock
 
         private void barBtnSuivie_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Formshow(Forms.FrmSuivieProductions.InstanceFrmSuivieProductions);
+         
         }
 
         private void barBtnEtatsClient_ItemClick(object sender, ItemClickEventArgs e)
@@ -363,15 +350,9 @@ namespace Gestion_de_Stock
 
       
 
-        private void barProductionJournalierUsine2_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Formshow(Gestion_de_Stock.Forms.FrmProduction2.InstanceFrmProduction);
-        }
+     
 
-        private void barSuivieProductionsUsine2_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Formshow(Gestion_de_Stock.Forms.FrmSuivieProductionsUsine2.InstanceFrmSuivieProductionsUsine2);
-        }
+      
 
         private void barArticlesChutes_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -406,6 +387,16 @@ namespace Gestion_de_Stock
         private void barListedesBondeLivraisons_ItemClick(object sender, ItemClickEventArgs e)
         {
             Formshow(FrmListeBonLivraison.InstanceFrmListeBonDeCommande);
+        }
+
+        private void barSuivieProductionsUsine2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barProductionJournalierUsine2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }

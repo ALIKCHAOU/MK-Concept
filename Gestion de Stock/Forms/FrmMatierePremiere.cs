@@ -99,8 +99,7 @@ namespace Gestion_de_Stock.Forms
                 if (Application.OpenForms.OfType<FrmAchats>().FirstOrDefault() != null)
                     Application.OpenForms.OfType<FrmAchats>().First().matierePremiereBindingSource.DataSource = db.MatierePremieres.Select(x => new { x.Code, x.Nom, x.Description, x.Unite }).ToList();
 
-                if (Application.OpenForms.OfType<FrmProductions>().FirstOrDefault() != null)
-                    Application.OpenForms.OfType<FrmProductions>().First().matierePremiereBindingSource.DataSource = db.MatierePremieres.Select(x => new { x.Code, x.Nom, x.Description, x.Quantity }).ToList();
+
                 
             }
             catch (DbEntityValidationException ex)

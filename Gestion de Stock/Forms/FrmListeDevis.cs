@@ -266,9 +266,7 @@ namespace Gestion_de_Stock.Forms
                     db.SaveChanges();
                 }
                 //waiting Form  mise a jour des interfaces 
-               
-                if (Application.OpenForms.OfType<FrmMvtStockPack>().FirstOrDefault() != null)
-                    Application.OpenForms.OfType<FrmMvtStockPack>().First().mouvementStockPackBindingSource.DataSource = db.MouvementStockPacks.OrderByDescending(x => x.Date).ToList();
+       
 
               
             }

@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainRibbonForm));
-            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barSociete = new DevExpress.XtraBars.BarButtonItem();
             this.Utilisateurs = new DevExpress.XtraBars.BarButtonItem();
@@ -76,8 +75,6 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnMouvementStock = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnProduction = new DevExpress.XtraBars.BarButtonItem();
-            this.barBtnListeProduction = new DevExpress.XtraBars.BarButtonItem();
-            this.barbtnMouvementStockPack = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnBondeCommandeVente = new DevExpress.XtraBars.BarButtonItem();
@@ -98,7 +95,6 @@
             this.barButtonListePointages = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnEtatdeProduction = new DevExpress.XtraBars.BarButtonItem();
             this.barListedesventes = new DevExpress.XtraBars.BarButtonItem();
-            this.barBtnSuivie = new DevExpress.XtraBars.BarButtonItem();
             this.barBntFounisseur = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnEtatsClient = new DevExpress.XtraBars.BarButtonItem();
             this.btnEtatDepenseParNature = new DevExpress.XtraBars.BarButtonItem();
@@ -110,8 +106,6 @@
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.BtnProductionJournalier = new DevExpress.XtraBars.BarButtonItem();
-            this.barProductionJournalierUsine2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barSuivieProductionsUsine2 = new DevExpress.XtraBars.BarButtonItem();
             this.barArticlesChutes = new DevExpress.XtraBars.BarButtonItem();
             this.barEtatdeStock = new DevExpress.XtraBars.BarButtonItem();
             this.barBondeSortieSaisieLibre = new DevExpress.XtraBars.BarButtonItem();
@@ -134,9 +128,6 @@
             this.ribbonPageGroup33 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup31 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -159,8 +150,8 @@
             this.ribbonPageGroup34 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup35 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             this.ribbonPageGroup21 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup20 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup28 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -234,8 +225,6 @@
             this.barButtonItem2,
             this.barbtnMouvementStock,
             this.barBtnProduction,
-            this.barBtnListeProduction,
-            this.barbtnMouvementStockPack,
             this.barButtonItem5,
             this.barButtonItem6,
             this.barBtnBondeCommandeVente,
@@ -256,7 +245,6 @@
             this.barButtonListePointages,
             this.barBtnEtatdeProduction,
             this.barListedesventes,
-            this.barBtnSuivie,
             this.barBntFounisseur,
             this.barBtnEtatsClient,
             this.btnEtatDepenseParNature,
@@ -268,8 +256,6 @@
             this.barButtonItem8,
             this.barButtonItem9,
             this.BtnProductionJournalier,
-            this.barProductionJournalierUsine2,
-            this.barSuivieProductionsUsine2,
             this.barArticlesChutes,
             this.barEtatdeStock,
             this.barBondeSortieSaisieLibre,
@@ -647,33 +633,7 @@
             this.barBtnProduction.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barBtnProduction.ItemAppearance.Normal.Options.UseFont = true;
             this.barBtnProduction.Name = "barBtnProduction";
-            this.barBtnProduction.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnProduction_ItemClick);
-            // 
-            // barBtnListeProduction
-            // 
-            this.barBtnListeProduction.Caption = "Liste des Productions";
-            this.barBtnListeProduction.Id = 57;
-            this.barBtnListeProduction.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnListeProduction.ImageOptions.Image")));
-            this.barBtnListeProduction.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnListeProduction.ImageOptions.LargeImage")));
-            this.barBtnListeProduction.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barBtnListeProduction.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barBtnListeProduction.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barBtnListeProduction.ItemAppearance.Normal.Options.UseFont = true;
-            this.barBtnListeProduction.Name = "barBtnListeProduction";
-            this.barBtnListeProduction.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnListeProduction_ItemClick);
-            // 
-            // barbtnMouvementStockPack
-            // 
-            this.barbtnMouvementStockPack.Caption = "Mouvement Stock Article";
-            this.barbtnMouvementStockPack.Id = 58;
-            this.barbtnMouvementStockPack.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barbtnMouvementStockPack.ImageOptions.Image")));
-            this.barbtnMouvementStockPack.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barbtnMouvementStockPack.ImageOptions.LargeImage")));
-            this.barbtnMouvementStockPack.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barbtnMouvementStockPack.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barbtnMouvementStockPack.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barbtnMouvementStockPack.ItemAppearance.Normal.Options.UseFont = true;
-            this.barbtnMouvementStockPack.Name = "barbtnMouvementStockPack";
-            this.barbtnMouvementStockPack.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnMouvementStockPack_ItemClick);
+          
             // 
             // barButtonItem5
             // 
@@ -931,19 +891,6 @@
             this.barListedesventes.Name = "barListedesventes";
             this.barListedesventes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barListedesventes_ItemClick);
             // 
-            // barBtnSuivie
-            // 
-            this.barBtnSuivie.Caption = "Suivie Productions";
-            this.barBtnSuivie.Id = 127;
-            this.barBtnSuivie.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnSuivie.ImageOptions.Image")));
-            this.barBtnSuivie.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnSuivie.ImageOptions.LargeImage")));
-            this.barBtnSuivie.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barBtnSuivie.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barBtnSuivie.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barBtnSuivie.ItemAppearance.Normal.Options.UseFont = true;
-            this.barBtnSuivie.Name = "barBtnSuivie";
-            this.barBtnSuivie.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnSuivie_ItemClick);
-            // 
             // barBntFounisseur
             // 
             this.barBntFounisseur.Caption = "Etat Fournisseur";
@@ -1082,32 +1029,6 @@
             this.BtnProductionJournalier.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnProductionJournalier.ItemAppearance.Normal.Options.UseFont = true;
             this.BtnProductionJournalier.Name = "BtnProductionJournalier";
-            // 
-            // barProductionJournalierUsine2
-            // 
-            this.barProductionJournalierUsine2.Caption = "Production Journalier Usine 2";
-            this.barProductionJournalierUsine2.Id = 142;
-            this.barProductionJournalierUsine2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barProductionJournalierUsine2.ImageOptions.Image")));
-            this.barProductionJournalierUsine2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barProductionJournalierUsine2.ImageOptions.LargeImage")));
-            this.barProductionJournalierUsine2.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barProductionJournalierUsine2.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barProductionJournalierUsine2.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barProductionJournalierUsine2.ItemAppearance.Normal.Options.UseFont = true;
-            this.barProductionJournalierUsine2.Name = "barProductionJournalierUsine2";
-            this.barProductionJournalierUsine2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barProductionJournalierUsine2_ItemClick);
-            // 
-            // barSuivieProductionsUsine2
-            // 
-            this.barSuivieProductionsUsine2.Caption = "Suivie Productions Usine 2";
-            this.barSuivieProductionsUsine2.Id = 143;
-            this.barSuivieProductionsUsine2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSuivieProductionsUsine2.ImageOptions.Image")));
-            this.barSuivieProductionsUsine2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSuivieProductionsUsine2.ImageOptions.LargeImage")));
-            this.barSuivieProductionsUsine2.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barSuivieProductionsUsine2.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barSuivieProductionsUsine2.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barSuivieProductionsUsine2.ItemAppearance.Normal.Options.UseFont = true;
-            this.barSuivieProductionsUsine2.Name = "barSuivieProductionsUsine2";
-            this.barSuivieProductionsUsine2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barSuivieProductionsUsine2_ItemClick);
             // 
             // barArticlesChutes
             // 
@@ -1303,10 +1224,7 @@
             this.ribbonPage3.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonPage3.Appearance.Options.UseFont = true;
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup16,
-            this.ribbonPageGroup17,
-            this.ribbonPageGroup4,
-            this.ribbonPageGroup31});
+            this.ribbonPageGroup16});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Production";
             // 
@@ -1314,28 +1232,8 @@
             // 
             this.ribbonPageGroup16.ItemLinks.Add(this.barBtnProduction);
             this.ribbonPageGroup16.ItemLinks.Add(this.barBtnEtatdeProduction);
-            this.ribbonPageGroup16.ItemLinks.Add(this.barBtnSuivie);
             this.ribbonPageGroup16.Name = "ribbonPageGroup16";
             this.ribbonPageGroup16.Text = "Production";
-            // 
-            // ribbonPageGroup17
-            // 
-            this.ribbonPageGroup17.ItemLinks.Add(this.barBtnListeProduction);
-            this.ribbonPageGroup17.Name = "ribbonPageGroup17";
-            this.ribbonPageGroup17.Text = "Liste Production";
-            // 
-            // ribbonPageGroup4
-            // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.barbtnMouvementStockPack);
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "Mouvement Stock Pack";
-            // 
-            // ribbonPageGroup31
-            // 
-            this.ribbonPageGroup31.ItemLinks.Add(this.barProductionJournalierUsine2);
-            this.ribbonPageGroup31.ItemLinks.Add(this.barSuivieProductionsUsine2);
-            this.ribbonPageGroup31.Name = "ribbonPageGroup31";
-            this.ribbonPageGroup31.Text = "Production Journalier Usine 2";
             // 
             // ribbonPage6
             // 
@@ -1583,7 +1481,7 @@
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "Gestion de Stock";
+            this.Text = "MK Concept";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainRibbonForm_FormClosed);
             this.Load += new System.EventHandler(this.MainRibbonForm_Load);
@@ -1644,8 +1542,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barbtnMouvementStock;
         private DevExpress.XtraBars.BarButtonItem barBtnProduction;
-        private DevExpress.XtraBars.BarButtonItem barBtnListeProduction;
-        private DevExpress.XtraBars.BarButtonItem barbtnMouvementStockPack;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barBtnBondeCommandeVente;
@@ -1661,8 +1557,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
@@ -1699,7 +1593,6 @@
         private DevExpress.XtraBars.BarButtonItem barBtnEtatdeProduction;
         private DevExpress.XtraBars.BarButtonItem barListedesventes;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
-        private DevExpress.XtraBars.BarButtonItem barBtnSuivie;
         private DevExpress.XtraBars.BarButtonItem barBntFounisseur;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup24;
         private DevExpress.XtraBars.BarButtonItem barBtnEtatsClient;
@@ -1717,10 +1610,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup27;
         private DevExpress.XtraBars.BarButtonItem BtnProductionJournalier;
-        private DevExpress.XtraBars.BarButtonItem barProductionJournalierUsine2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup31;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup30;
-        private DevExpress.XtraBars.BarButtonItem barSuivieProductionsUsine2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup32;
         private DevExpress.XtraBars.BarButtonItem barArticlesChutes;
         private DevExpress.XtraBars.BarButtonItem barEtatdeStock;

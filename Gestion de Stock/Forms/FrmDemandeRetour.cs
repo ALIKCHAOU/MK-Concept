@@ -130,10 +130,7 @@ namespace Gestion_de_Stock.Forms
                 db.SaveChanges();
                 mouvementStockPack.Code = "EN" + (mouvementStockPack.Id).ToString("D8");
                 db.SaveChanges();
-                if (Application.OpenForms.OfType<FrmMvtStockPack>().FirstOrDefault() != null)
-                {
-                    Application.OpenForms.OfType<FrmMvtStockPack>().First().mouvementStockPackBindingSource.DataSource = db.MouvementStockPacks.ToList(); ;
-                }
+            
             }
             
             if (QteVendu - QteRetourne > 0)

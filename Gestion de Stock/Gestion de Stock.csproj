@@ -537,18 +537,6 @@
     <Compile Include="Forms\FrmMouvementStockMatierePremiere.Designer.cs">
       <DependentUpon>FrmMouvementStockMatierePremiere.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmMvtStockPack.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmMvtStockPack.Designer.cs">
-      <DependentUpon>FrmMvtStockPack.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmProductions.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmProductions.Designer.cs">
-      <DependentUpon>FrmProductions.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FrmRemiseVente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -567,18 +555,6 @@
     <Compile Include="Forms\FrmSociete.Designer.cs">
       <DependentUpon>FrmSociete.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmSuivieProductions.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmSuivieProductions.Designer.cs">
-      <DependentUpon>FrmSuivieProductions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmSuivieProductionsUsine2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmSuivieProductionsUsine2.Designer.cs">
-      <DependentUpon>FrmSuivieProductionsUsine2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FrmViewPdf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -590,18 +566,6 @@
     </Compile>
     <Compile Include="Forms\FrmWaitForm.Designer.cs">
       <DependentUpon>FrmWaitForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmListeProduction.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmListeProduction.Designer.cs">
-      <DependentUpon>FrmListeProduction.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmEtatProduction.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmEtatProduction.Designer.cs">
-      <DependentUpon>FrmEtatProduction.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmListeBonLivraison.cs">
       <SubType>Form</SubType>
@@ -620,12 +584,6 @@
     </Compile>
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmProduction2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmProduction2.Designer.cs">
-      <DependentUpon>FrmProduction2.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmWaitForm1.cs">
       <SubType>Form</SubType>
@@ -1116,9 +1074,6 @@
     <EmbeddedResource Include="Forms\FrmEtatFournisseur.resx">
       <DependentUpon>FrmEtatFournisseur.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmEtatProduction.resx">
-      <DependentUpon>FrmEtatProduction.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmEtatStock.resx">
       <DependentUpon>FrmEtatStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -1194,15 +1149,6 @@
     <EmbeddedResource Include="Forms\FrmMouvementStockMatierePremiere.resx">
       <DependentUpon>FrmMouvementStockMatierePremiere.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmMvtStockPack.resx">
-      <DependentUpon>FrmMvtStockPack.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmProduction2.resx">
-      <DependentUpon>FrmProduction2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmProductions.resx">
-      <DependentUpon>FrmProductions.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmRemiseVente.resx">
       <DependentUpon>FrmRemiseVente.cs</DependentUpon>
     </EmbeddedResource>
@@ -1212,20 +1158,11 @@
     <EmbeddedResource Include="Forms\FrmSociete.resx">
       <DependentUpon>FrmSociete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmSuivieProductions.resx">
-      <DependentUpon>FrmSuivieProductions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmSuivieProductionsUsine2.resx">
-      <DependentUpon>FrmSuivieProductionsUsine2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmViewPdf.resx">
       <DependentUpon>FrmViewPdf.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmWaitForm.resx">
       <DependentUpon>FrmWaitForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmListeProduction.resx">
-      <DependentUpon>FrmListeProduction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmListeBonLivraison.resx">
       <DependentUpon>FrmListeBonLivraison.cs</DependentUpon>
@@ -1569,6 +1506,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Image\MK Concept.jpg" />
+    <Content Include="Image\MK-Concept.ico" />
     <Content Include="Image\NonReglee_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1595,6 +1533,7 @@
     <None Include="Resources\liste.png" />
     <None Include="Resources\listeventes.png" />
     <None Include="Resources\MK Concept.jpg" />
+    <Content Include="Resources\MK-Concept.ico" />
     <Content Include="Resources\téléchargement.png" />
     <None Include="Resources\téléchargement1.png" />
     <None Include="Resources\partenaires1.png" />
