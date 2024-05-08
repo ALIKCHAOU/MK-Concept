@@ -74,7 +74,6 @@
             this.barButtonListedesPacks = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnMouvementStock = new DevExpress.XtraBars.BarButtonItem();
-            this.barBtnProduction = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnBondeCommandeVente = new DevExpress.XtraBars.BarButtonItem();
@@ -93,7 +92,6 @@
             this.barBtnChequeEmis = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemListeSalaries = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonListePointages = new DevExpress.XtraBars.BarButtonItem();
-            this.barBtnEtatdeProduction = new DevExpress.XtraBars.BarButtonItem();
             this.barListedesventes = new DevExpress.XtraBars.BarButtonItem();
             this.barBntFounisseur = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnEtatsClient = new DevExpress.XtraBars.BarButtonItem();
@@ -120,14 +118,6 @@
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup24 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup32 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup33 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -224,7 +214,6 @@
             this.barButtonListedesPacks,
             this.barButtonItem2,
             this.barbtnMouvementStock,
-            this.barBtnProduction,
             this.barButtonItem5,
             this.barButtonItem6,
             this.barBtnBondeCommandeVente,
@@ -243,7 +232,6 @@
             this.barBtnChequeEmis,
             this.barButtonItemListeSalaries,
             this.barButtonListePointages,
-            this.barBtnEtatdeProduction,
             this.barListedesventes,
             this.barBntFounisseur,
             this.barBtnEtatsClient,
@@ -269,8 +257,6 @@
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.AccueilPage,
             this.AchatPage,
-            this.ribbonPage1,
-            this.ribbonPage3,
             this.ribbonPage6,
             this.ribbonPage2,
             this.ribbonPage4,
@@ -622,19 +608,6 @@
             this.barbtnMouvementStock.Name = "barbtnMouvementStock";
             this.barbtnMouvementStock.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnMouvementStock_ItemClick);
             // 
-            // barBtnProduction
-            // 
-            this.barBtnProduction.Caption = "Production Journalier";
-            this.barBtnProduction.Id = 56;
-            this.barBtnProduction.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnProduction.ImageOptions.Image")));
-            this.barBtnProduction.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnProduction.ImageOptions.LargeImage")));
-            this.barBtnProduction.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barBtnProduction.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barBtnProduction.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barBtnProduction.ItemAppearance.Normal.Options.UseFont = true;
-            this.barBtnProduction.Name = "barBtnProduction";
-          
-            // 
             // barButtonItem5
             // 
             this.barButtonItem5.Caption = "Creer bon de livraison";
@@ -860,19 +833,6 @@
             this.barButtonListePointages.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonListePointages.Name = "barButtonListePointages";
             this.barButtonListePointages.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonListePointages_ItemClick);
-            // 
-            // barBtnEtatdeProduction
-            // 
-            this.barBtnEtatdeProduction.Caption = "Etat de Production";
-            this.barBtnEtatdeProduction.Id = 125;
-            this.barBtnEtatdeProduction.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnEtatdeProduction.ImageOptions.Image")));
-            this.barBtnEtatdeProduction.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnEtatdeProduction.ImageOptions.LargeImage")));
-            this.barBtnEtatdeProduction.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barBtnEtatdeProduction.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barBtnEtatdeProduction.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barBtnEtatdeProduction.ItemAppearance.Normal.Options.UseFont = true;
-            this.barBtnEtatdeProduction.Name = "barBtnEtatdeProduction";
-            this.barBtnEtatdeProduction.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnEtatdeProduction_ItemClick);
             // 
             // barListedesventes
             // 
@@ -1174,66 +1134,6 @@
             this.ribbonPageGroup24.ItemLinks.Add(this.btnEtatAchat);
             this.ribbonPageGroup24.Name = "ribbonPageGroup24";
             this.ribbonPageGroup24.Text = "Etat Fournisseur";
-            // 
-            // ribbonPage1
-            // 
-            this.ribbonPage1.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ribbonPage1.Appearance.Options.UseFont = true;
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup6,
-            this.ribbonPageGroup8,
-            this.ribbonPageGroup14,
-            this.ribbonPageGroup32,
-            this.ribbonPageGroup33});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Stock";
-            // 
-            // ribbonPageGroup6
-            // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonMatierePremier);
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.Text = "Stock";
-            // 
-            // ribbonPageGroup8
-            // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonPack);
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonListedesPacks);
-            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            this.ribbonPageGroup8.Text = "Articles";
-            // 
-            // ribbonPageGroup14
-            // 
-            this.ribbonPageGroup14.ItemLinks.Add(this.barbtnMouvementStock);
-            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
-            this.ribbonPageGroup14.Text = "M Stock  Matière Premiere";
-            // 
-            // ribbonPageGroup32
-            // 
-            this.ribbonPageGroup32.ItemLinks.Add(this.barArticlesChutes);
-            this.ribbonPageGroup32.Name = "ribbonPageGroup32";
-            this.ribbonPageGroup32.Text = "Articles Chutes";
-            // 
-            // ribbonPageGroup33
-            // 
-            this.ribbonPageGroup33.ItemLinks.Add(this.barEtatdeStock);
-            this.ribbonPageGroup33.Name = "ribbonPageGroup33";
-            this.ribbonPageGroup33.Text = "Etat de Stock";
-            // 
-            // ribbonPage3
-            // 
-            this.ribbonPage3.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ribbonPage3.Appearance.Options.UseFont = true;
-            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup16});
-            this.ribbonPage3.Name = "ribbonPage3";
-            this.ribbonPage3.Text = "Production";
-            // 
-            // ribbonPageGroup16
-            // 
-            this.ribbonPageGroup16.ItemLinks.Add(this.barBtnProduction);
-            this.ribbonPageGroup16.ItemLinks.Add(this.barBtnEtatdeProduction);
-            this.ribbonPageGroup16.Name = "ribbonPageGroup16";
-            this.ribbonPageGroup16.Text = "Production";
             // 
             // ribbonPage6
             // 
@@ -1541,7 +1441,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonListedesPacks;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barbtnMouvementStock;
-        private DevExpress.XtraBars.BarButtonItem barBtnProduction;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barBtnBondeCommandeVente;
@@ -1551,12 +1450,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage AchatPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
@@ -1590,7 +1483,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup19;
         private DevExpress.XtraBars.BarButtonItem barButtonListePointages;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup23;
-        private DevExpress.XtraBars.BarButtonItem barBtnEtatdeProduction;
         private DevExpress.XtraBars.BarButtonItem barListedesventes;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
         private DevExpress.XtraBars.BarButtonItem barBntFounisseur;
@@ -1611,10 +1503,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup27;
         private DevExpress.XtraBars.BarButtonItem BtnProductionJournalier;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup30;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup32;
         private DevExpress.XtraBars.BarButtonItem barArticlesChutes;
         private DevExpress.XtraBars.BarButtonItem barEtatdeStock;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup33;
         private DevExpress.XtraBars.BarButtonItem barBondeSortieSaisieLibre;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup34;
         private DevExpress.XtraBars.BarButtonItem barButtonIBondeSortieSasieLibre;

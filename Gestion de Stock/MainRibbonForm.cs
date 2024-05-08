@@ -389,12 +389,7 @@ namespace Gestion_de_Stock
             Formshow(FrmListeBonLivraison.InstanceFrmListeBonDeCommande);
         }
 
-        private void barSuivieProductionsUsine2_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
-        private void barProductionJournalierUsine2_ItemClick(object sender, ItemClickEventArgs e)
+        private void barBtnProduction_ItemClick(object sender, ItemClickEventArgs e)
         {
 
         }
