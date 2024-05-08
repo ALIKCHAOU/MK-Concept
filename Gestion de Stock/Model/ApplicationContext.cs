@@ -53,7 +53,7 @@ namespace Gestion_de_Stock.Model
 
         public DbSet<Coffrecheque> CoffreCheques { get; set; }
         public DbSet<Salarier> Salariers { get; set; }
-        public DbSet<Prelevement> Prelevements { get; set; }
+      
         public DbSet<Alimentation> Alimentations { get; set; }
         public DbSet<Depense> Depenses { get; set; }
         public DbSet<MouvementCaisse> MouvementsCaisse { get; set; }

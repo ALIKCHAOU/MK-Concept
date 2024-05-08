@@ -509,6 +509,10 @@
     <Compile Include="Migrations\202405082040386_add 1.designer.cs">
       <DependentUpon>202405082040386_add 1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202405082104551_add 2.cs" />
+    <Compile Include="Migrations\202405082104551_add 2.designer.cs">
+      <DependentUpon>202405082104551_add 2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Achat.cs" />
     <Compile Include="Model\Alimentation.cs" />
@@ -549,7 +553,6 @@
     <Compile Include="Model\NumeriqueHelper.cs" />
     <Compile Include="Model\Article.cs" />
     <Compile Include="Model\PointageJournalier.cs" />
-    <Compile Include="Model\Prelevement.cs" />
     <Compile Include="Model\RapportHistoriqueAchat.cs" />
     <Compile Include="Model\Retenue.cs" />
     <Compile Include="Model\Salarier.cs" />
@@ -820,6 +823,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202405082040386_add 1.resx">
       <DependentUpon>202405082040386_add 1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405082104551_add 2.resx">
+      <DependentUpon>202405082104551_add 2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

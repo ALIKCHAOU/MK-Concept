@@ -165,7 +165,7 @@ namespace Gestion_de_Stock.Forms
             RFIpression.Parameters["RIB"].Value = societe.Rib;
 
             RFIpression.Parameters["Date"].Value = GetFactureDB.DateCreation.ToString("dd/MM/yyyy");
-            RFIpression.Parameters["CodeFacture"].Value = GetFactureDB.Reference;
+            RFIpression.Parameters["CodeFacture"].Value = GetFactureDB.Code.Replace("F000",DateTime.Now.Year.ToString().Substring(2,2));
             RFIpression.Parameters["ClientFullName"].Value = GetFactureDB.Client.FullName;
             RFIpression.Parameters["RSClient"].Value = GetFactureDB.Client.RaisonSociale;
             RFIpression.Parameters["AdresseClient"].Value = GetFactureDB.Client.Adresse;

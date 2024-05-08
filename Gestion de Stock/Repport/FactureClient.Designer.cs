@@ -74,8 +74,6 @@
             this.xrTableCell20 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell21 = new DevExpress.XtraReports.UI.XRTableCell();
             this.TotalFacture = new DevExpress.XtraReports.Parameters.Parameter();
-            this.FODEC = new DevExpress.XtraReports.Parameters.Parameter();
-            this.Total_FactureHTFODEC = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrTableRow8 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell22 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -95,6 +93,8 @@
             this.xrTableCell40 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell41 = new DevExpress.XtraReports.UI.XRTableCell();
             this.TotalFactureTTC = new DevExpress.XtraReports.Parameters.Parameter();
+            this.FODEC = new DevExpress.XtraReports.Parameters.Parameter();
+            this.Total_FactureHTFODEC = new DevExpress.XtraReports.Parameters.Parameter();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.MatFiscale = new DevExpress.XtraReports.Parameters.Parameter();
@@ -567,18 +567,6 @@
             this.TotalFacture.Name = "TotalFacture";
             this.TotalFacture.Visible = false;
             // 
-            // FODEC
-            // 
-            this.FODEC.Description = "FODEC";
-            this.FODEC.Name = "FODEC";
-            this.FODEC.Visible = false;
-            // 
-            // Total_FactureHTFODEC
-            // 
-            this.Total_FactureHTFODEC.Description = "Total_Facture HT FODEC";
-            this.Total_FactureHTFODEC.Name = "Total_FactureHTFODEC";
-            this.Total_FactureHTFODEC.Visible = false;
-            // 
             // xrTableRow8
             // 
             this.xrTableRow8.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
@@ -787,6 +775,18 @@
             this.TotalFactureTTC.Name = "TotalFactureTTC";
             this.TotalFactureTTC.Visible = false;
             // 
+            // FODEC
+            // 
+            this.FODEC.Description = "FODEC";
+            this.FODEC.Name = "FODEC";
+            this.FODEC.Visible = false;
+            // 
+            // Total_FactureHTFODEC
+            // 
+            this.Total_FactureHTFODEC.Description = "Total_Facture HT FODEC";
+            this.Total_FactureHTFODEC.Name = "Total_FactureHTFODEC";
+            this.Total_FactureHTFODEC.Visible = false;
+            // 
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -936,6 +936,8 @@
             // 
             // xrLabel3
             // 
+            this.xrLabel3.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding(this.CodeFacture, "Text", "Facture N : {0}")});
             this.xrLabel3.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(4.000012F, 65.00001F);
@@ -945,7 +947,6 @@
             this.xrLabel3.StylePriority.UseFont = false;
             this.xrLabel3.StylePriority.UseForeColor = false;
             this.xrLabel3.StylePriority.UseTextAlignment = false;
-            this.xrLabel3.Text = "Facture N° 00001";
             this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrTable1

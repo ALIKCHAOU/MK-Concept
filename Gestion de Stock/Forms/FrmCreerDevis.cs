@@ -55,7 +55,9 @@ namespace Gestion_de_Stock.Forms
 
             Devis D = new Devis();
             TxTReference.Text = D.Reference;
-            TXTTVA.Text = "19";
+            Societe societe = db.Societes.FirstOrDefault();
+
+            TXTTVA.Text = societe != null ? societe.TVA.ToString() : "19";
             dateEditValidite.DateTime = DateTime.Now.AddDays(7);
 
 

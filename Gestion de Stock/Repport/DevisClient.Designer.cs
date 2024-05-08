@@ -117,8 +117,6 @@
             this.xrTableCell42 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell43 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrLabel24 = new DevExpress.XtraReports.UI.XRLabel();
-            this.FODEC = new DevExpress.XtraReports.Parameters.Parameter();
-            this.Total_DevisHTFODEC = new DevExpress.XtraReports.Parameters.Parameter();
             this.ligneAchatsTableAdapter1 = new Gestion_de_Stock.GestiondeStockMedDataSetORGTableAdapters.LigneAchatsTableAdapter();
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
@@ -789,9 +787,9 @@
             // 
             // xrPictureBox1
             // 
-            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(508.5413F, 24.61432F);
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(447.9167F, 24.61432F);
             this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(189.7921F, 78.01895F);
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(250.4167F, 78.01895F);
             this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
             this.xrPictureBox1.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.xrPictureBox1_BeforePrint);
             // 
@@ -1092,18 +1090,6 @@
             this.xrLabel24.SizeF = new System.Drawing.SizeF(332.1401F, 22.99999F);
             this.xrLabel24.StylePriority.UseFont = false;
             // 
-            // FODEC
-            // 
-            this.FODEC.Description = "FODEC";
-            this.FODEC.Name = "FODEC";
-            this.FODEC.Visible = false;
-            // 
-            // Total_DevisHTFODEC
-            // 
-            this.Total_DevisHTFODEC.Description = "Total_DevisHTFODEC";
-            this.Total_DevisHTFODEC.Name = "Total_DevisHTFODEC";
-            this.Total_DevisHTFODEC.Visible = false;
-            // 
             // ligneAchatsTableAdapter1
             // 
             this.ligneAchatsTableAdapter1.ClearBeforeFill = true;
@@ -1323,8 +1309,6 @@
             this.Email,
             this.matFiscal,
             this.RIB,
-            this.FODEC,
-            this.Total_DevisHTFODEC,
             this.Timbre});
             this.Version = "17.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable5)).EndInit();
@@ -1442,8 +1426,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell42;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell43;
         private DevExpress.XtraReports.UI.XRLabel xrLabel24;
-        private DevExpress.XtraReports.Parameters.Parameter FODEC;
-        private DevExpress.XtraReports.Parameters.Parameter Total_DevisHTFODEC;
         private DevExpress.XtraReports.Parameters.Parameter Timbre;
         private DevExpress.XtraReports.UI.XRLabel xrLabel7;
     }
