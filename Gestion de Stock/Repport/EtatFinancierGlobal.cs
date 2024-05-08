@@ -20,5 +20,10 @@ namespace Gestion_de_Stock.Repport
             var dbPath0 = executingFolder + "\\Image\\Logo.png";
             xrPictureBox1.ImageUrl = dbPath0;
         }
+
+        private void xrTableRow6_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+
+        }
     }
 }
