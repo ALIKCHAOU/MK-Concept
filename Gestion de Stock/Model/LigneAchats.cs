@@ -20,7 +20,7 @@ namespace Gestion_de_Stock.Model
 
         public decimal Quantity { get; set; }
 
-        public string unite { get; set; }
+       
 
         public int TVA { get; set; } = 19;
 

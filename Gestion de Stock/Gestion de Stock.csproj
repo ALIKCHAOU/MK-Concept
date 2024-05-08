@@ -483,12 +483,6 @@
     <Compile Include="Forms\FrmListeVente.Designer.cs">
       <DependentUpon>FrmListeVente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmMatierePremiere.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmMatierePremiere.Designer.cs">
-      <DependentUpon>FrmMatierePremiere.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FrmMatriculeFiscale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -530,12 +524,6 @@
     </Compile>
     <Compile Include="Forms\FrmMouvementCaisse.Designer.cs">
       <DependentUpon>FrmMouvementCaisse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmMouvementStockMatierePremiere.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmMouvementStockMatierePremiere.Designer.cs">
-      <DependentUpon>FrmMouvementStockMatierePremiere.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmRemiseVente.cs">
       <SubType>Form</SubType>
@@ -610,6 +598,10 @@
     <Compile Include="Migrations\202405081422462_init.cs" />
     <Compile Include="Migrations\202405081422462_init.designer.cs">
       <DependentUpon>202405081422462_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405081514195_remouve unite produits.cs" />
+    <Compile Include="Migrations\202405081514195_remouve unite produits.designer.cs">
+      <DependentUpon>202405081514195_remouve unite produits.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Achat.cs" />
@@ -950,9 +942,6 @@
     <EmbeddedResource Include="Forms\FrmListeVente.resx">
       <DependentUpon>FrmListeVente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmMatierePremiere.resx">
-      <DependentUpon>FrmMatierePremiere.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMatriculeFiscale.resx">
       <DependentUpon>FrmMatriculeFiscale.cs</DependentUpon>
     </EmbeddedResource>
@@ -973,9 +962,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMouvementCaisse.resx">
       <DependentUpon>FrmMouvementCaisse.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmMouvementStockMatierePremiere.resx">
-      <DependentUpon>FrmMouvementStockMatierePremiere.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmRemiseVente.resx">
       <DependentUpon>FrmRemiseVente.cs</DependentUpon>
@@ -1009,6 +995,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202405081422462_init.resx">
       <DependentUpon>202405081422462_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405081514195_remouve unite produits.resx">
+      <DependentUpon>202405081514195_remouve unite produits.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -1188,23 +1177,11 @@
     <Content Include="File Application\Reclamation BSM 15_01_2024\rectification.JPG" />
     <Content Include="File Application\Reclamation BSM 15_01_2024\Update database.txt" />
     <Content Include="File Application\v3.txt" />
-    <Content Include="Image Final\BSM_Logo_RGB-1.png" />
-    <Content Include="Image Final\Logo.ico" />
-    <Content Include="Image Final\Logo.png" />
-    <Content Include="Image Final\NonReglee_16x16.png" />
-    <Content Include="Image Final\PR_16x16.png" />
-    <Content Include="Image Final\Reglee_16x16.png" />
-    <Content Include="Image Final\Termine.png" />
-    <Content Include="Image\Logo.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Image\Logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Image\BSM_Logo_RGB-1.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Image\MK Concept.jpg" />
+    <Content Include="Image\Logo.ico" />
     <Content Include="Image\MK-Concept.ico" />
     <Content Include="Image\NonReglee_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

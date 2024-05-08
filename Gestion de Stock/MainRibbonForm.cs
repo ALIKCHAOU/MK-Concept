@@ -151,7 +151,7 @@ namespace Gestion_de_Stock
 
         private void barButtonMatierePremier_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Formshow(Gestion_de_Stock.Forms.FrmMatierePremiere.InstanceFrmMatierePremiere);
+           
         }
 
         private void stockPackBtn(object sender, ItemClickEventArgs e)
@@ -166,7 +166,7 @@ namespace Gestion_de_Stock
 
         private void barbtnMouvementStock_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Formshow(Gestion_de_Stock.Forms.FrmMouvementStockMatierePremiere.InstanceFrmMouvementStock);
+          
         }
 
        

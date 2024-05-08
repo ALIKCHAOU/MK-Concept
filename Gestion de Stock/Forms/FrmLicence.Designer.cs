@@ -422,7 +422,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = global::Gestion_de_Stock.Properties.Resources.BSM_Logo_RGB_1;
+            this.pictureBox1.Image = global::Gestion_de_Stock.Properties.Resources.MK_Concept;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";

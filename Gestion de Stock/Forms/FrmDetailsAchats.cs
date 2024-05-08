@@ -75,7 +75,7 @@ namespace Gestion_de_Stock.Forms
                     LigneAchats L = new LigneAchats();
                     L.NomArticle = linge.NomArticle;
                         L.Quantity = linge.Quantity;
-                    L.unite = linge.unite;
+                   
                     L.TVA = linge.TVA;
                     L.PrixUnitaire = linge.PrixUnitaire;  
                     GetAchatDB.Lines.Add(L);

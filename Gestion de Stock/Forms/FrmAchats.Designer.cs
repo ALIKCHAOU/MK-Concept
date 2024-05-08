@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAchats));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
@@ -40,7 +39,7 @@
             this.BtnImport = new DevExpress.XtraEditors.ButtonEdit();
             this.TxtFactureNumero = new DevExpress.XtraEditors.TextEdit();
             this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.fournisseurBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fournisseurBindingSource = new System.Windows.Forms.BindingSource();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.BtnEnregister = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -53,11 +52,10 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.ligneAchatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ligneAchatsBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colNomArticle = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositorySearchLookUpMatierePermier = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
-            this.matierePremiereBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrixUnitaire = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -98,7 +96,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ligneAchatsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositorySearchLookUpMatierePermier)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matierePremiereBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonSupprimer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
@@ -333,9 +330,9 @@
             // gridControl1
             // 
             this.gridControl1.DataSource = this.ligneAchatsBindingSource;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(12, 12);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -374,7 +371,6 @@
             // 
             this.colNomArticle.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colNomArticle.AppearanceHeader.Options.UseFont = true;
-            this.colNomArticle.ColumnEdit = this.repositorySearchLookUpMatierePermier;
             this.colNomArticle.FieldName = "NomArticle";
             this.colNomArticle.MinWidth = 400;
             this.colNomArticle.Name = "colNomArticle";
@@ -387,16 +383,11 @@
             this.repositorySearchLookUpMatierePermier.AutoHeight = false;
             this.repositorySearchLookUpMatierePermier.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositorySearchLookUpMatierePermier.DataSource = this.matierePremiereBindingSource;
             this.repositorySearchLookUpMatierePermier.DisplayMember = "Nom";
             this.repositorySearchLookUpMatierePermier.Name = "repositorySearchLookUpMatierePermier";
             this.repositorySearchLookUpMatierePermier.NullText = "Ajouter Article";
             this.repositorySearchLookUpMatierePermier.ValueMember = "Nom";
             this.repositorySearchLookUpMatierePermier.View = this.repositoryItemSearchLookUpEdit1View;
-            // 
-            // matierePremiereBindingSource
-            // 
-            this.matierePremiereBindingSource.DataSource = typeof(Gestion_de_Stock.Model.MatierePremiere);
             // 
             // repositoryItemSearchLookUpEdit1View
             // 
@@ -469,9 +460,9 @@
             // repositoryItemButtonSupprimer
             // 
             this.repositoryItemButtonSupprimer.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.repositoryItemButtonSupprimer.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Supprimer", -1, true, true, false, editorButtonImageOptions2)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Supprimer", -1, true, true, false, editorButtonImageOptions1)});
             this.repositoryItemButtonSupprimer.Name = "repositoryItemButtonSupprimer";
             this.repositoryItemButtonSupprimer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonSupprimer.Click += new System.EventHandler(this.repositoryItemButtonSupprimer_Click);
@@ -568,7 +559,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ligneAchatsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositorySearchLookUpMatierePermier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matierePremiereBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonSupprimer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
@@ -617,7 +607,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit repositorySearchLookUpMatierePermier;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit1View;
         private DevExpress.XtraGrid.Columns.GridColumn GCTotalTTC;
-        public System.Windows.Forms.BindingSource matierePremiereBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn GVTVA;
     }
 }
