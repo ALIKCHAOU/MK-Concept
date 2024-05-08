@@ -7,13 +7,13 @@ namespace Gestion_de_Stock.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class ajoutermegration : IMigrationMetadata
+    public sealed partial class init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ajoutermegration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
         
         string IMigrationMetadata.Id
         {
-            get { return "202302182137190_ajouter megration"; }
+            get { return "202405081422462_init"; }
         }
         
         string IMigrationMetadata.Source

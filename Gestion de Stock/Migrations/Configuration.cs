@@ -55,47 +55,25 @@
                 var societe = new Societe
                 {
                     Id = 1,
-                    Activite = "Activité 1",
-                    Adresse = "Adresse 1",
+                    Activite = " 1",
+                    Adresse = "Sfax, Tunisia, 3002",
                     Capitale = "1000000",
                     CodePostale = "3000",
                     Complement = "Complément 1",
                     Mail = "mail@societe.com",
                     MatriculFiscal = "matfisc",
-                    Name = "Sociéte 1",
-                    RaisonSociale = "Entreprise",
-                    Site = "societe.com",
-                   
-                    Telephone = "123123",
+                    Name = "MK Concept",
+                    RaisonSociale = "MK Concept",
+                    Site = "MKConcept.com",                   
+                    Telephone = "216 93 356 891",
                     Ville = "Sfax",
                     Timber=1m,
                     TVA = 19
                 };
                 context.Societes.AddOrUpdate(societe);
             }
-            if (context.Packs.Count()==0)
-            {
-                context.Packs.Add(new Article { Code= "P00000001", DateCreation=DateTime.Now,Designation= "Bargataire 90 PN6", PrixdeVenteGros1= 400m, PrixdeVenteGros2= 400m, PrixdeVentepublic=400m,PrixdeVenteRevendeur=400m});
-                context.SaveChanges();
-                context.Packs.Add(new Article { Code = "P00000002", DateCreation = DateTime.Now, Designation = "Bargataire 90 PN10", PrixdeVenteGros1 = 500m, PrixdeVenteGros2 = 500m, PrixdeVentepublic = 500m, PrixdeVenteRevendeur = 500m });
-                context.SaveChanges();
-                //context.Packs.Add(new Article { Code = "P00000003", DateCreation = DateTime.Now, Designation = "Bargataire 53 PN6", PrixdeVenteGros1 = 1m, PrixdeVenteGros2 = 2m, PrixdeVentepublic = 3m, PrixdeVenteRevendeur = 4m });
-                //context.SaveChanges();
-                //context.Packs.Add(new Article { Code = "P00000004", DateCreation = DateTime.Now, Designation = "Bargataire 53 PN10", PrixdeVenteGros1 = 1m, PrixdeVenteGros2 = 2m, PrixdeVentepublic = 3m, PrixdeVenteRevendeur = 4m });
-                //context.SaveChanges();
-                //context.Packs.Add(new Article { Code = "P00000005", DateCreation = DateTime.Now, Designation = "Bargataire 43 PN6", PrixdeVenteGros1 = 1m, PrixdeVenteGros2 = 2m, PrixdeVentepublic = 3m, PrixdeVenteRevendeur = 4m });
-                //context.SaveChanges();
-                //context.Packs.Add(new Article { Code = "P00000006", DateCreation = DateTime.Now, Designation = "Bargataire 43 PN10", PrixdeVenteGros1 = 1m, PrixdeVenteGros2 = 2m, PrixdeVentepublic = 3m, PrixdeVenteRevendeur = 4m });
-                //context.SaveChanges();
-                //context.Packs.Add(new Article { Code = "P00000007", DateCreation = DateTime.Now, Designation = "Bargataire 33 PN6", PrixdeVenteGros1 = 1m, PrixdeVenteGros2 = 2m, PrixdeVentepublic = 3m, PrixdeVenteRevendeur = 4m });
-                //context.SaveChanges();
-                //context.Packs.Add(new Article { Code = "P00000008", DateCreation = DateTime.Now, Designation = "Bargataire 33 PN10", PrixdeVenteGros1 = 1m, PrixdeVenteGros2 = 2m, PrixdeVentepublic = 3m, PrixdeVenteRevendeur = 4m });
-            }
-            if (context.MatierePremieres.Count() == 0)
-            {
-                context.MatierePremieres.Add(new MatierePremiere {Id=1, Code = "M00000001", Description = "Déchet", Unite = "kg", Quantity = 0 ,DernierPirxAchat=0,Nom= "Déchet" });
-                context.SaveChanges();
-            }
+           
+           
 
                 context.SaveChanges();
         }

@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class inits : DbMigration
+    public partial class init : DbMigration
     {
         public override void Up()
         {
@@ -26,11 +26,8 @@
                         Total_AchatHT = c.Decimal(nullable: false, precision: 18, scale: 3),
                         Total_AchatTTC = c.Decimal(nullable: false, precision: 18, scale: 3),
                         NFactureFounisseur = c.String(),
-                        Retenue_id = c.Int(),
                     })
-                .PrimaryKey(t => t.id)
-                .ForeignKey("dbo.Retenues", t => t.Retenue_id)
-                .Index(t => t.Retenue_id);
+                .PrimaryKey(t => t.id);
             
             CreateTable(
                 "dbo.LigneAchats",
@@ -47,28 +44,6 @@
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Achats", t => t.Achat_id)
                 .Index(t => t.Achat_id);
-            
-            CreateTable(
-                "dbo.Retenues",
-                c => new
-                    {
-                        id = c.Int(nullable: false, identity: true),
-                        MatriculeFiscalePayeur = c.String(),
-                        RaisonSocialePayeur = c.String(),
-                        AdressePayeur = c.String(),
-                        Num_Facture = c.String(),
-                        Montant_Brut = c.Decimal(nullable: false, precision: 18, scale: 3),
-                        Taux = c.Decimal(nullable: false, precision: 18, scale: 3),
-                        MontantRetenue = c.Decimal(nullable: false, precision: 18, scale: 3),
-                        Montant_Net = c.Decimal(nullable: false, precision: 18, scale: 3),
-                        TotalMontant_Brut = c.Decimal(nullable: false, precision: 18, scale: 3),
-                        TotalMontantRetenue = c.Decimal(nullable: false, precision: 18, scale: 3),
-                        TotalMontant_Net = c.Decimal(nullable: false, precision: 18, scale: 3),
-                        MatriculeFiscaleBeneficiaire = c.String(),
-                        RaisonSocialePayeurBeneficiaire = c.String(),
-                        AdressePayeurBeneficiaire = c.String(),
-                    })
-                .PrimaryKey(t => t.id);
             
             CreateTable(
                 "dbo.Alimentations",
@@ -148,14 +123,30 @@
                 .PrimaryKey(t => t.Code);
             
             CreateTable(
-                "dbo.BonDeSorties",
+                "dbo.ArticleChutes",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Code = c.String(),
+                        NomArticle = c.String(),
+                        DateCreation = c.DateTime(nullable: false),
+                        Origine = c.String(),
+                        Quantite = c.Int(nullable: false),
+                        Poids = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        Metrage = c.Int(nullable: false),
+                        idArticle = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.BondeLivraisons",
                 c => new
                     {
                         Code = c.String(nullable: false, maxLength: 128),
                         Reference = c.String(),
                         DateCreation = c.DateTime(nullable: false),
                         DateBonDeCommande = c.DateTime(nullable: false),
-                        Emitteur = c.String(),
+                        TypeBonDeLivraison = c.Int(nullable: false),
                         Timbre = c.Decimal(nullable: false, precision: 18, scale: 3),
                         Currency = c.String(),
                         TVA = c.Int(nullable: false),
@@ -164,8 +155,60 @@
                         ModePaiment = c.Int(nullable: false),
                         NomChauffeur = c.String(),
                         CinChauffeur = c.String(),
+                        MatriculeCamion = c.String(),
+                        MatriculeClient = c.String(),
+                        RaisonSocialeClient = c.String(),
                         Depart = c.String(),
                         Destination = c.String(),
+                        Client_Code = c.String(maxLength: 128),
+                    })
+                .PrimaryKey(t => t.Code)
+                .ForeignKey("dbo.Clients", t => t.Client_Code)
+                .Index(t => t.Client_Code);
+            
+            CreateTable(
+                "dbo.ligneBonLivraisons",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Description = c.String(),
+                        PrixHT = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        Qty = c.Int(nullable: false),
+                        Remise = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        Metrage = c.Int(nullable: false),
+                        TVA = c.Int(nullable: false),
+                        BonDeCommande_Code = c.String(maxLength: 128),
+                        BondeLivraison_Code = c.String(maxLength: 128),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.BonDeSorties", t => t.BonDeCommande_Code)
+                .ForeignKey("dbo.BondeLivraisons", t => t.BondeLivraison_Code)
+                .Index(t => t.BonDeCommande_Code)
+                .Index(t => t.BondeLivraison_Code);
+            
+            CreateTable(
+                "dbo.BonDeSorties",
+                c => new
+                    {
+                        Code = c.String(nullable: false, maxLength: 128),
+                        Reference = c.String(),
+                        DateCreation = c.DateTime(nullable: false),
+                        DateBonDeCommande = c.DateTime(nullable: false),
+                        Timbre = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        Currency = c.String(),
+                        TVA = c.Int(nullable: false),
+                        Total_BonDeCommandeHT = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        Total_BonDeCommandeTTC = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        NomClientPassager = c.String(),
+                        PrenomClientPassager = c.String(),
+                        RaisonSociale = c.String(),
+                        NomChauffeur = c.String(),
+                        CinChauffeur = c.String(),
+                        MatriculeCamion = c.String(),
+                        MatriculeClient = c.String(),
+                        Depart = c.String(),
+                        Destination = c.String(),
+                        TypeBonDeSortie = c.Int(nullable: false),
                         Client_Code = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Code)
@@ -181,6 +224,7 @@
                         PrixHT = c.Decimal(nullable: false, precision: 18, scale: 3),
                         Qty = c.Int(nullable: false),
                         Remise = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        Metrage = c.Int(nullable: false),
                         TVA = c.Int(nullable: false),
                         BonDeCommande_Code = c.String(maxLength: 128),
                     })
@@ -215,11 +259,10 @@
                         Commentaire = c.String(),
                         ModePaiment = c.Int(nullable: false),
                         ChequeType = c.Int(nullable: false),
-                        Depense_Id = c.Int(),
+                        Nature = c.Int(nullable: false),
+                        StatutVirement = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Depenses", t => t.Depense_Id)
-                .Index(t => t.Depense_Id);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Depenses",
@@ -234,10 +277,15 @@
                         Commentaire = c.String(),
                         ModePaiement = c.String(),
                         Tiers = c.String(),
-                        Bank = c.String(),
+                        Banque = c.String(),
                         DateEcheance = c.DateTime(),
                         NumCheque = c.String(),
                         CodeTiers = c.String(),
+                        NumVente = c.String(),
+                        NumAchat = c.String(),
+                        NomSalarier = c.String(),
+                        Frounisseur = c.String(),
+                        DateDepense = c.DateTime(nullable: false),
                         Salarie_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
@@ -252,6 +300,11 @@
                         Intitule = c.String(),
                         numero = c.String(),
                         Tel = c.String(),
+                        Matricule = c.String(),
+                        Solde = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        MontantReglé = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        MontantJournalie = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        EtatSalarie = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -290,6 +343,7 @@
                         PrixHT = c.Decimal(nullable: false, precision: 18, scale: 3),
                         Qty = c.Int(nullable: false),
                         Remise = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        Metrage = c.Int(nullable: false),
                         TVA = c.Int(nullable: false),
                         Devis_Code = c.String(maxLength: 128),
                     })
@@ -309,12 +363,6 @@
                         TVA = c.Int(nullable: false),
                         Total_FactureHT = c.Decimal(nullable: false, precision: 18, scale: 3),
                         Total_FactureTTC = c.Decimal(nullable: false, precision: 18, scale: 3),
-                        FileName = c.String(),
-                        FileSize = c.Int(nullable: false),
-                        Attachment = c.Binary(),
-                        Currency = c.String(),
-                        ModePaiment = c.Int(nullable: false),
-                        Emitteur = c.String(),
                         Timbre = c.Decimal(nullable: false, precision: 18, scale: 3),
                         Client_Code = c.String(maxLength: 128),
                         Retenue_id = c.Int(),
@@ -335,11 +383,34 @@
                         Qty = c.Int(nullable: false),
                         Remise = c.Decimal(nullable: false, precision: 18, scale: 3),
                         TVA = c.Int(nullable: false),
+                        Metrage = c.Int(nullable: false),
                         Facture_Code = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Factures", t => t.Facture_Code)
                 .Index(t => t.Facture_Code);
+            
+            CreateTable(
+                "dbo.Retenues",
+                c => new
+                    {
+                        id = c.Int(nullable: false, identity: true),
+                        MatriculeFiscalePayeur = c.String(),
+                        RaisonSocialePayeur = c.String(),
+                        AdressePayeur = c.String(),
+                        Num_Facture = c.String(),
+                        Montant_Brut = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        Taux = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        MontantRetenue = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        Montant_Net = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        TotalMontant_Brut = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        TotalMontantRetenue = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        TotalMontant_Net = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        MatriculeFiscaleBeneficiaire = c.String(),
+                        RaisonSocialePayeurBeneficiaire = c.String(),
+                        AdressePayeurBeneficiaire = c.String(),
+                    })
+                .PrimaryKey(t => t.id);
             
             CreateTable(
                 "dbo.HistoriquePaiementAchats",
@@ -415,11 +486,66 @@
                         Chaine = c.String(),
                         Quantite = c.Int(nullable: false),
                         Poids = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        Metrage = c.Int(nullable: false),
                         Production_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Productions", t => t.Production_Id)
                 .Index(t => t.Production_Id);
+            
+            CreateTable(
+                "dbo.LigneProductionUsine2",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        NomArticle = c.String(),
+                        NomArticleFini = c.String(),
+                        code = c.String(),
+                        DateCreation = c.DateTime(nullable: false),
+                        Poste = c.String(),
+                        QteUtiliser = c.Int(nullable: false),
+                        QteProduite = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.LigneVentes",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Quantity = c.Int(nullable: false),
+                        NomArticle = c.String(),
+                        Remise = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        TVA = c.Int(nullable: false),
+                        PrixHT = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        Metrage = c.Int(nullable: false),
+                        Vente_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Ventes", t => t.Vente_Id)
+                .Index(t => t.Vente_Id);
+            
+            CreateTable(
+                "dbo.Ventes",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Numero = c.String(),
+                        IntituleClient = c.String(),
+                        NumClient = c.String(),
+                        NomClientPassager = c.String(),
+                        PrenomClientPassager = c.String(),
+                        Date = c.DateTime(nullable: false),
+                        EtatVente = c.Int(nullable: false),
+                        TotalHT = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        TotalTTC = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        QteVendue = c.Int(nullable: false),
+                        MontantReglement = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        MontantRegle = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        ModeReglement = c.Int(nullable: false),
+                        MontantRemise = c.Decimal(nullable: false, precision: 18, scale: 3),
+                    })
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.ListeMatierePermierUtilisers",
@@ -537,6 +663,9 @@
                         DateCreation = c.DateTime(nullable: false),
                         Quantity = c.Int(nullable: false),
                         TotalPoids = c.Decimal(nullable: false, precision: 18, scale: 3),
+                        GereStock = c.Boolean(nullable: false),
+                        Metrage = c.Int(nullable: false),
+                        IdArticlechute = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -546,6 +675,8 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Date = c.DateTime(nullable: false),
+                        Poste = c.String(),
+                        Montant = c.Decimal(nullable: false, precision: 18, scale: 3),
                         Salarier_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
@@ -593,6 +724,7 @@
                         MatriculFiscal = c.String(),
                         Activite = c.String(),
                         Telephone = c.String(),
+                        Rib = c.String(),
                         Ville = c.String(),
                         Timber = c.Decimal(nullable: false, precision: 18, scale: 3),
                         Mail = c.String(),
@@ -614,45 +746,10 @@
                     })
                 .PrimaryKey(t => t.Id);
             
-            CreateTable(
-                "dbo.Ventes",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Numero = c.String(),
-                        IntituleClient = c.String(),
-                        NumClient = c.String(),
-                        Date = c.DateTime(nullable: false),
-                        EtatVente = c.Int(nullable: false),
-                        TotalHT = c.Decimal(nullable: false, precision: 18, scale: 3),
-                        TotalTTC = c.Decimal(nullable: false, precision: 18, scale: 3),
-                        MontantReglement = c.Decimal(nullable: false, precision: 18, scale: 3),
-                        MontantRegle = c.Decimal(nullable: false, precision: 18, scale: 3),
-                        ModeReglement = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
-                "dbo.LigneVentes",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Quantity = c.Int(nullable: false),
-                        NomArticle = c.String(),
-                        Remise = c.Decimal(nullable: false, precision: 18, scale: 3),
-                        TVA = c.Int(nullable: false),
-                        PrixHT = c.Decimal(nullable: false, precision: 18, scale: 3),
-                        Vente_Id = c.Int(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Ventes", t => t.Vente_Id)
-                .Index(t => t.Vente_Id);
-            
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.LigneVentes", "Vente_Id", "dbo.Ventes");
             DropForeignKey("dbo.ListeMatierePermierUtilisers", "Production_Id", "dbo.Productions");
             DropForeignKey("dbo.LigneProductions", "Production_Id", "dbo.Productions");
             DropForeignKey("dbo.PointageJournaliers", "Salarier_Id", "dbo.Salariers");
@@ -661,21 +758,22 @@
             DropForeignKey("dbo.MouvementCaisses", "Facture_Code", "dbo.Factures");
             DropForeignKey("dbo.MouvementCaisses", "Client_Code", "dbo.Clients");
             DropForeignKey("dbo.MouvementCaisses", "Achat_id", "dbo.Achats");
+            DropForeignKey("dbo.LigneVentes", "Vente_Id", "dbo.Ventes");
             DropForeignKey("dbo.HistoriquePaiementSalaries", "Salarie_Id", "dbo.Salariers");
             DropForeignKey("dbo.Factures", "Retenue_id", "dbo.Retenues");
             DropForeignKey("dbo.ligneFactures", "Facture_Code", "dbo.Factures");
             DropForeignKey("dbo.Factures", "Client_Code", "dbo.Clients");
             DropForeignKey("dbo.ligneDevis", "Devis_Code", "dbo.Devis");
             DropForeignKey("dbo.Devis", "Client_Code", "dbo.Clients");
-            DropForeignKey("dbo.Coffrecheques", "Depense_Id", "dbo.Depenses");
             DropForeignKey("dbo.Depenses", "Salarie_Id", "dbo.Salariers");
+            DropForeignKey("dbo.ligneBonLivraisons", "BondeLivraison_Code", "dbo.BondeLivraisons");
+            DropForeignKey("dbo.ligneBonLivraisons", "BonDeCommande_Code", "dbo.BonDeSorties");
             DropForeignKey("dbo.ligneBonSorties", "BonDeCommande_Code", "dbo.BonDeSorties");
             DropForeignKey("dbo.BonDeSorties", "Client_Code", "dbo.Clients");
+            DropForeignKey("dbo.BondeLivraisons", "Client_Code", "dbo.Clients");
             DropForeignKey("dbo.Alimentations", "Fournisseur_Code", "dbo.Fournisseurs");
             DropForeignKey("dbo.Alimentations", "Client_Code", "dbo.Clients");
-            DropForeignKey("dbo.Achats", "Retenue_id", "dbo.Retenues");
             DropForeignKey("dbo.LigneAchats", "Achat_id", "dbo.Achats");
-            DropIndex("dbo.LigneVentes", new[] { "Vente_Id" });
             DropIndex("dbo.PointageJournaliers", new[] { "Salarier_Id" });
             DropIndex("dbo.MouvementCaisses", new[] { "Salarie_Id" });
             DropIndex("dbo.MouvementCaisses", new[] { "NatureDepense_Id" });
@@ -683,6 +781,7 @@
             DropIndex("dbo.MouvementCaisses", new[] { "Client_Code" });
             DropIndex("dbo.MouvementCaisses", new[] { "Achat_id" });
             DropIndex("dbo.ListeMatierePermierUtilisers", new[] { "Production_Id" });
+            DropIndex("dbo.LigneVentes", new[] { "Vente_Id" });
             DropIndex("dbo.LigneProductions", new[] { "Production_Id" });
             DropIndex("dbo.HistoriquePaiementSalaries", new[] { "Salarie_Id" });
             DropIndex("dbo.ligneFactures", new[] { "Facture_Code" });
@@ -691,15 +790,14 @@
             DropIndex("dbo.ligneDevis", new[] { "Devis_Code" });
             DropIndex("dbo.Devis", new[] { "Client_Code" });
             DropIndex("dbo.Depenses", new[] { "Salarie_Id" });
-            DropIndex("dbo.Coffrecheques", new[] { "Depense_Id" });
             DropIndex("dbo.ligneBonSorties", new[] { "BonDeCommande_Code" });
             DropIndex("dbo.BonDeSorties", new[] { "Client_Code" });
+            DropIndex("dbo.ligneBonLivraisons", new[] { "BondeLivraison_Code" });
+            DropIndex("dbo.ligneBonLivraisons", new[] { "BonDeCommande_Code" });
+            DropIndex("dbo.BondeLivraisons", new[] { "Client_Code" });
             DropIndex("dbo.Alimentations", new[] { "Fournisseur_Code" });
             DropIndex("dbo.Alimentations", new[] { "Client_Code" });
             DropIndex("dbo.LigneAchats", new[] { "Achat_id" });
-            DropIndex("dbo.Achats", new[] { "Retenue_id" });
-            DropTable("dbo.LigneVentes");
-            DropTable("dbo.Ventes");
             DropTable("dbo.Utilisateurs");
             DropTable("dbo.Societes");
             DropTable("dbo.Productions");
@@ -711,10 +809,14 @@
             DropTable("dbo.MouvementCaisses");
             DropTable("dbo.MatierePremieres");
             DropTable("dbo.ListeMatierePermierUtilisers");
+            DropTable("dbo.Ventes");
+            DropTable("dbo.LigneVentes");
+            DropTable("dbo.LigneProductionUsine2");
             DropTable("dbo.LigneProductions");
             DropTable("dbo.HistoriquePaiementVentes");
             DropTable("dbo.HistoriquePaiementSalaries");
             DropTable("dbo.HistoriquePaiementAchats");
+            DropTable("dbo.Retenues");
             DropTable("dbo.ligneFactures");
             DropTable("dbo.Factures");
             DropTable("dbo.ligneDevis");
@@ -725,10 +827,12 @@
             DropTable("dbo.Caisses");
             DropTable("dbo.ligneBonSorties");
             DropTable("dbo.BonDeSorties");
+            DropTable("dbo.ligneBonLivraisons");
+            DropTable("dbo.BondeLivraisons");
+            DropTable("dbo.ArticleChutes");
             DropTable("dbo.Fournisseurs");
             DropTable("dbo.Clients");
             DropTable("dbo.Alimentations");
-            DropTable("dbo.Retenues");
             DropTable("dbo.LigneAchats");
             DropTable("dbo.Achats");
         }
