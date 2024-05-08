@@ -58,7 +58,7 @@ namespace Gestion_de_Stock.Forms
             TxTReference.Text = D.Reference;
            
             TxtTimber.Text = db.Societes.FirstOrDefault().Timber.ToString();
-            SearchLookUpPack.DataSource = db.Packs.Select(x => new { x.Code, x.Designation, x.Quantity, x.PrixdeVenteRevendeur, x.PrixdeVentepublic, x.PrixdeVenteGros1, x.PrixdeVenteGros2 }).ToList();
+            SearchLookUpPack.DataSource = db.Articles.Select(x => new { x.Code, x.Designation, x.Quantity, x.PrixdeVenteRevendeur, x.PrixdeVentepublic, x.PrixdeVenteGros1, x.PrixdeVenteGros2 }).ToList();
 
 
         }
@@ -118,7 +118,7 @@ namespace Gestion_de_Stock.Forms
             foreach (var L in Vente.LigneVentes)
             {
 
-                Article Pack = db.Packs.FirstOrDefault(x => x.Designation.Equals(L.NomArticle));
+                Article Pack = db.Articles.FirstOrDefault(x => x.Designation.Equals(L.NomArticle));
                 int PackQuantity = Pack.Quantity; // Stock Disponible 
 
                 int QtyRequired = L.Quantity;
@@ -148,37 +148,7 @@ namespace Gestion_de_Stock.Forms
             if (Application.OpenForms.OfType<FrmListeVente>().FirstOrDefault() != null)
                 Application.OpenForms.OfType<FrmListeVente>().First().venteBindingSource.DataSource = db.Vente.ToList();
 
-            // Mouvement Sortie Vente
-            foreach (var L in Vente.LigneVentes)
-            {
-                MouvementStockPack mouvementStockPack = new MouvementStockPack();
-                int lastMvtStockPacks = db.MouvementStockPacks.ToList().Count() + 1;
-
-                mouvementStockPack.Commentaire = "Facture et Vente N°" + " " + Vente.Numero;
-                mouvementStockPack.Intitulé = "Vente";
-                mouvementStockPack.Numero = Vente.Numero;
-                mouvementStockPack.QuantiteProduite = 0;
-                mouvementStockPack.QuantiteVendue = L.Quantity;
-                mouvementStockPack.Sens = SensStock.Sortie;
-                mouvementStockPack.Article = L.NomArticle;
-                Article Packdb = db.Packs.FirstOrDefault(x => x.Designation.Equals(L.NomArticle));
-                mouvementStockPack.QuantiteStockInitial = Packdb.Quantity;
-                mouvementStockPack.QuantiteStockFinal = mouvementStockPack.QuantiteStockInitial - mouvementStockPack.QuantiteVendue;
-
-                if(Packdb.GereStock)
-                {
-                    Packdb.Quantity = mouvementStockPack.QuantiteStockFinal;
-                }
-
-               
-                mouvementStockPack.Date = Vente.Date;
-                db.MouvementStockPacks.Add(mouvementStockPack);
-                db.SaveChanges();
-                mouvementStockPack.Code = "SP" + (mouvementStockPack.Id).ToString("D8");
-                db.SaveChanges();
-            }
-            //waiting Form  mise a jour des interfaces 
-            //waiting Form  mise a jour des interfaces 
+       
 
 
 
@@ -266,7 +236,7 @@ namespace Gestion_de_Stock.Forms
             object PackSelected = view2.GetRowCellValue(rowHandle2, fieldName2);
             if (PackSelected != null)
             {
-                pack = db.Packs.FirstOrDefault(x => x.Designation.Equals(PackSelected.ToString()));
+                pack = db.Articles.FirstOrDefault(x => x.Designation.Equals(PackSelected.ToString()));
                 //if (gridView1.IsNewItemRow(gridView1.FocusedRowHandle))
                 //{
 
@@ -292,7 +262,7 @@ namespace Gestion_de_Stock.Forms
                 // get price of current Pack 
 
                 string DesignationPack = gridView1.GetFocusedRowCellValue("Description").ToString();
-                pack = db.Packs.FirstOrDefault(x => x.Designation.Equals(DesignationPack));
+                pack = db.Articles.FirstOrDefault(x => x.Designation.Equals(DesignationPack));
                 repositoryItemComboBoxListePrice.Items.Clear();
                 repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVenteGros1);
                 repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVenteGros2);

@@ -561,7 +561,7 @@
             this.barButtonPack.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barButtonPack.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonPack.Name = "barButtonPack";
-            this.barButtonPack.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.stockPackBtn);
+       
             // 
             // barButtonListedesPacks
             // 
@@ -574,7 +574,7 @@
             this.barButtonListedesPacks.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barButtonListedesPacks.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonListedesPacks.Name = "barButtonListedesPacks";
-            this.barButtonListedesPacks.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonListedesPacks_ItemClick);
+
             // 
             // barButtonItem2
             // 

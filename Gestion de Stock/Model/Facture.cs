@@ -21,12 +21,12 @@ namespace Gestion_de_Stock.Model
             if (lastCode == 0)
             {
                 Code = "F00000001";
-                Reference = "Facture/BSM/00000001";
+                Reference = "Facture/MK Concept/00000001";
             }
             else
             {
                 Code = "F" + (lastCode+1).ToString("D8");
-                Reference = "Facture/BSM/" + (lastCode+1).ToString("D8");
+                Reference = "Facture/MK Concept/" + (lastCode+1).ToString("D8");
             }
         }
         [Key]

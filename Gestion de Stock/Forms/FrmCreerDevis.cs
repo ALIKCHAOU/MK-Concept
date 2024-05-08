@@ -57,7 +57,7 @@ namespace Gestion_de_Stock.Forms
             TxTReference.Text = D.Reference;
             TXTTVA.Text = "19";
             dateEditValidite.DateTime = DateTime.Now.AddDays(7);
-            SearchLookUpPack.DataSource = db.Packs.Select(x => new { x.Code, x.Designation,x.Quantity, x.PrixdeVenteRevendeur, x.PrixdeVentepublic,x.PrixdeVenteGros1,x.PrixdeVenteGros2 }).ToList();
+            SearchLookUpPack.DataSource = db.Articles.Select(x => new { x.Code, x.Designation,x.Quantity, x.PrixdeVenteRevendeur, x.PrixdeVentepublic,x.PrixdeVenteGros1,x.PrixdeVenteGros2 }).ToList();
 
 
         }
@@ -175,7 +175,7 @@ namespace Gestion_de_Stock.Forms
             object PackSelected = view2.GetRowCellValue(rowHandle2, fieldName2);
             if (PackSelected != null)
             {
-                 pack = db.Packs.FirstOrDefault(x => x.Designation.Equals(PackSelected.ToString()));
+                 pack = db.Articles.FirstOrDefault(x => x.Designation.Equals(PackSelected.ToString()));
                 //if (gridView1.IsNewItemRow(gridView1.FocusedRowHandle))
                 //{
 
@@ -205,7 +205,7 @@ namespace Gestion_de_Stock.Forms
                 // get price of current Pack 
 
                 string DesignationPack = gridView1.GetFocusedRowCellValue("Description").ToString();
-                pack = db.Packs.FirstOrDefault(x => x.Designation.Equals(DesignationPack));
+                pack = db.Articles.FirstOrDefault(x => x.Designation.Equals(DesignationPack));
                 repositoryItemComboBoxListePrice.Items.Clear();
                 repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVenteGros1);
                 repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVenteGros2);

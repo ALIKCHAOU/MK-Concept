@@ -262,41 +262,13 @@ namespace Gestion_de_Stock.Forms
                 {
                     List<LigneVente> ligneVentes = new List<LigneVente>();
                     ligneVentes = VenteDb.LigneVentes.ToList();
-                    foreach (var item in ligneVentes)
-                    {
-                        LigneVente ligneVente = db.LigneVentes.Find(item.Id);
-                        db.LigneVentes.Remove(ligneVente);
-                        db.SaveChanges();
-                        // Alimentation de Stock 
-                        MouvementStockPack mouvementStockPack = new MouvementStockPack();
-                        mouvementStockPack.Commentaire = "Supresseion Vente N°" + " " + VenteDb.Id;
-                        mouvementStockPack.Intitulé = "Supresseion Vente";
-                        mouvementStockPack.Numero = "Vente N° :" + VenteDb.Id;
-                        mouvementStockPack.QuantiteProduite = item.Quantity;
-                        mouvementStockPack.Sens = SensStock.Entree;
-                        mouvementStockPack.Article = item.NomArticle;
-                        Article Packdb = db.Packs.FirstOrDefault(x => x.Designation.Equals(item.NomArticle));
-                        mouvementStockPack.QuantiteStockInitial = Packdb.Quantity;
-                        mouvementStockPack.QuantiteStockFinal = mouvementStockPack.QuantiteStockInitial + item.Quantity;
-                        Packdb.Quantity = mouvementStockPack.QuantiteStockFinal;
-                        mouvementStockPack.Date = DateTime.Now;
-                        db.MouvementStockPacks.Add(mouvementStockPack);
-                        db.SaveChanges();
-                        mouvementStockPack.Code = "EN" + (mouvementStockPack.Id).ToString("D8");
-                        db.SaveChanges();
-                        // Alimentation de Stock
-                    }
-
+               
                     db.Vente.Remove(VenteDb);
                     db.SaveChanges();
                     XtraMessageBox.Show(" la Vente a été  Supprimer", "Configuration de l'application", MessageBoxButtons.OK, MessageBoxIcon.Information);
                  
 
-                    if (Application.OpenForms.OfType<FrmAjouterArticle>().FirstOrDefault() != null)
-                    {
-                        Application.OpenForms.OfType<FrmAjouterArticle>().First().articleBindingSource.DataSource = db.Packs.Where(x => x.IdArticlechute == 0).Select(x => new { x.Code, x.PrixdeVenteGros1, x.PrixdeVenteGros2, x.PrixdeVentepublic, x.PrixdeVenteRevendeur, x.Designation, x.Quantity }).ToList();
-                        Application.OpenForms.OfType<FrmAjouterArticle>().First().articleBindingSource1.DataSource = db.Packs.Where(x => x.IdArticlechute != 0).Select(x => new { x.Code, x.Designation, x.Quantity, x.Metrage, x.TotalPoids }).ToList();
-                    }
+                
 
                 }
                 else

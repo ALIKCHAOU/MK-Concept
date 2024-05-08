@@ -601,7 +601,7 @@
             // 
             // matierePremiereBindingSource
             // 
-            this.matierePremiereBindingSource.DataSource = typeof(Gestion_de_Stock.Model.MatierePremiere);
+            this.matierePremiereBindingSource.DataSource = typeof(Gestion_de_Stock.Model.Article);
             // 
             // FrmCreerFacture
             // 

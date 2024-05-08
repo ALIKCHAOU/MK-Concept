@@ -213,7 +213,7 @@ namespace Gestion_de_Stock.Forms
                 foreach (var L in Facture.ligneFactures)
                 {
 
-                    Article Pack = db.Packs.FirstOrDefault(x => x.Designation.Equals(L.Description));
+                    Article Pack = db.Articles.FirstOrDefault(x => x.Designation.Equals(L.Description));
                     int PackQuantity = Pack.Quantity; // Stock Disponible 
 
                     int QtyRequired = L.Qty;
@@ -242,30 +242,7 @@ namespace Gestion_de_Stock.Forms
              
                 if (Application.OpenForms.OfType<FrmListeFactures>().FirstOrDefault() != null)
                     Application.OpenForms.OfType<FrmListeFactures>().First().factureBindingSource.DataSource = db.Factures.Include("Client").Include("ligneFactures").OrderByDescending(x => x.DateCreation).ToList();
-                // Mouvement Sortie Vente
-                foreach (var L in Facture.ligneFactures)
-                {
-                    MouvementStockPack mouvementStockPack = new MouvementStockPack();
-                    int lastMvtStockPacks = db.MouvementStockPacks.ToList().Count() + 1;
-
-                    mouvementStockPack.Commentaire = "Facture N°" + " " + Facture.Code;
-                    mouvementStockPack.Intitulé = "Vente";
-                    mouvementStockPack.Numero = Facture.Code;
-                    mouvementStockPack.QuantiteProduite = 0;
-                    mouvementStockPack.QuantiteVendue = L.Qty;
-                    mouvementStockPack.Sens = SensStock.Sortie;
-                    mouvementStockPack.Article = L.Description;
-                    Article Packdb = db.Packs.FirstOrDefault(x => x.Designation.Equals(L.Description));
-                    mouvementStockPack.QuantiteStockInitial = Packdb.Quantity;
-                    mouvementStockPack.QuantiteStockFinal = mouvementStockPack.QuantiteStockInitial - mouvementStockPack.QuantiteVendue;
-                    Packdb.Quantity = mouvementStockPack.QuantiteStockFinal;
-                    mouvementStockPack.Date = Facture.DateCreation;
-                    db.MouvementStockPacks.Add(mouvementStockPack);
-                    db.SaveChanges();
-                    mouvementStockPack.Code = "SP" + (mouvementStockPack.Id).ToString("D8");
-                    db.SaveChanges();
-                }
-                //waiting Form  mise a jour des interfaces 
+            
        
 
               
@@ -295,53 +272,7 @@ namespace Gestion_de_Stock.Forms
 
         private void BtnCreerBonDeCommande_Click(object sender, EventArgs e)
         {
-            db = new Model.ApplicationContext();
-            int FocusedRowHandle = gridView1.FocusedRowHandle;
-            int count = gridView1.SelectedRowsCount;
-            // si la ligne n'est pas seléctionner
-            if (count == 0)
-            {
-                XtraMessageBox.Show("Merci de sélectionner une ligne", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else
-            {
-
-                var D = gridView1.GetFocusedRow() as Devis;
-                Devis DevisDB = db.Devis.Include("ligneDevis").Include("Client").FirstOrDefault(x => x.Code.Equals(D.Code));
-                BonDeSortie BonDeCommande = new BonDeSortie();
-              
-                BonDeCommande.TVA = DevisDB.TVA;
-                BonDeCommande.Total_BonDeCommandeHT = DevisDB.Total_DevisHT;
-                BonDeCommande.Total_BonDeCommandeTTC = DevisDB.Total_DevisTTC;
-                BonDeCommande.ligneBonDeSortie = new List<ligneBonSortie>();
-                foreach (var LD in DevisDB.ligneDevis)
-                {
-                    ligneBonSortie LBC = new ligneBonSortie();
-                    LBC.Description = LD.Description;
-                    LBC.PrixHT = LD.PrixHT;
-                    LBC.Qty = LD.Qty;
-                    LBC.Remise = LD.Remise;
-                    LBC.TVA = LD.TVA;
-                    BonDeCommande.ligneBonDeSortie.Add(LBC);
-
-
-                }
-                // BonDeCommande.ligneFactures     =DevisDB.ligneDevis
-
-               
-                BonDeCommande.Currency = DevisDB.Currency;
-                BonDeCommande.Client = DevisDB.Client;
-               
-
-
-                db.BonDeSorties.Add(BonDeCommande);
-                db.SaveChanges();
-                XtraMessageBox.Show("Creation Bon De Commande terminer avec succès", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //waiting Form 
-              
-
-            }
+       
         }
         public void SendRapport()
         {

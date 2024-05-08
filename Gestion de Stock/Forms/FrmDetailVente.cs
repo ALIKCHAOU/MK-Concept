@@ -60,20 +60,8 @@ namespace Gestion_de_Stock.Forms
         private void BtnRetour_Click(object sender, EventArgs e)
         {
             
-            LigneVente v = gridView1.GetFocusedRow() as LigneVente;
+          
 
-            db = new Model.ApplicationContext();
-
-            LigneVente VenteDb = db.LigneVentes.Find(v.Id);
-
-            FormshowNotParent(Forms.FrmDemandeRetour.InstanceFrmDemandeRetour);
-
-            if (Application.OpenForms.OfType<FrmDemandeRetour>().FirstOrDefault() != null)
-            {
-                Application.OpenForms.OfType<FrmDemandeRetour>().First().TxtCodeLigne.Text = v.Id.ToString();
-                Application.OpenForms.OfType<FrmDemandeRetour>().First().TxtNomArticle.Text = v.NomArticle;
-                Application.OpenForms.OfType<FrmDemandeRetour>().First().TxtQuantiteVendu.Text = v.Quantity.ToString();
-            }
 
 
 

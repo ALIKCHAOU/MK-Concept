@@ -154,15 +154,7 @@ namespace Gestion_de_Stock
            
         }
 
-        private void stockPackBtn(object sender, ItemClickEventArgs e)
-        {
-            Formshow(Gestion_de_Stock.Forms.FrmAjouterArticle.InstanceFrmPack);
-        }
-
-        private void barButtonListedesPacks_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Formshow(Gestion_de_Stock.Forms.FrmAjouterArticle.InstanceFrmPack);
-        }
+       
 
         private void barBtnListeFactures_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -330,7 +322,7 @@ namespace Gestion_de_Stock
 
         private void barArticlesChutes_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Formshow(Gestion_de_Stock.Forms.FrmArticleChutes.InstanceFrmArticleChutes);
+          
         }
 
         private void barEtatdeStock_ItemClick(object sender, ItemClickEventArgs e)

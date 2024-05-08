@@ -41,19 +41,14 @@ namespace Gestion_de_Stock.Model
 
         public DbSet<Facture> Factures { get; set; }
   
-        public DbSet<MatierePremiere> MatierePremieres { get; set; }
-        public DbSet<Article> Packs { get; set; }
+     
+        public DbSet<Article> Articles { get; set; }
       
 
-        public DbSet<MouvementStockMatierePremiere> MouvementsStockMatierePremiere { get; set; }
 
-        public DbSet<MouvementStockPack> MouvementStockPacks { get; set; }
 
-        public DbSet<Production> Productions { get; set; }
 
-        public DbSet<BonDeSortie> BonDeSorties { get; set; }
-
-        public DbSet<ligneBonSortie> ligneBonSorties { get; set; }
+     
 
 
         public DbSet<Coffrecheque> CoffreCheques { get; set; }
@@ -67,17 +62,15 @@ namespace Gestion_de_Stock.Model
         public DbSet<HistoriquePaiementAchats> HistoriquePaiementAchats { get; set; }
 
         public DbSet<HistoriquePaiementSalarie> HistoriquePaiementSalaries { get; set; }
-        public DbSet<ListeMatierePermierUtiliser> listeMatierePermierUtilisers { get; set; }
-        public DbSet<LigneProduction> LigneProductions { get; set; }
+       
         public DbSet<Vente> Vente { get; set; }
         public DbSet<LigneAchats> LigneAchats { get; set; }
 
-        public DbSet<BondeLivraison> BondeLivraisons { get; set; }
+
 
         public DbSet<LigneVente> LigneVentes { get; set; }
 
-        public DbSet<LigneProductionUsine2> LigneProductionUsine2 { get; set; }
-
+ 
         public DbSet<ArticleChute> ArticleChutes { get; set; }
         
 

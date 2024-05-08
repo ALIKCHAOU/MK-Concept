@@ -34,7 +34,7 @@ namespace Gestion_de_Stock.Forms
         private void FrmEtatStock_Load(object sender, EventArgs e)
         {
 
-            articleBindingSource.DataSource = db.Packs.OrderByDescending(x => x.DateCreation).ToList();
+            articleBindingSource.DataSource = db.Articles.OrderByDescending(x => x.DateCreation).ToList();
         }
 
         private void FrmEtatStock_FormClosed(object sender, FormClosedEventArgs e)
@@ -71,7 +71,7 @@ namespace Gestion_de_Stock.Forms
             //if (Datefin.ToString("dd/MM/yyyy").Equals("01/01/0001"))
             //{
 
-            EtatStock = db.Packs.OrderBy(x => x.Code).ToList();
+            EtatStock = db.Articles.OrderBy(x => x.Code).ToList();
 
 
             //}

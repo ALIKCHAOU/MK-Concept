@@ -22,12 +22,12 @@ namespace Gestion_de_Stock.Model
             if (lastCode == 0)
             {
                 Code = "DV00000001";
-                Reference = "DEVIS/BSM/00000001";
+                Reference = "DEVIS/MK Concept/00000001";
             }
             else
             {
                 Code = "DV" + (lastCode+1).ToString("D8");
-                Reference = "DEVIS/BSM/" + (lastCode+1).ToString("D8");
+                Reference = "DEVIS/MK Concept/" + (lastCode+1).ToString("D8");
             }
 
         }
