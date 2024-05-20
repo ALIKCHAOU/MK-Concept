@@ -51,5 +51,31 @@ namespace Gestion_de_Stock
             Societe societe = db.Societes.Include("ListeArticles").FirstOrDefault();
             articleBindingSource.DataSource = societe.ListeArticles;
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            List<Article> ListeGrid = new List<Article>();
+            int rowHandle = 0;
+            while (gridView1.IsValidRowHandle(rowHandle))
+            {
+                var data = gridView1.GetRow(rowHandle) as Article;
+                ListeGrid.Add(data);
+                bool isSelected = gridView1.IsRowSelected(rowHandle);
+                rowHandle++;
+            }
+            if (ListeGrid.Count == 0)
+            {
+                XtraMessageBox.Show("liste Articles  est Invalide", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                return;
+            }
+            Societe societe = db.Societes.Include("ListeArticles").FirstOrDefault();
+            if (societe.ListeArticles == null)
+                societe.ListeArticles = new List<Article>();
+
+            societe.ListeArticles = ListeGrid;
+            db.SaveChanges();
+            XtraMessageBox.Show("Enregistrement  terminer ", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
     }
 }

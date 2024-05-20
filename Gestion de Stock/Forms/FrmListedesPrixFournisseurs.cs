@@ -70,9 +70,54 @@ namespace Gestion_de_Stock
             {
               
                 F = db.Fournisseurs.Include("ListeArticles").FirstOrDefault(x=>x.Code.Equals(FournisseurSelected.ToString()));
+                if(F.ListeArticles!= null)
                 articleBindingSource.DataSource = F.ListeArticles.ToList();
             }
 
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            Fournisseur F = new Fournisseur();
+            List<Article> ListeGrid = new List<Article>();
+            int rowHandle = 0;
+            while (gridView1.IsValidRowHandle(rowHandle))
+            {
+                var data = gridView1.GetRow(rowHandle) as Article;
+                ListeGrid.Add(data);
+                bool isSelected = gridView1.IsRowSelected(rowHandle);
+                rowHandle++;
+            }
+            if (ListeGrid.Count == 0)
+            {
+                XtraMessageBox.Show("liste Articles  est Invalide", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                return;
+            }
+            GridView view = searchLookUpEdit1.Properties.View;
+
+            int rowHandle1 = view.FocusedRowHandle;
+            string fieldName = "Code"; // or other field name  
+            object FournisseurSelected = view.GetRowCellValue(rowHandle1, fieldName);
+            ///Condition existance Fournisseur
+            if (FournisseurSelected == null)
+            {
+                XtraMessageBox.Show("Choisir un Fournisseur ", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                searchLookUpEdit1.Focus();
+                return;
+
+            }
+            else
+            {
+
+                F = db.Fournisseurs.Include("ListeArticles").FirstOrDefault(x => x.Code.Equals(FournisseurSelected.ToString()));
+                if (F.ListeArticles != null)
+                    F.ListeArticles = new List<Article>();
+                F.ListeArticles = ListeGrid;
+                db.SaveChanges();
+                XtraMessageBox.Show("Enregistrement  terminer ", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+           
         }
     }
 }
