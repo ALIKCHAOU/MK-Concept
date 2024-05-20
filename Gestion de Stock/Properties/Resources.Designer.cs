@@ -243,6 +243,16 @@ namespace Gestion_de_Stock.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MK_Concept_jpg {
+            get {
+                object obj = ResourceManager.GetObject("MK Concept.jpg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap parametres {
             get {
                 object obj = ResourceManager.GetObject("parametres", resourceCulture);

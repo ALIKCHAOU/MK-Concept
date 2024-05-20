@@ -513,6 +513,10 @@
     <Compile Include="Migrations\202405082104551_add 2.designer.cs">
       <DependentUpon>202405082104551_add 2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202405201652351_date Date livraison .cs" />
+    <Compile Include="Migrations\202405201652351_date Date livraison .designer.cs">
+      <DependentUpon>202405201652351_date Date livraison .cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Achat.cs" />
     <Compile Include="Model\Alimentation.cs" />
@@ -827,6 +831,9 @@
     <EmbeddedResource Include="Migrations\202405082104551_add 2.resx">
       <DependentUpon>202405082104551_add 2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405201652351_date Date livraison .resx">
+      <DependentUpon>202405201652351_date Date livraison .cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -993,8 +1000,8 @@
     <Content Include="Image\Logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Image\MK Concept.jpg" />
     <Content Include="Image\Logo.ico" />
+    <Content Include="Image\MK Concept.jpg" />
     <Content Include="Image\MK-Concept.ico" />
     <Content Include="Image\NonReglee_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -1022,6 +1029,7 @@
     <None Include="Resources\liste.png" />
     <None Include="Resources\listeventes.png" />
     <None Include="Resources\MK Concept.jpg" />
+    <None Include="Resources\MK Concept.jpg.jpg" />
     <Content Include="Resources\MK-Concept.ico" />
     <Content Include="Resources\téléchargement.png" />
     <None Include="Resources\téléchargement1.png" />

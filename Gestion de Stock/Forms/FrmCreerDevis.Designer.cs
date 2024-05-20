@@ -58,14 +58,14 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ColRemise = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SearchLookUpPack = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
-            this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPrixHT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemComboBoxListePrice = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.colTotalLigneHT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColQuantitè = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColSupprimer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.SearchLookUpPack = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
+            this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -106,10 +106,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ligneDevisBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SearchLookUpPack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBoxListePrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchLookUpPack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
@@ -181,52 +181,52 @@
             // 
             // TxTReference
             // 
-            this.TxTReference.Location = new System.Drawing.Point(73, 12);
+            this.TxTReference.Location = new System.Drawing.Point(91, 12);
             this.TxTReference.Name = "TxTReference";
-            this.TxTReference.Size = new System.Drawing.Size(229, 20);
+            this.TxTReference.Size = new System.Drawing.Size(211, 20);
             this.TxTReference.StyleController = this.layoutControl3;
             this.TxTReference.TabIndex = 19;
             // 
             // TXTTVA
             // 
-            this.TXTTVA.Location = new System.Drawing.Point(73, 84);
+            this.TXTTVA.Location = new System.Drawing.Point(91, 84);
             this.TXTTVA.Name = "TXTTVA";
             this.TXTTVA.Properties.Mask.EditMask = "f0";
             this.TXTTVA.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TXTTVA.Properties.MaxLength = 2;
-            this.TXTTVA.Size = new System.Drawing.Size(229, 20);
+            this.TXTTVA.Size = new System.Drawing.Size(211, 20);
             this.TXTTVA.StyleController = this.layoutControl3;
             this.TXTTVA.TabIndex = 15;
             // 
             // dateEditValidite
             // 
             this.dateEditValidite.EditValue = null;
-            this.dateEditValidite.Location = new System.Drawing.Point(73, 108);
+            this.dateEditValidite.Location = new System.Drawing.Point(91, 108);
             this.dateEditValidite.Name = "dateEditValidite";
             this.dateEditValidite.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEditValidite.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditValidite.Size = new System.Drawing.Size(229, 20);
+            this.dateEditValidite.Size = new System.Drawing.Size(211, 20);
             this.dateEditValidite.StyleController = this.layoutControl3;
             this.dateEditValidite.TabIndex = 12;
             // 
             // dateEditDateDevis
             // 
             this.dateEditDateDevis.EditValue = null;
-            this.dateEditDateDevis.Location = new System.Drawing.Point(73, 36);
+            this.dateEditDateDevis.Location = new System.Drawing.Point(91, 36);
             this.dateEditDateDevis.Name = "dateEditDateDevis";
             this.dateEditDateDevis.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEditDateDevis.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditDateDevis.Size = new System.Drawing.Size(229, 20);
+            this.dateEditDateDevis.Size = new System.Drawing.Size(211, 20);
             this.dateEditDateDevis.StyleController = this.layoutControl3;
             this.dateEditDateDevis.TabIndex = 9;
             // 
             // searchLookUpEdit1
             // 
-            this.searchLookUpEdit1.Location = new System.Drawing.Point(73, 60);
+            this.searchLookUpEdit1.Location = new System.Drawing.Point(91, 60);
             this.searchLookUpEdit1.Name = "searchLookUpEdit1";
             this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -235,7 +235,7 @@
             this.searchLookUpEdit1.Properties.NullText = "Ajouter Client";
             this.searchLookUpEdit1.Properties.ValueMember = "Code";
             this.searchLookUpEdit1.Properties.View = this.searchLookUpEdit1View;
-            this.searchLookUpEdit1.Size = new System.Drawing.Size(229, 20);
+            this.searchLookUpEdit1.Size = new System.Drawing.Size(211, 20);
             this.searchLookUpEdit1.StyleController = this.layoutControl3;
             this.searchLookUpEdit1.TabIndex = 4;
             this.searchLookUpEdit1.EditValueChanged += new System.EventHandler(this.searchLookUpEdit1_EditValueChanged);
@@ -276,7 +276,7 @@
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(294, 24);
             this.layoutControlItem3.Text = "Client";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(58, 15);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(76, 15);
             // 
             // emptySpaceItem1
             // 
@@ -295,7 +295,7 @@
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(294, 24);
             this.layoutControlItem4.Text = "Date Devis";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(58, 15);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(76, 15);
             // 
             // layoutControlItemEcheanceDevis
             // 
@@ -305,8 +305,8 @@
             this.layoutControlItemEcheanceDevis.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItemEcheanceDevis.Name = "layoutControlItemEcheanceDevis";
             this.layoutControlItemEcheanceDevis.Size = new System.Drawing.Size(294, 24);
-            this.layoutControlItemEcheanceDevis.Text = "Validitè";
-            this.layoutControlItemEcheanceDevis.TextSize = new System.Drawing.Size(58, 15);
+            this.layoutControlItemEcheanceDevis.Text = "Date livraison";
+            this.layoutControlItemEcheanceDevis.TextSize = new System.Drawing.Size(76, 15);
             // 
             // layoutControlItem7
             // 
@@ -317,7 +317,7 @@
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(294, 24);
             this.layoutControlItem7.Text = "TVA";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(58, 15);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(76, 15);
             // 
             // layoutControlItem11
             // 
@@ -328,7 +328,7 @@
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Size = new System.Drawing.Size(294, 24);
             this.layoutControlItem11.Text = "Référence";
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(58, 15);
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(76, 15);
             // 
             // layoutControl4
             // 
@@ -398,7 +398,6 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colDescription, DevExpress.Data.ColumnSortOrder.Ascending)});
-
             // 
             // ColRemise
             // 
@@ -423,25 +422,6 @@
             this.colDescription.Visible = true;
             this.colDescription.VisibleIndex = 0;
             this.colDescription.Width = 233;
-            // 
-            // SearchLookUpPack
-            // 
-            this.SearchLookUpPack.AutoHeight = false;
-            this.SearchLookUpPack.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.SearchLookUpPack.DisplayMember = "Designation";
-            this.SearchLookUpPack.Name = "SearchLookUpPack";
-            this.SearchLookUpPack.NullText = "Sélectionner Article";
-            this.SearchLookUpPack.ValueMember = "Designation";
-            this.SearchLookUpPack.View = this.repositoryItemSearchLookUpEdit1View;
-            this.SearchLookUpPack.EditValueChanged += new System.EventHandler(this.SearchLookUpPack_EditValueChanged);
-            // 
-            // repositoryItemSearchLookUpEdit1View
-            // 
-            this.repositoryItemSearchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
-            this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // colPrixHT
             // 
@@ -515,6 +495,25 @@
             this.repositoryItemButtonDelete.Name = "repositoryItemButtonDelete";
             this.repositoryItemButtonDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonDelete.Click += new System.EventHandler(this.repositoryItemButtonEdit1_Click);
+            // 
+            // SearchLookUpPack
+            // 
+            this.SearchLookUpPack.AutoHeight = false;
+            this.SearchLookUpPack.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.SearchLookUpPack.DisplayMember = "Designation";
+            this.SearchLookUpPack.Name = "SearchLookUpPack";
+            this.SearchLookUpPack.NullText = "Sélectionner Article";
+            this.SearchLookUpPack.ValueMember = "Designation";
+            this.SearchLookUpPack.View = this.repositoryItemSearchLookUpEdit1View;
+            this.SearchLookUpPack.EditValueChanged += new System.EventHandler(this.SearchLookUpPack_EditValueChanged);
+            // 
+            // repositoryItemSearchLookUpEdit1View
+            // 
+            this.repositoryItemSearchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
+            this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // layoutControlGroup4
             // 
@@ -637,10 +636,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ligneDevisBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SearchLookUpPack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBoxListePrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchLookUpPack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();

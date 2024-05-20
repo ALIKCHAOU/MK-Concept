@@ -99,14 +99,14 @@ namespace Gestion_de_Stock.Forms
         {
             DateTime DateMin = DateDebut.DateTime;
             DateTime DateMaxJour = DateFin.DateTime.Date.AddDays(1).AddSeconds(-1);
-            devisBindingSource.DataSource = db.Devis.Where(x => x.DateDevis.CompareTo(DateMin) >= 0 && x.DateDevis.CompareTo(DateMaxJour) <= 0).OrderByDescending(x => x.DateCreation).ToList();
+            devisBindingSource.DataSource = db.Devis.Where(x => x.Datelivraison.CompareTo(DateMin) >= 0 && x.Datelivraison.CompareTo(DateMaxJour) <= 0).OrderByDescending(x => x.Datelivraison).ToList();
         }
 
         private void DateFin_EditValueChanged(object sender, EventArgs e)
         {
             DateTime DateMin = DateDebut.DateTime;
             DateTime DateMaxJour = DateFin.DateTime.Date.AddDays(1).AddSeconds(-1);
-            devisBindingSource.DataSource = db.Devis.Where(x => x.DateDevis.CompareTo(DateMin) >= 0 && x.DateDevis.CompareTo(DateMaxJour) <= 0).OrderByDescending(x => x.DateCreation).ToList();
+            devisBindingSource.DataSource = db.Devis.Where(x => x.Datelivraison.CompareTo(DateMin) >= 0 && x.Datelivraison.CompareTo(DateMaxJour) <= 0).OrderByDescending(x => x.Datelivraison).ToList();
         }
 
         private void ImprimerItem_Click(object sender, EventArgs e)
@@ -117,7 +117,7 @@ namespace Gestion_de_Stock.Forms
             Societe societe = db.Societes.FirstOrDefault();
             DevisClient RFIpression = new DevisClient();
             RFIpression.Parameters["Date"].Value = GetDevisDB.DateCreation.ToString("dd/MM/yyyy");
-            RFIpression.Parameters["DateValiditeDevis"].Value = GetDevisDB.DateValiditeDevis.ToString("dd/MM/yyyy");
+            RFIpression.Parameters["DateValiditeDevis"].Value = GetDevisDB.Datelivraison.ToString("dd/MM/yyyy");
 
             RFIpression.Parameters["Adresse"].Value = societe.Adresse;
             RFIpression.Parameters["CodePostale"].Value = societe.CodePostale;

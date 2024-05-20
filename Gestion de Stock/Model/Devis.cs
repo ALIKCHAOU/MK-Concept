@@ -15,7 +15,7 @@ namespace Gestion_de_Stock.Model
         {
             DateCreation = DateTime.Now;
             DateDevis = DateTime.Now;
-            DateValiditeDevis = DateTime.Now.AddDays(7);
+            Datelivraison = DateTime.Now.AddDays(7);
            
             context = new ApplicationContext();
             int lastCode = context.Devis.Count();
@@ -43,7 +43,7 @@ namespace Gestion_de_Stock.Model
 
         public DateTime DateDevis { get; set; }
 
-        public DateTime DateValiditeDevis { get; set; }
+        public DateTime Datelivraison { get; set; }
 
         public string Emitteur { get; set; }
        

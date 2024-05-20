@@ -30,11 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListeDevis));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
@@ -51,14 +49,11 @@
             this.colTotal_DevisHT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotal_DevisTTC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colClient = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ColViewDocument = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ViewDocument = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.ColImprimer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ImprimerItem = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.ColDetais = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonDetaisDevis = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.repositoryModifierDevis = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.repositorySendEmail = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.DateDebutItem = new DevExpress.XtraLayout.LayoutControlItem();
@@ -68,6 +63,8 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.Supprimer = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemSupprimer = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -81,11 +78,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.devisBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ViewDocument)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImprimerItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonDetaisDevis)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryModifierDevis)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositorySendEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateDebutItem)).BeginInit();
@@ -95,6 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSupprimer)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -192,11 +187,9 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.ViewDocument,
             this.ImprimerItem,
             this.repositoryItemButtonDetaisDevis,
-            this.repositoryModifierDevis,
-            this.repositorySendEmail});
+            this.repositoryItemSupprimer});
             this.gridControl1.Size = new System.Drawing.Size(913, 367);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -215,9 +208,10 @@
             this.colTotal_DevisHT,
             this.colTotal_DevisTTC,
             this.colClient,
-            this.ColViewDocument,
             this.ColImprimer,
-            this.ColDetais});
+            this.ColDetais,
+            this.gridColumn1,
+            this.Supprimer});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
@@ -241,7 +235,7 @@
             // 
             this.colDateCreation.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colDateCreation.AppearanceHeader.Options.UseFont = true;
-            this.colDateCreation.Caption = "Date";
+            this.colDateCreation.Caption = "Date Devis";
             this.colDateCreation.FieldName = "DateDevis";
             this.colDateCreation.Name = "colDateCreation";
             this.colDateCreation.OptionsColumn.AllowEdit = false;
@@ -256,7 +250,7 @@
             this.colTVA.Name = "colTVA";
             this.colTVA.OptionsColumn.AllowEdit = false;
             this.colTVA.Visible = true;
-            this.colTVA.VisibleIndex = 5;
+            this.colTVA.VisibleIndex = 6;
             // 
             // colTotal_DevisHT
             // 
@@ -269,7 +263,7 @@
             this.colTotal_DevisHT.Name = "colTotal_DevisHT";
             this.colTotal_DevisHT.OptionsColumn.AllowEdit = false;
             this.colTotal_DevisHT.Visible = true;
-            this.colTotal_DevisHT.VisibleIndex = 4;
+            this.colTotal_DevisHT.VisibleIndex = 5;
             // 
             // colTotal_DevisTTC
             // 
@@ -282,7 +276,7 @@
             this.colTotal_DevisTTC.Name = "colTotal_DevisTTC";
             this.colTotal_DevisTTC.OptionsColumn.AllowEdit = false;
             this.colTotal_DevisTTC.Visible = true;
-            this.colTotal_DevisTTC.VisibleIndex = 6;
+            this.colTotal_DevisTTC.VisibleIndex = 7;
             // 
             // colClient
             // 
@@ -295,26 +289,6 @@
             this.colClient.Visible = true;
             this.colClient.VisibleIndex = 2;
             // 
-            // ColViewDocument
-            // 
-            this.ColViewDocument.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ColViewDocument.AppearanceHeader.Options.UseFont = true;
-            this.ColViewDocument.Caption = "Document";
-            this.ColViewDocument.ColumnEdit = this.ViewDocument;
-            this.ColViewDocument.Name = "ColViewDocument";
-            this.ColViewDocument.Visible = true;
-            this.ColViewDocument.VisibleIndex = 7;
-            // 
-            // ViewDocument
-            // 
-            this.ViewDocument.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.ViewDocument.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
-            this.ViewDocument.Name = "ViewDocument";
-            this.ViewDocument.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.ViewDocument.Click += new System.EventHandler(this.ViewDocument_Click);
-            // 
             // ColImprimer
             // 
             this.ColImprimer.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -324,14 +298,14 @@
             this.ColImprimer.Image = ((System.Drawing.Image)(resources.GetObject("ColImprimer.Image")));
             this.ColImprimer.Name = "ColImprimer";
             this.ColImprimer.Visible = true;
-            this.ColImprimer.VisibleIndex = 8;
+            this.ColImprimer.VisibleIndex = 9;
             // 
             // ImprimerItem
             // 
             this.ImprimerItem.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
             this.ImprimerItem.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions4, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.ImprimerItem.Name = "ImprimerItem";
             this.ImprimerItem.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.ImprimerItem.Click += new System.EventHandler(this.ImprimerItem_Click);
@@ -344,36 +318,27 @@
             this.ColDetais.ColumnEdit = this.repositoryItemButtonDetaisDevis;
             this.ColDetais.Name = "ColDetais";
             this.ColDetais.Visible = true;
-            this.ColDetais.VisibleIndex = 9;
+            this.ColDetais.VisibleIndex = 8;
             // 
             // repositoryItemButtonDetaisDevis
             // 
             this.repositoryItemButtonDetaisDevis.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
             this.repositoryItemButtonDetaisDevis.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions5, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryItemButtonDetaisDevis.Name = "repositoryItemButtonDetaisDevis";
             this.repositoryItemButtonDetaisDevis.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonDetaisDevis.Click += new System.EventHandler(this.repositoryItemButtonDetaisDevis_Click);
             // 
-            // repositoryModifierDevis
+            // gridColumn1
             // 
-            this.repositoryModifierDevis.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
-            this.repositoryModifierDevis.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions4, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
-            this.repositoryModifierDevis.Name = "repositoryModifierDevis";
-            this.repositoryModifierDevis.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            // 
-            // repositorySendEmail
-            // 
-            this.repositorySendEmail.AutoHeight = false;
-            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
-            this.repositorySendEmail.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions5, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
-            this.repositorySendEmail.Name = "repositorySendEmail";
-            this.repositorySendEmail.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositorySendEmail.Click += new System.EventHandler(this.repositorySendEmail_Click);
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn1.Caption = "Date livraison";
+            this.gridColumn1.FieldName = "Datelivraison";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 4;
             // 
             // layoutControlGroup2
             // 
@@ -468,6 +433,25 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
+            // Supprimer
+            // 
+            this.Supprimer.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Supprimer.AppearanceHeader.Options.UseFont = true;
+            this.Supprimer.Caption = "Supprimer";
+            this.Supprimer.ColumnEdit = this.repositoryItemSupprimer;
+            this.Supprimer.Name = "Supprimer";
+            this.Supprimer.Visible = true;
+            this.Supprimer.VisibleIndex = 10;
+            // 
+            // repositoryItemSupprimer
+            // 
+            this.repositoryItemSupprimer.AutoHeight = false;
+            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
+            this.repositoryItemSupprimer.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions6, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.repositoryItemSupprimer.Name = "repositoryItemSupprimer";
+            this.repositoryItemSupprimer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
             // FrmListeDevis
             // 
             this.Appearance.Options.UseFont = true;
@@ -494,11 +478,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.devisBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ViewDocument)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImprimerItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonDetaisDevis)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryModifierDevis)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositorySendEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateDebutItem)).EndInit();
@@ -508,6 +489,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSupprimer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -529,8 +511,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTotal_DevisHT;
         private DevExpress.XtraGrid.Columns.GridColumn colTotal_DevisTTC;
         private DevExpress.XtraGrid.Columns.GridColumn colClient;
-        private DevExpress.XtraGrid.Columns.GridColumn ColViewDocument;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit ViewDocument;
         private DevExpress.XtraEditors.DateEdit DateFin;
         private DevExpress.XtraEditors.DateEdit DateDebut;
         private DevExpress.XtraLayout.LayoutControlItem DateDebutItem;
@@ -540,12 +520,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn ColDetais;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonDetaisDevis;
         public System.Windows.Forms.BindingSource devisBindingSource;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryModifierDevis;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositorySendEmail;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn Supprimer;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemSupprimer;
     }
 }

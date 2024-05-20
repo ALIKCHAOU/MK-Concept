@@ -121,9 +121,6 @@
   <data name="icons-certificationx48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons-certificationx481.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logoKM" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoKM.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="parametres" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\parametres1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -133,14 +130,20 @@
   <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="téléchargement" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\téléchargement1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sell" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="partenaires" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\partenaires1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="informations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\informations1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="banque" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\banque1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK Concept" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MK Concept.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="famille-contact" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\famille-contact1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,14 +151,14 @@
   <data name="buy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="journaux" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\journaux1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="caisse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\caisse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="informations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\informations1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons-certificationV48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons-certificationV48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,8 +166,8 @@
   <data name="calendrier" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calendrier1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="téléchargement" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\téléchargement1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="caisse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\caisse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="listeventes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\listeventes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,7 +175,6 @@
   <data name="logoKM1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoKM1.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-
   <data name="famille-immobilisations" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\famille-immobilisations1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -182,10 +184,10 @@
   <data name="pdt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pdt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="banque" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\banque1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logoKM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoKM.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MK Concept" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MK Concept.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MK Concept.jpg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MK Concept.jpg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
