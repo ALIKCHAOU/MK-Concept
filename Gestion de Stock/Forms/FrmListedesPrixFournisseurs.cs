@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Globalization;
 using System.Threading;
+using Gestion_de_Stock.Model;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace Gestion_de_Stock
 {
@@ -39,6 +41,38 @@ namespace Gestion_de_Stock
         private void FrmListedesPrixFournisseurs_FormClosing(object sender, FormClosingEventArgs e)
         {
             _FrmListedesPrixFournisseurs = null;
+        }
+
+        private void FrmListedesPrixFournisseurs_Load(object sender, EventArgs e)
+        {
+            fournisseurBindingSource.DataSource = db.Fournisseurs.Where(x => x.Status == Status.Active).Select(x => new { x.Code, x.RaisonSociale, x.NomResponsable, x.PrenomResponsable }).ToList();
+        }
+
+        private void searchLookUpEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            Fournisseur F = new Fournisseur();
+
+
+
+            GridView view = searchLookUpEdit1.Properties.View;
+            int rowHandle = view.FocusedRowHandle;
+            string fieldName = "Code"; // or other field name  
+            object FournisseurSelected = view.GetRowCellValue(rowHandle, fieldName);
+            ///Condition existance Fournisseur
+            if (FournisseurSelected == null)
+            {
+                XtraMessageBox.Show("Choisir un Fournisseur ", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                searchLookUpEdit1.Focus();
+                return;
+
+            }
+            else
+            {
+              
+                F = db.Fournisseurs.Include("ListeArticles").FirstOrDefault(x=>x.Code.Equals(FournisseurSelected.ToString()));
+                articleBindingSource.DataSource = F.ListeArticles.ToList();
+            }
+
         }
     }
 }

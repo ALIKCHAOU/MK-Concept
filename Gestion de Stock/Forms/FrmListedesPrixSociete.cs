@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Globalization;
 using System.Threading;
+using Gestion_de_Stock.Model;
 
 namespace Gestion_de_Stock
 {
@@ -47,7 +48,8 @@ namespace Gestion_de_Stock
 
         private void FrmListedesPrixSociete_Load(object sender, EventArgs e)
         {
-
+            Societe societe = db.Societes.Include("ListeArticles").FirstOrDefault();
+            articleBindingSource.DataSource = societe.ListeArticles;
         }
     }
 }

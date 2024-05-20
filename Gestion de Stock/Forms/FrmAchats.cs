@@ -239,5 +239,10 @@ namespace Gestion_de_Stock.Forms
         {
             this.ActiveControl = TxtFactureFounisseur;
         }
+
+        private void searchLookUpEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
