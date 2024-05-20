@@ -42,6 +42,8 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.BtnImprimer = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -51,10 +53,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.BtnImprimer);
             this.layoutControl1.Controls.Add(this.gridControl1);
             this.layoutControl1.Controls.Add(this.BtnEnregister);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -114,6 +118,7 @@
             // 
             this.colPrix.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colPrix.AppearanceHeader.Options.UseFont = true;
+            this.colPrix.Caption = "Prix en Dinar";
             this.colPrix.FieldName = "Prix";
             this.colPrix.Name = "colPrix";
             this.colPrix.Visible = true;
@@ -123,10 +128,10 @@
             // 
             this.BtnEnregister.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEnregister.Appearance.Options.UseFont = true;
-            this.BtnEnregister.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.BtnEnregister.Location = new System.Drawing.Point(404, 12);
+            this.BtnEnregister.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnEnregister.ImageOptions.Image")));
+            this.BtnEnregister.Location = new System.Drawing.Point(382, 12);
             this.BtnEnregister.Name = "BtnEnregister";
-            this.BtnEnregister.Size = new System.Drawing.Size(147, 22);
+            this.BtnEnregister.Size = new System.Drawing.Size(87, 22);
             this.BtnEnregister.StyleController = this.layoutControl1;
             this.BtnEnregister.TabIndex = 5;
             this.BtnEnregister.Text = "Enregister";
@@ -139,7 +144,8 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem2,
             this.layoutControlItem3,
-            this.emptySpaceItem1});
+            this.emptySpaceItem1,
+            this.layoutControlItem1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(563, 285);
@@ -148,9 +154,9 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.BtnEnregister;
-            this.layoutControlItem2.Location = new System.Drawing.Point(392, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(370, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(151, 26);
+            this.layoutControlItem2.Size = new System.Drawing.Size(91, 26);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -168,8 +174,30 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(392, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(370, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // BtnImprimer
+            // 
+            this.BtnImprimer.Appearance.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnImprimer.Appearance.Options.UseFont = true;
+            this.BtnImprimer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnImprimer.ImageOptions.Image")));
+            this.BtnImprimer.Location = new System.Drawing.Point(473, 12);
+            this.BtnImprimer.Name = "BtnImprimer";
+            this.BtnImprimer.Size = new System.Drawing.Size(78, 22);
+            this.BtnImprimer.StyleController = this.layoutControl1;
+            this.BtnImprimer.TabIndex = 7;
+            this.BtnImprimer.Text = "Imprimer";
+            this.BtnImprimer.Click += new System.EventHandler(this.BtnImprimer_Click);
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.BtnImprimer;
+            this.layoutControlItem1.Location = new System.Drawing.Point(461, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(82, 26);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
             // 
             // FrmListedesPrixSociete
             // 
@@ -191,6 +219,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -209,5 +238,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDesignation;
         private DevExpress.XtraGrid.Columns.GridColumn colPrix;
         private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
+        private DevExpress.XtraEditors.SimpleButton BtnImprimer;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }

@@ -197,7 +197,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.searchLookUpEdit1.Properties.DataSource = this.fournisseurBindingSource;
             this.searchLookUpEdit1.Properties.DisplayMember = "RaisonSociale";
-            this.searchLookUpEdit1.Properties.NullText = "Ajouter Founisseur";
+            this.searchLookUpEdit1.Properties.NullText = "choisir un founisseur ";
             this.searchLookUpEdit1.Properties.ValueMember = "Code";
             this.searchLookUpEdit1.Properties.View = this.searchLookUpEdit1View;
             this.searchLookUpEdit1.Size = new System.Drawing.Size(153, 20);

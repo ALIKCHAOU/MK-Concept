@@ -34,7 +34,6 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.articleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDesignation = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrix = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,6 +45,8 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.BtnImprimer = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -58,10 +59,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.BtnImprimer);
             this.layoutControl1.Controls.Add(this.gridControl1);
             this.layoutControl1.Controls.Add(this.BtnEnregister);
             this.layoutControl1.Controls.Add(this.searchLookUpEdit1);
@@ -91,22 +94,12 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colCode,
             this.colDesignation,
             this.colQuantity,
             this.colPrix});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
-            // 
-            // colCode
-            // 
-            this.colCode.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colCode.AppearanceHeader.Options.UseFont = true;
-            this.colCode.FieldName = "Code";
-            this.colCode.Name = "colCode";
-            this.colCode.Visible = true;
-            this.colCode.VisibleIndex = 0;
             // 
             // colDesignation
             // 
@@ -115,7 +108,7 @@
             this.colDesignation.FieldName = "Designation";
             this.colDesignation.Name = "colDesignation";
             this.colDesignation.Visible = true;
-            this.colDesignation.VisibleIndex = 1;
+            this.colDesignation.VisibleIndex = 0;
             // 
             // colQuantity
             // 
@@ -125,25 +118,26 @@
             this.colQuantity.FieldName = "Quantity";
             this.colQuantity.Name = "colQuantity";
             this.colQuantity.Visible = true;
-            this.colQuantity.VisibleIndex = 2;
+            this.colQuantity.VisibleIndex = 1;
             // 
             // colPrix
             // 
             this.colPrix.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colPrix.AppearanceHeader.Options.UseFont = true;
+            this.colPrix.Caption = "Prix en Dinar";
             this.colPrix.FieldName = "Prix";
             this.colPrix.Name = "colPrix";
             this.colPrix.Visible = true;
-            this.colPrix.VisibleIndex = 3;
+            this.colPrix.VisibleIndex = 2;
             // 
             // BtnEnregister
             // 
             this.BtnEnregister.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEnregister.Appearance.Options.UseFont = true;
-            this.BtnEnregister.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.BtnEnregister.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnEnregister.ImageOptions.Image")));
             this.BtnEnregister.Location = new System.Drawing.Point(284, 12);
             this.BtnEnregister.Name = "BtnEnregister";
-            this.BtnEnregister.Size = new System.Drawing.Size(267, 22);
+            this.BtnEnregister.Size = new System.Drawing.Size(131, 22);
             this.BtnEnregister.StyleController = this.layoutControl1;
             this.BtnEnregister.TabIndex = 5;
             this.BtnEnregister.Text = "Enregister";
@@ -156,7 +150,8 @@
             this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.searchLookUpEdit1.Properties.DataSource = this.fournisseurBindingSource;
-            this.searchLookUpEdit1.Properties.DisplayMember = "FullName";
+            this.searchLookUpEdit1.Properties.DisplayMember = "RaisonSociale";
+            this.searchLookUpEdit1.Properties.NullText = "choisir un founisseur ";
             this.searchLookUpEdit1.Properties.ValueMember = "Code";
             this.searchLookUpEdit1.Properties.View = this.searchLookUpEdit1View;
             this.searchLookUpEdit1.Size = new System.Drawing.Size(139, 20);
@@ -182,7 +177,8 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem3});
+            this.layoutControlItem3,
+            this.layoutControlItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(563, 285);
@@ -204,7 +200,7 @@
             this.layoutControlItem2.Control = this.BtnEnregister;
             this.layoutControlItem2.Location = new System.Drawing.Point(272, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(271, 26);
+            this.layoutControlItem2.Size = new System.Drawing.Size(135, 26);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -216,6 +212,28 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(543, 239);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
+            // 
+            // BtnImprimer
+            // 
+            this.BtnImprimer.Appearance.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnImprimer.Appearance.Options.UseFont = true;
+            this.BtnImprimer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnImprimer.ImageOptions.Image")));
+            this.BtnImprimer.Location = new System.Drawing.Point(419, 12);
+            this.BtnImprimer.Name = "BtnImprimer";
+            this.BtnImprimer.Size = new System.Drawing.Size(132, 22);
+            this.BtnImprimer.StyleController = this.layoutControl1;
+            this.BtnImprimer.TabIndex = 7;
+            this.BtnImprimer.Text = "Imprimer";
+            this.BtnImprimer.Click += new System.EventHandler(this.BtnImprimer_Click);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.BtnImprimer;
+            this.layoutControlItem4.Location = new System.Drawing.Point(407, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(136, 26);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
             // 
             // FrmListedesPrixFournisseurs
             // 
@@ -240,6 +258,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -258,9 +277,10 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private System.Windows.Forms.BindingSource fournisseurBindingSource;
         private System.Windows.Forms.BindingSource articleBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn colCode;
         private DevExpress.XtraGrid.Columns.GridColumn colDesignation;
         private DevExpress.XtraGrid.Columns.GridColumn colPrix;
         private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
+        private DevExpress.XtraEditors.SimpleButton BtnImprimer;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

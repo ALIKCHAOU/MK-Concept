@@ -119,5 +119,16 @@ namespace Gestion_de_Stock
             }
            
         }
+
+        private void BtnImprimer_Click(object sender, EventArgs e)
+        {
+            if (!gridControl1.IsPrintingAvailable)
+            {
+                MessageBox.Show("The 'DevExpress.XtraPrinting' Library is not found", "Error");
+                return;
+            }
+            // Opens the Preview window.
+            gridControl1.ShowPrintPreview();
+        }
     }
 }
