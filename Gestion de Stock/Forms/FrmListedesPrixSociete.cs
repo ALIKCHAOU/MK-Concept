@@ -8,12 +8,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Globalization;
+using System.Threading;
 
 namespace Gestion_de_Stock
 {
     public partial class FrmListedesPrixSociete : DevExpress.XtraEditors.XtraForm
     {
-
+        private CultureInfo culture = Thread.CurrentThread.CurrentCulture;
+        string decimalSeparator;
+        private Model.ApplicationContext db;
         private static FrmListedesPrixSociete _FrmListedesPrixSociete;
         public static FrmListedesPrixSociete InstanceFrmListedesPrixSociete
         {
@@ -27,6 +31,8 @@ namespace Gestion_de_Stock
         public FrmListedesPrixSociete()
         {
             InitializeComponent();
+            db = new Model.ApplicationContext();
+            decimalSeparator = culture.NumberFormat.NumberDecimalSeparator;
         }
 
         private void FrmListedesPrixSociete_FormClosing(object sender, FormClosingEventArgs e)
