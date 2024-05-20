@@ -50,11 +50,11 @@
             this.colVille = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTelephone = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colemail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GcMF = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GCActivitee = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditViewBattante = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemButtonEditViewRegistredecommerce = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemButtonEditviewAttestationexoneration = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.GcMF = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.GCActivitee = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -271,7 +271,7 @@
             // 
             this.colTelephone.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colTelephone.AppearanceHeader.Options.UseFont = true;
-            this.colTelephone.Caption = "Telephone";
+            this.colTelephone.Caption = "Téléphone";
             this.colTelephone.FieldName = "TelResponsable";
             this.colTelephone.Name = "colTelephone";
             this.colTelephone.OptionsColumn.AllowEdit = false;
@@ -288,6 +288,28 @@
             this.colemail.OptionsColumn.AllowEdit = false;
             this.colemail.Visible = true;
             this.colemail.VisibleIndex = 9;
+            // 
+            // GcMF
+            // 
+            this.GcMF.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GcMF.AppearanceHeader.Options.UseFont = true;
+            this.GcMF.Caption = "M.F";
+            this.GcMF.FieldName = "MatriculeFiscale";
+            this.GcMF.Name = "GcMF";
+            this.GcMF.OptionsColumn.AllowEdit = false;
+            this.GcMF.Visible = true;
+            this.GcMF.VisibleIndex = 4;
+            // 
+            // GCActivitee
+            // 
+            this.GCActivitee.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GCActivitee.AppearanceHeader.Options.UseFont = true;
+            this.GCActivitee.Caption = "Activité";
+            this.GCActivitee.FieldName = "Activite";
+            this.GCActivitee.Name = "GCActivitee";
+            this.GCActivitee.OptionsColumn.AllowEdit = false;
+            this.GCActivitee.Visible = true;
+            this.GCActivitee.VisibleIndex = 5;
             // 
             // repositoryItemButtonEditViewBattante
             // 
@@ -318,28 +340,6 @@
             this.repositoryItemButtonEditviewAttestationexoneration.Name = "repositoryItemButtonEditviewAttestationexoneration";
             this.repositoryItemButtonEditviewAttestationexoneration.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditviewAttestationexoneration.Click += new System.EventHandler(this.repositoryItemButtonEditviewAttestationexoneration_Click);
-            // 
-            // GcMF
-            // 
-            this.GcMF.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GcMF.AppearanceHeader.Options.UseFont = true;
-            this.GcMF.Caption = "M.F";
-            this.GcMF.FieldName = "MatriculeFiscale";
-            this.GcMF.Name = "GcMF";
-            this.GcMF.OptionsColumn.AllowEdit = false;
-            this.GcMF.Visible = true;
-            this.GcMF.VisibleIndex = 4;
-            // 
-            // GCActivitee
-            // 
-            this.GCActivitee.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GCActivitee.AppearanceHeader.Options.UseFont = true;
-            this.GCActivitee.Caption = "Activité";
-            this.GCActivitee.FieldName = "Activite";
-            this.GCActivitee.Name = "GCActivitee";
-            this.GCActivitee.OptionsColumn.AllowEdit = false;
-            this.GCActivitee.Visible = true;
-            this.GCActivitee.VisibleIndex = 5;
             // 
             // layoutControlGroup1
             // 
