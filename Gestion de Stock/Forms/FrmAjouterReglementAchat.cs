@@ -122,6 +122,7 @@ namespace Gestion_de_Stock.Forms
             #region Ajouter historique paiement achat
             HistoriquePaiementAchats HP = new HistoriquePaiementAchats();
             HP.codeFournisseur = Achat.CodeFournisseur;
+            HP.DateCreation = DateReglemement.DateTime;
             HP.IntituleFournisseur = Achat.RaisonSociale;
             HP.NumAchat = Achat.Code;
             HP.MontantReglement = Achat.MontantReglement;
@@ -270,6 +271,7 @@ namespace Gestion_de_Stock.Forms
 
         private void FrmAjouterReglementAchat_Load(object sender, EventArgs e)
         {
+            DateReglemement.DateTime = DateTime.Now;
             List<string> ModePaiement = Enum.GetNames(typeof(ModeReglement)).ToList();
             if (ModePaiement != null)
             {

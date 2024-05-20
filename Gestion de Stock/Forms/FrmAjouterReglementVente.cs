@@ -43,6 +43,7 @@ namespace Gestion_de_Stock.Forms
 
         private void FrmAjouterReglementVente_Load(object sender, EventArgs e)
         {
+            DateReglementVente.DateTime = DateTime.Now;
             List<string> ModePaiement = Enum.GetNames(typeof(ModeReglement)).ToList();
             if (ModePaiement != null)
             {
@@ -142,7 +143,8 @@ namespace Gestion_de_Stock.Forms
 
             #region  Historique paiement vente
             HistoriquePaiementVente hpv = new HistoriquePaiementVente();
-            hpv.IdVente = Vente.Id;          
+            hpv.IdVente = Vente.Id;
+            hpv.DateCreation = DateReglementVente.DateTime;
             hpv.IntituleClient = Vente.IntituleClient;
             hpv.NumClient = Vente.NumClient;
             hpv.MontantRegle = MontantRegle;
