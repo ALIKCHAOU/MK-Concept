@@ -381,6 +381,12 @@
     <Compile Include="Forms\FrmListeDepenseSalarier.Designer.cs">
       <DependentUpon>FrmListeDepenseSalarier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmListedesPrixSociete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmListedesPrixSociete.Designer.cs">
+      <DependentUpon>FrmListedesPrixSociete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmListeDevis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -772,6 +778,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmListeDepenseSalarier.resx">
       <DependentUpon>FrmListeDepenseSalarier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmListedesPrixSociete.resx">
+      <DependentUpon>FrmListedesPrixSociete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmListeDevis.resx">
       <DependentUpon>FrmListeDevis.cs</DependentUpon>

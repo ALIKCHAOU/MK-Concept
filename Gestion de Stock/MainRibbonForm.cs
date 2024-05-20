@@ -334,6 +334,11 @@ namespace Gestion_de_Stock
         {
             Formshow(Gestion_de_Stock.FrmListedesPrixFournisseurs.InstanceFrmListedesPrixFournisseurs);
         }
+
+        private void barlistedesprixso_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Formshow(Gestion_de_Stock.FrmListedesPrixSociete.InstanceFrmListedesPrixSociete);
+        }
     }
 
 }
