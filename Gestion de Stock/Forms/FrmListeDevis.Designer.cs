@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListeDevis));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
@@ -65,6 +65,10 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.Supprimer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemSupprimer = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.BtnExportExcel = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.BtnExportPdF = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -90,6 +94,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSupprimer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -113,6 +119,8 @@
             // 
             // layoutControl2
             // 
+            this.layoutControl2.Controls.Add(this.BtnExportPdF);
+            this.layoutControl2.Controls.Add(this.BtnExportExcel);
             this.layoutControl2.Controls.Add(this.simpleButton2);
             this.layoutControl2.Controls.Add(this.DateFin);
             this.layoutControl2.Controls.Add(this.simpleButton1);
@@ -131,7 +139,7 @@
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(703, 36);
+            this.simpleButton2.Location = new System.Drawing.Point(703, 62);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(222, 22);
             this.simpleButton2.StyleController = this.layoutControl2;
@@ -158,7 +166,7 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(477, 36);
+            this.simpleButton1.Location = new System.Drawing.Point(477, 62);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(222, 22);
             this.simpleButton1.StyleController = this.layoutControl2;
@@ -183,14 +191,14 @@
             // gridControl1
             // 
             this.gridControl1.DataSource = this.devisBindingSource;
-            this.gridControl1.Location = new System.Drawing.Point(12, 62);
+            this.gridControl1.Location = new System.Drawing.Point(12, 88);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.ImprimerItem,
             this.repositoryItemButtonDetaisDevis,
             this.repositoryItemSupprimer});
-            this.gridControl1.Size = new System.Drawing.Size(913, 367);
+            this.gridControl1.Size = new System.Drawing.Size(913, 341);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -303,9 +311,9 @@
             // ImprimerItem
             // 
             this.ImprimerItem.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.ImprimerItem.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions4, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.ImprimerItem.Name = "ImprimerItem";
             this.ImprimerItem.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.ImprimerItem.Click += new System.EventHandler(this.ImprimerItem_Click);
@@ -323,9 +331,9 @@
             // repositoryItemButtonDetaisDevis
             // 
             this.repositoryItemButtonDetaisDevis.AutoHeight = false;
-            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.repositoryItemButtonDetaisDevis.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions5, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryItemButtonDetaisDevis.Name = "repositoryItemButtonDetaisDevis";
             this.repositoryItemButtonDetaisDevis.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonDetaisDevis.Click += new System.EventHandler(this.repositoryItemButtonDetaisDevis_Click);
@@ -350,7 +358,9 @@
             this.layoutControlItem5,
             this.emptySpaceItem1,
             this.layoutControlItem3,
-            this.layoutControlItem4});
+            this.layoutControlItem4,
+            this.layoutControlItem6,
+            this.layoutControlItem7});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(937, 441);
@@ -359,9 +369,9 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.gridControl1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 50);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 76);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(917, 371);
+            this.layoutControlItem2.Size = new System.Drawing.Size(917, 345);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -392,13 +402,13 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 24);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(465, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(465, 52);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.simpleButton1;
-            this.layoutControlItem3.Location = new System.Drawing.Point(465, 24);
+            this.layoutControlItem3.Location = new System.Drawing.Point(465, 50);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(226, 26);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -407,7 +417,7 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.simpleButton2;
-            this.layoutControlItem4.Location = new System.Drawing.Point(691, 24);
+            this.layoutControlItem4.Location = new System.Drawing.Point(691, 50);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(226, 26);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
@@ -446,11 +456,56 @@
             // repositoryItemSupprimer
             // 
             this.repositoryItemSupprimer.AutoHeight = false;
-            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.repositoryItemSupprimer.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions6, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryItemSupprimer.Name = "repositoryItemSupprimer";
             this.repositoryItemSupprimer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemSupprimer.Click += new System.EventHandler(this.repositoryItemSupprimer_Click);
+            // 
+            // BtnExportExcel
+            // 
+            this.BtnExportExcel.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnExportExcel.Appearance.Options.UseFont = true;
+            this.BtnExportExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnExportExcel.ImageOptions.Image")));
+            this.BtnExportExcel.Location = new System.Drawing.Point(477, 36);
+            this.BtnExportExcel.Name = "BtnExportExcel";
+            this.BtnExportExcel.Size = new System.Drawing.Size(222, 22);
+            this.BtnExportExcel.StyleController = this.layoutControl2;
+            this.BtnExportExcel.TabIndex = 11;
+            this.BtnExportExcel.Text = "Export Excel";
+            this.BtnExportExcel.Click += new System.EventHandler(this.BtnExportExcel_Click);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.BtnExportExcel;
+            this.layoutControlItem6.Location = new System.Drawing.Point(465, 24);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(226, 26);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
+            // 
+            // BtnExportPdF
+            // 
+            this.BtnExportPdF.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnExportPdF.Appearance.Options.UseFont = true;
+            this.BtnExportPdF.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnExportPdF.ImageOptions.Image")));
+            this.BtnExportPdF.Location = new System.Drawing.Point(703, 36);
+            this.BtnExportPdF.Name = "BtnExportPdF";
+            this.BtnExportPdF.Size = new System.Drawing.Size(222, 22);
+            this.BtnExportPdF.StyleController = this.layoutControl2;
+            this.BtnExportPdF.TabIndex = 12;
+            this.BtnExportPdF.Text = "Export PdF";
+            this.BtnExportPdF.Click += new System.EventHandler(this.BtnExportPdF_Click);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.BtnExportPdF;
+            this.layoutControlItem7.Location = new System.Drawing.Point(691, 24);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(226, 26);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.TextVisible = false;
             // 
             // FrmListeDevis
             // 
@@ -490,6 +545,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSupprimer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -528,5 +585,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn Supprimer;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemSupprimer;
+        private DevExpress.XtraEditors.SimpleButton BtnExportPdF;
+        private DevExpress.XtraEditors.SimpleButton BtnExportExcel;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
     }
 }

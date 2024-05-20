@@ -15,7 +15,7 @@ namespace Gestion_de_Stock.Model
         {
             context = new ApplicationContext();
             DateCreation = DateTime.Now;
-            GereStock = false;
+          
 
 
         }
@@ -28,20 +28,15 @@ namespace Gestion_de_Stock.Model
         [Required(ErrorMessage = "Designation is required")]
         public string Designation { get; set; }
 
-        public decimal PrixdeVenteRevendeur { get; set; }
-        public decimal PrixdeVenteGros1 { get; set; }
-        public decimal PrixdeVenteGros2 { get; set; }
-        public decimal PrixdeVentepublic { get; set; }      
+        public decimal Prix { get; set; }    
+           
 
         [Required]
         public DateTime DateCreation { get; set; }
 
         public int Quantity { get; set; }
 
-        public decimal TotalPoids { get; set; }
-        public bool GereStock { get; set; }        
-        public int Metrage { get; set; }
-        public int IdArticlechute { get; set; }
+       
 
 
 

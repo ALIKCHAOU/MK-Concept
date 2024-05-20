@@ -38,7 +38,7 @@ namespace Gestion_de_Stock.Forms
 
         private void FrmDetaisDevis_Load(object sender, EventArgs e)
         {
-            SearchLookUpPack.DataSource = db.Articles.Select(x => new { x.Code, x.Designation, x.Quantity, x.PrixdeVenteRevendeur, x.PrixdeVentepublic, x.PrixdeVenteGros1, x.PrixdeVenteGros2 }).ToList();
+          
         }
 
         private void FrmDetaisDevis_FormClosed(object sender, FormClosedEventArgs e)
@@ -126,32 +126,6 @@ namespace Gestion_de_Stock.Forms
 
       
 
-        private void SearchLookUpPack_EditValueChanged(object sender, EventArgs e)
-        {
-            SearchLookUpEdit editor = sender as SearchLookUpEdit;
-            GridView view2 = editor.Properties.View;
-            int rowHandle2 = view2.FocusedRowHandle;
-            string fieldName2 = "Designation"; // or other field name  
-            object PackSelected = view2.GetRowCellValue(rowHandle2, fieldName2);
-            if (PackSelected != null)
-            {
-                pack = db.Articles.FirstOrDefault(x => x.Designation.Equals(PackSelected.ToString()));
-                //if (gridView1.IsNewItemRow(gridView1.FocusedRowHandle))
-                //{
-
-                repositoryItemComboBoxListePrice.Items.Clear();
-                repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVenteGros1);
-                repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVenteGros2);
-                repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVentepublic);
-                repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVenteRevendeur);
-                gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "PrixHT", repositoryItemComboBoxListePrice.Items[0]);
-                gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "Qty", 1);
-                gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "Description", pack.Designation);
-
-
-                //  }
-
-            }
-        }
+       
     }
 }

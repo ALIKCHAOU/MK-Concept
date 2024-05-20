@@ -28,6 +28,8 @@ namespace Gestion_de_Stock.Model
         public string Mail { get; set; }
         public int TVA { get; set; } = 19;
 
+        public List<Article> ListeArticles { get; set; }
+
 
     }
 }

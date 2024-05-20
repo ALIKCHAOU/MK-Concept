@@ -61,11 +61,7 @@ namespace Gestion_de_Stock.Forms
             TxtPrenom.ErrorIconAlignment = ErrorIconAlignment.MiddleRight;           
             TxtTelephone.ErrorIconAlignment = ErrorIconAlignment.MiddleRight;
             TxtEmail.ErrorIconAlignment = ErrorIconAlignment.MiddleRight;
-            TxtFax.ErrorIconAlignment = ErrorIconAlignment.MiddleRight;
-
-            //	Coordonné Bancaire 
-            TxtBanque.ErrorIconAlignment = ErrorIconAlignment.MiddleRight;
-            TxtRiB.ErrorIconAlignment = ErrorIconAlignment.MiddleRight;
+         
 
             //	Document pour attachement 
 
@@ -163,32 +159,8 @@ namespace Gestion_de_Stock.Forms
             fournisser.PrenomResponsable = TxtPrenom.Text;
             fournisser.TelResponsable = TxtTelephone.Text;
             fournisser.EmailResponsable = TxtEmail.Text;
-            fournisser.Fax = TxtFax.Text;
-
-            fournisser.Banque = TxtBanque.Text;
-            fournisser.RIB = TxtRiB.Text;
         
-           
-
-            if (!String.IsNullOrEmpty(filePathBattante))
-            {
-                byte[] imag = File.ReadAllBytes(filePathBattante);
-                fournisser.Attachment_Battante = imag;
-                fournisser.FileName_Battante = filePathBattante;
-            }
-            if (!String.IsNullOrEmpty(filePathRegistredecommerce))
-            {
-                byte[] imag = File.ReadAllBytes(filePathRegistredecommerce);
-                fournisser.Attachment_RC = imag;
-                fournisser.FileName_RC = filePathRegistredecommerce;
-            }
-
-            if (!String.IsNullOrEmpty(filePathAttestationExoneration))
-            {
-                byte[] imag = File.ReadAllBytes(filePathAttestationExoneration);
-                fournisser.Attachment__Attestation_exonération = imag;
-                fournisser.FileName_Attestation_exonération = filePathAttestationExoneration;
-            }
+        
 
             fournisser.Status = Status.Active;
            
@@ -205,14 +177,7 @@ namespace Gestion_de_Stock.Forms
             TxtPrenom.Text = string.Empty;
             TxtTelephone.Text = string.Empty;
             TxtEmail.Text = string.Empty; 
-            TxtFax.Text = string.Empty;
-
-            TxtBanque.Text = string.Empty;
-            TxtRiB.Text = string.Empty;
-
-            buttonEditBattante.Text= string.Empty;
-            buttonEditRegistredecommerce.Text = string.Empty;
-            buttonEditAttestationExoneration.Text = string.Empty;
+           
 
             this.Hide();
 
@@ -252,7 +217,6 @@ namespace Gestion_de_Stock.Forms
                 {
 
 
-                    buttonEditBattante.Text = openFileDialog.FileName;
 
                     filePathBattante = openFileDialog.FileName;
 
@@ -276,7 +240,7 @@ namespace Gestion_de_Stock.Forms
                 {
 
 
-                    buttonEditRegistredecommerce.Text = openFileDialog.FileName;
+                 
 
                     filePathRegistredecommerce = openFileDialog.FileName;
 
@@ -300,7 +264,7 @@ namespace Gestion_de_Stock.Forms
                 {
 
 
-                    buttonEditAttestationExoneration.Text = openFileDialog.FileName;
+                 
 
                     filePathAttestationExoneration = openFileDialog.FileName;
 

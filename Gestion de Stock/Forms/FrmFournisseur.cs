@@ -184,14 +184,7 @@ namespace Gestion_de_Stock.Forms
             if (Application.OpenForms.OfType<FrmViewPdf>().FirstOrDefault() != null)
                 frmViewPdf = Application.OpenForms.OfType<FrmViewPdf>().First();
 
-            byte[] byteArray = FounisseurDb.Attachment_Battante;
-
-            frmViewPdf.pdfViewer1.DetachStreamAfterLoadComplete = true;
-            if (byteArray != null)
-            {
-                using (MemoryStream ms = new MemoryStream(byteArray))
-                    frmViewPdf.pdfViewer1.LoadDocument(ms);
-            }
+            
         }
 
         private void repositoryItemButtonEditviewAttestationexoneration_Click(object sender, EventArgs e)
@@ -203,14 +196,7 @@ namespace Gestion_de_Stock.Forms
             if (Application.OpenForms.OfType<FrmViewPdf>().FirstOrDefault() != null)
                 frmViewPdf = Application.OpenForms.OfType<FrmViewPdf>().First();
 
-            byte[] byteArray = FounisseurDb.Attachment__Attestation_exonération;
-
-            frmViewPdf.pdfViewer1.DetachStreamAfterLoadComplete = true;
-            if (byteArray != null)
-            {
-                using (MemoryStream ms = new MemoryStream(byteArray))
-                    frmViewPdf.pdfViewer1.LoadDocument(ms);
-            }
+          
         }
 
         private void repositoryItemButtonEditViewRegistredecommerce_Click(object sender, EventArgs e)
@@ -222,14 +208,7 @@ namespace Gestion_de_Stock.Forms
             if (Application.OpenForms.OfType<FrmViewPdf>().FirstOrDefault() != null)
                 frmViewPdf = Application.OpenForms.OfType<FrmViewPdf>().First();
 
-            byte[] byteArray = FounisseurDb.Attachment_RC;
-
-            frmViewPdf.pdfViewer1.DetachStreamAfterLoadComplete = true;
-            if (byteArray != null)
-            {
-                using (MemoryStream ms = new MemoryStream(byteArray))
-                    frmViewPdf.pdfViewer1.LoadDocument(ms);
-            }
+           
 
         }
     }

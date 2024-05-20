@@ -50,11 +50,8 @@
             this.colVille = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTelephone = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colemail = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ColBattante = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditViewBattante = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.ColRegistredecommerce = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditViewRegistredecommerce = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.ColAttestationexoneration = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditviewAttestationexoneration = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.GcMF = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GCActivitee = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -198,9 +195,6 @@
             this.colVille,
             this.colTelephone,
             this.colemail,
-            this.ColBattante,
-            this.ColRegistredecommerce,
-            this.ColAttestationexoneration,
             this.GcMF,
             this.GCActivitee});
             this.gridView1.GridControl = this.gridControl1;
@@ -295,16 +289,6 @@
             this.colemail.Visible = true;
             this.colemail.VisibleIndex = 9;
             // 
-            // ColBattante
-            // 
-            this.ColBattante.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ColBattante.AppearanceHeader.Options.UseFont = true;
-            this.ColBattante.Caption = "Battante";
-            this.ColBattante.ColumnEdit = this.repositoryItemButtonEditViewBattante;
-            this.ColBattante.Name = "ColBattante";
-            this.ColBattante.Visible = true;
-            this.ColBattante.VisibleIndex = 10;
-            // 
             // repositoryItemButtonEditViewBattante
             // 
             this.repositoryItemButtonEditViewBattante.AutoHeight = false;
@@ -315,16 +299,6 @@
             this.repositoryItemButtonEditViewBattante.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditViewBattante.Click += new System.EventHandler(this.repositoryItemButtonEditViewBattante_Click);
             // 
-            // ColRegistredecommerce
-            // 
-            this.ColRegistredecommerce.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ColRegistredecommerce.AppearanceHeader.Options.UseFont = true;
-            this.ColRegistredecommerce.Caption = "Registre de Commerce ";
-            this.ColRegistredecommerce.ColumnEdit = this.repositoryItemButtonEditViewRegistredecommerce;
-            this.ColRegistredecommerce.Name = "ColRegistredecommerce";
-            this.ColRegistredecommerce.Visible = true;
-            this.ColRegistredecommerce.VisibleIndex = 11;
-            // 
             // repositoryItemButtonEditViewRegistredecommerce
             // 
             this.repositoryItemButtonEditViewRegistredecommerce.AutoHeight = false;
@@ -334,16 +308,6 @@
             this.repositoryItemButtonEditViewRegistredecommerce.Name = "repositoryItemButtonEditViewRegistredecommerce";
             this.repositoryItemButtonEditViewRegistredecommerce.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditViewRegistredecommerce.Click += new System.EventHandler(this.repositoryItemButtonEditViewRegistredecommerce_Click);
-            // 
-            // ColAttestationexoneration
-            // 
-            this.ColAttestationexoneration.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ColAttestationexoneration.AppearanceHeader.Options.UseFont = true;
-            this.ColAttestationexoneration.Caption = "Attestation exoneration";
-            this.ColAttestationexoneration.ColumnEdit = this.repositoryItemButtonEditviewAttestationexoneration;
-            this.ColAttestationexoneration.Name = "ColAttestationexoneration";
-            this.ColAttestationexoneration.Visible = true;
-            this.ColAttestationexoneration.VisibleIndex = 12;
             // 
             // repositoryItemButtonEditviewAttestationexoneration
             // 
@@ -528,9 +492,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditViewBattante;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditViewRegistredecommerce;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditviewAttestationexoneration;
-        private DevExpress.XtraGrid.Columns.GridColumn ColBattante;
-        private DevExpress.XtraGrid.Columns.GridColumn ColRegistredecommerce;
-        private DevExpress.XtraGrid.Columns.GridColumn ColAttestationexoneration;
         private DevExpress.XtraGrid.Columns.GridColumn GcMF;
         private DevExpress.XtraGrid.Columns.GridColumn GCActivitee;
     }

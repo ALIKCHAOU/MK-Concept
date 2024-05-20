@@ -417,7 +417,7 @@
             this.SearchLookUpPack.NullText = "Sélectionner Pack";
             this.SearchLookUpPack.ValueMember = "Designation";
             this.SearchLookUpPack.View = this.repositoryItemSearchLookUpEdit1View;
-            this.SearchLookUpPack.EditValueChanged += new System.EventHandler(this.SearchLookUpPack_EditValueChanged);
+
             // 
             // repositoryItemSearchLookUpEdit1View
             // 

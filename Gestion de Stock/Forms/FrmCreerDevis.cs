@@ -182,10 +182,7 @@ namespace Gestion_de_Stock.Forms
                 //{
 
                     repositoryItemComboBoxListePrice.Items.Clear();
-                    repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVenteGros1);
-                    repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVenteGros2);
-                    repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVentepublic);
-                    repositoryItemComboBoxListePrice.Items.Add(pack.PrixdeVenteRevendeur);
+                  
                     gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "PrixHT", repositoryItemComboBoxListePrice.Items[0]);
                     gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "Qty", 1);
                     gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "Description", pack.Designation);

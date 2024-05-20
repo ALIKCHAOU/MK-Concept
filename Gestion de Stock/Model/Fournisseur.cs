@@ -68,28 +68,7 @@ namespace Gestion_de_Stock.Model
 
 
 
-
-        //	Document pour attachement 
         
-        public string FileName_Battante { get; set; }
-
-        public int FileSize_Battante { get; set; }
-
-        public byte[] Attachment_Battante { get; set; }
-        //  Registre de commerce  
-        public string FileName_RC { get; set; }
-
-        public int FileSize_RC { get; set; }
-
-        public byte[] Attachment_RC { get; set; }
-
-        // Attestation d’exonération
-        public string FileName_Attestation_exonération { get; set; }
-
-        public int FileSize__Attestation_exonération { get; set; }
-
-        public byte[] Attachment__Attestation_exonération { get; set; }
-
         //Modalité de payement
         public string Devise { get; set; }
 
@@ -103,6 +82,7 @@ namespace Gestion_de_Stock.Model
 
         public decimal SommedesFacture { get; set; }
 
+        public List<Article> ListeArticles { get; set; }
 
 
 

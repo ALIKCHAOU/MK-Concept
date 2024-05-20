@@ -465,6 +465,12 @@
     <Compile Include="Forms\FrmWaitForm.Designer.cs">
       <DependentUpon>FrmWaitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmListedesPrixFournisseurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmListedesPrixFournisseurs.Designer.cs">
+      <DependentUpon>FrmListedesPrixFournisseurs.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -516,6 +522,10 @@
     <Compile Include="Migrations\202405201652351_date Date livraison .cs" />
     <Compile Include="Migrations\202405201652351_date Date livraison .designer.cs">
       <DependentUpon>202405201652351_date Date livraison .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405201825228_liste articles .cs" />
+    <Compile Include="Migrations\202405201825228_liste articles .designer.cs">
+      <DependentUpon>202405201825228_liste articles .cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Achat.cs" />
@@ -806,6 +816,9 @@
     <EmbeddedResource Include="Forms\FrmWaitForm.resx">
       <DependentUpon>FrmWaitForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmListedesPrixFournisseurs.resx">
+      <DependentUpon>FrmListedesPrixFournisseurs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -833,6 +846,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202405201652351_date Date livraison .resx">
       <DependentUpon>202405201652351_date Date livraison .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405201825228_liste articles .resx">
+      <DependentUpon>202405201825228_liste articles .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

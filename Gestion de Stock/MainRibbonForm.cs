@@ -330,8 +330,10 @@ namespace Gestion_de_Stock
             Formshow(Gestion_de_Stock.Forms.FrmEtatStock.InstanceFrmEtatStock);
         }
 
-    
-
-    
+        private void ListedesPrixdesFournissuers_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Formshow(Gestion_de_Stock.FrmListedesPrixFournisseurs.InstanceFrmListedesPrixFournisseurs);
+        }
     }
+
 }

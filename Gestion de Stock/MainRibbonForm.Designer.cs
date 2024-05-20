@@ -141,6 +141,7 @@
             this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barBtnlisteBondeLivraison = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnCrrerBondeLivraisons = new DevExpress.XtraBars.BarButtonItem();
+            this.ListedesPrixdesFournissuers = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -234,9 +235,10 @@
             this.barButtonItem9,
             this.BtnProductionJournalier,
             this.barArticlesChutes,
-            this.barEtatdeStock});
+            this.barEtatdeStock,
+            this.ListedesPrixdesFournissuers});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 151;
+            this.ribbon.MaxItemId = 152;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.AccueilPage,
@@ -1008,6 +1010,7 @@
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.barAjouterfournisseur);
             this.ribbonPageGroup7.ItemLinks.Add(this.barFournisseur);
+            this.ribbonPageGroup7.ItemLinks.Add(this.ListedesPrixdesFournissuers);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Fournisseurs";
             // 
@@ -1233,6 +1236,19 @@
             this.barBtnCrrerBondeLivraisons.Name = "barBtnCrrerBondeLivraisons";
             this.barBtnCrrerBondeLivraisons.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnCrrerBondeLivraisons_ItemClick);
             // 
+            // ListedesPrixdesFournissuers
+            // 
+            this.ListedesPrixdesFournissuers.Caption = "Liste des Prix des Fournissuers";
+            this.ListedesPrixdesFournissuers.Id = 151;
+            this.ListedesPrixdesFournissuers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.Image")));
+            this.ListedesPrixdesFournissuers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.LargeImage")));
+            this.ListedesPrixdesFournissuers.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListedesPrixdesFournissuers.ItemAppearance.Hovered.Options.UseFont = true;
+            this.ListedesPrixdesFournissuers.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListedesPrixdesFournissuers.ItemAppearance.Normal.Options.UseFont = true;
+            this.ListedesPrixdesFournissuers.Name = "ListedesPrixdesFournissuers";
+            this.ListedesPrixdesFournissuers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ListedesPrixdesFournissuers_ItemClick);
+            // 
             // MainRibbonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1370,5 +1386,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup25;
         private DevExpress.XtraBars.BarButtonItem barBtnlisteBondeLivraison;
         private DevExpress.XtraBars.BarButtonItem barBtnCrrerBondeLivraisons;
+        private DevExpress.XtraBars.BarButtonItem ListedesPrixdesFournissuers;
     }
 }

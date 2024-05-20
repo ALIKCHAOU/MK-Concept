@@ -22,6 +22,8 @@ using System.Net;
 using System.Configuration;
 using System.Net.Mime;
 using Gestion_de_Stock.Model.Enumuration;
+using DevExpress.XtraPrinting;
+using System.Diagnostics;
 
 namespace Gestion_de_Stock.Forms
 {
@@ -138,7 +140,7 @@ namespace Gestion_de_Stock.Forms
 
             string Currency = "TND";
             RFIpression.Parameters["TotalDevis"].Value = GetDevisDB.Total_DevisHT + " " + Currency;
-         
+
             decimal Timber = db.Societes.FirstOrDefault().Timber;
             RFIpression.Parameters["Timbre"].Value = Timber.ToString() + " " + Currency;
 
@@ -151,7 +153,7 @@ namespace Gestion_de_Stock.Forms
             RFIpression.Parameters["TOTALTVA"].Value = GetDevisDB.TOTALTVA + " " + Currency;
             RFIpression.Parameters["MatriculeFiscale"].Value = GetDevisDB.Client.MatriculeFiscale;
             RFIpression.Parameters["TVA"].Value = societe.TVA + " " + "%";
-            RFIpression.DataSource = GetDevisDB.ligneDevis.ToList();      
+            RFIpression.DataSource = GetDevisDB.ligneDevis.ToList();
             ReportPrintTool tool = new ReportPrintTool(RFIpression);
             tool.ShowPreviewDialog();
 
@@ -162,11 +164,11 @@ namespace Gestion_de_Stock.Forms
         {
             db = new Model.ApplicationContext();
             string CodeDevis = gridView1.GetFocusedRowCellValue("Code").ToString();
-            Devis GetDevisDB = db.Devis.Include("Client").Include("ligneDevis").FirstOrDefault(x=> x.Code.Equals(CodeDevis));
+            Devis GetDevisDB = db.Devis.Include("Client").Include("ligneDevis").FirstOrDefault(x => x.Code.Equals(CodeDevis));
             FormshowNotParent(Gestion_de_Stock.Forms.FrmDetailsDevis.InstanceFrmDetaisDevis);
             if (Application.OpenForms.OfType<FrmDetailsDevis>().FirstOrDefault() != null)
             {
-                Application.OpenForms.OfType<FrmDetailsDevis>().FirstOrDefault().ligneDevisBindingSource.DataSource = GetDevisDB.ligneDevis.ToList();                
+                Application.OpenForms.OfType<FrmDetailsDevis>().FirstOrDefault().ligneDevisBindingSource.DataSource = GetDevisDB.ligneDevis.ToList();
                 Application.OpenForms.OfType<FrmDetailsDevis>().FirstOrDefault().TxtClient.Text = GetDevisDB.Client.RaisonSociale;
                 Application.OpenForms.OfType<FrmDetailsDevis>().FirstOrDefault().TxtCodeDevis.Text = GetDevisDB.Code;
             }
@@ -193,7 +195,7 @@ namespace Gestion_de_Stock.Forms
                 Facture.NumeoDocument = DevisDB.Code;
                 Facture.Client = DevisDB.Client;
                 Facture.TVA = DevisDB.TVA;
-                Facture.Total_FactureHT = DevisDB.Total_DevisHT;                    
+                Facture.Total_FactureHT = DevisDB.Total_DevisHT;
                 Facture.Total_FactureTTC = decimal.Add(Facture.Total_FactureHT, Facture.TOTALTVA);
                 Facture.ligneFactures = new List<ligneFacture>();
                 foreach (var LD in DevisDB.ligneDevis)
@@ -230,21 +232,21 @@ namespace Gestion_de_Stock.Forms
                     }
 
                 }
-               
+
                 Facture.Client = DevisDB.Client;
-               
+
                 db.Factures.Add(Facture);
                 db.SaveChanges();
                 XtraMessageBox.Show("Creation de Facture a ètè termineè avec succès", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Information);
-               
+
                 //waiting Form  mise a jour des interfaces 
-             
+
                 if (Application.OpenForms.OfType<FrmListeFactures>().FirstOrDefault() != null)
                     Application.OpenForms.OfType<FrmListeFactures>().First().factureBindingSource.DataSource = db.Factures.Include("Client").Include("ligneFactures").OrderByDescending(x => x.DateCreation).ToList();
-            
-       
 
-              
+
+
+
             }
 
 
@@ -271,7 +273,7 @@ namespace Gestion_de_Stock.Forms
 
         private void BtnCreerBonDeCommande_Click(object sender, EventArgs e)
         {
-       
+
         }
         public void SendRapport()
         {
@@ -288,14 +290,14 @@ namespace Gestion_de_Stock.Forms
                 DeliveryMethod = SmtpDeliveryMethod.Network,
             };
 
-        
+
             string CodeDevis = gridView1.GetFocusedRowCellValue("Code").ToString();
             Devis GetDevisDB = db.Devis.Include("Client").FirstOrDefault(x => x.Code.Equals(CodeDevis));
-            if(string.IsNullOrEmpty(GetDevisDB.Client.Email))
+            if (string.IsNullOrEmpty(GetDevisDB.Client.Email))
             {
                 XtraMessageBox.Show("Email Client est Invalid ", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-              
+
             }
 
             DevisClient RFIpression = new DevisClient();
@@ -341,12 +343,12 @@ namespace Gestion_de_Stock.Forms
             reportingStream.Flush();
             XtraMessageBox.Show("Email envoyé avec succès", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        
+
 
         private void repositorySendEmail_Click(object sender, EventArgs e)
         {
             SendRapport();
-           
+
         }
 
         private void BtnCreerBonDeLivraison_Click(object sender, EventArgs e)
@@ -373,7 +375,7 @@ namespace Gestion_de_Stock.Forms
                 Vente Vente = new Vente();
                 Vente.IntituleClient = devis.Client.RaisonSociale;
                 Vente.NumClient = devis.Client.Code;
-              
+
                 Vente.TotalHT = devis.Total_DevisHT;
                 Vente.TotalTTC = devis.Total_DevisTTC;
                 Vente.LigneVentes = new List<LigneVente>();
@@ -388,7 +390,7 @@ namespace Gestion_de_Stock.Forms
                     LF.TVA = LD.TVA;
                     Vente.LigneVentes.Add(LF);
 
-                }            
+                }
                 Vente.MontantRegle = 0m;
                 Vente.EtatVente = EtatVente.NonReglee;
                 Vente.MontantReglement = Vente.TotalTTC;
@@ -401,8 +403,8 @@ namespace Gestion_de_Stock.Forms
                 if (Application.OpenForms.OfType<FrmListeVente>().FirstOrDefault() != null)
                     Application.OpenForms.OfType<FrmListeVente>().First().venteBindingSource.DataSource = db.Vente.ToList();
 
-            
-         
+
+
 
             }
         }
@@ -431,7 +433,7 @@ namespace Gestion_de_Stock.Forms
                 Vente Vente = new Vente();
                 Vente.IntituleClient = devis.Client.RaisonSociale;
                 Vente.NumClient = devis.Client.Code;
-        
+
                 Vente.TotalHT = devis.Total_DevisHT;
                 Vente.TotalTTC = devis.Total_DevisTTC;
                 Vente.LigneVentes = new List<LigneVente>();
@@ -448,7 +450,7 @@ namespace Gestion_de_Stock.Forms
 
 
                 }
-            
+
                 Vente.MontantRegle = 0m;
                 Vente.EtatVente = EtatVente.NonReglee;
                 Vente.MontantReglement = Vente.TotalTTC;
@@ -467,7 +469,7 @@ namespace Gestion_de_Stock.Forms
                 Facture.Client = devis.Client;
                 Societe societe = db.Societes.FirstOrDefault();
 
-                Facture.TVA = societe != null ? societe.TVA :  19;
+                Facture.TVA = societe != null ? societe.TVA : 19;
                 Facture.Total_FactureHT = devis.Total_DevisHT;
                 Facture.Total_FactureTTC = decimal.Add(Facture.Total_FactureHT, Facture.TOTALTVA);
                 Facture.ligneFactures = new List<ligneFacture>();
@@ -481,7 +483,7 @@ namespace Gestion_de_Stock.Forms
                     LF.TVA = societe != null ? societe.TVA : 19;
                     Facture.ligneFactures.Add(LF);
 
-                }              
+                }
                 Facture.Client = devis.Client;
                 db.Factures.Add(Facture);
                 db.SaveChanges();
@@ -496,6 +498,69 @@ namespace Gestion_de_Stock.Forms
 
 
         }
+
+        private void BtnExportExcel_Click(object sender, EventArgs e)
+        {
+            string path = "Liste des devis.xlsx";
+
+            //Customize export options
+            (gridControl1.MainView as GridView).OptionsPrint.PrintHeader = false;
+            XlsxExportOptionsEx advOptions = new XlsxExportOptionsEx();
+            advOptions.AllowGrouping = DevExpress.Utils.DefaultBoolean.False;
+            advOptions.ShowTotalSummaries = DevExpress.Utils.DefaultBoolean.False;
+            advOptions.SheetName = "Exported from Data Grid";
+
+            gridControl1.ExportToXlsx(path, advOptions);
+            // Open the created XLSX file with the default application.
+            Process.Start(path);
+        }
+
+        private void BtnExportPdF_Click(object sender, EventArgs e)
+        {
+            if (!gridControl1.IsPrintingAvailable)
+            {
+                MessageBox.Show("The 'DevExpress.XtraPrinting' Library is not found", "Error");
+                return;
+            }
+            // Opens the Preview window.
+            gridControl1.ShowPrintPreview();
+        }
+
+        private void repositoryItemSupprimer_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("voulez vous supprimer cet élément ?", "Confirmation", MessageBoxButtons.YesNo) != DialogResult.No)
+            {
+
+                Devis C = gridView1.GetFocusedRow() as Devis;
+                if (C == null)
+                {
+                    XtraMessageBox.Show("La Suppression a été annulé", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                var DevisDb = db.Devis.Include("ligneDevis").FirstOrDefault(x => x.Code == C.Code);
+                List<ligneDevis> ligneDeviss = new List<ligneDevis>();
+                ligneDeviss = DevisDb.ligneDevis.ToList();
+                foreach (var Ld in ligneDeviss)
+                {
+                    ligneDevis lignesDevis = db.ligneDevis.Find(Ld.Id);
+                    db.ligneDevis.Remove(lignesDevis);
+                    db.SaveChanges();
+                }
+                db.Devis.Remove(DevisDb);
+                db.SaveChanges();
+                devisBindingSource.DataSource = db.Devis.OrderByDescending(x => x.DateCreation).ToList();
+
+                XtraMessageBox.Show("le Devis a été supprimée avec Succès", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+
+                XtraMessageBox.Show("La Suppression a été annulée", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+            }
+        }
     }
-    
+
 }
