@@ -26,10 +26,10 @@ namespace Gestion_de_Stock.Model
 
         public decimal Remise { get; set; }
 
-        public int Metrage { get; set; }
+       
 
 
-        public int TVA { get; set; } =19;
+        public int TVA { get; set; }
 
         [Required]
         public decimal TotalLigneHT { get { return Math.Round(Decimal.Multiply(PrixHT, Qty)  - Decimal.Divide(Decimal.Multiply(Decimal.Multiply(PrixHT, Qty), Remise), 100), 3); } }

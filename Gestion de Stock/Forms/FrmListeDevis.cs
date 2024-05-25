@@ -385,7 +385,7 @@ namespace Gestion_de_Stock.Forms
                     LigneVente LF = new LigneVente();
                     LF.NomArticle = LD.Description;
                     LF.PrixHT = LD.PrixHT;
-                    LF.Metrage = LD.Metrage;
+                
                     LF.Quantity = LD.Qty;
                     LF.Remise = LD.Remise;
                     LF.TVA = LD.TVA;
@@ -443,7 +443,7 @@ namespace Gestion_de_Stock.Forms
                     LigneVente LF = new LigneVente();
                     LF.NomArticle = LD.Description;
                     LF.PrixHT = LD.PrixHT;
-                    LF.Metrage = LD.Metrage;
+                   
                     LF.Quantity = LD.Qty;
                     LF.Remise = LD.Remise;
                     LF.TVA = LD.TVA;
