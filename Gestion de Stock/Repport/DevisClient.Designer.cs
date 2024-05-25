@@ -752,7 +752,7 @@
             this.xrLine5.BorderWidth = 1F;
             this.xrLine5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.xrLine5.LineWidth = 2;
-            this.xrLine5.LocationFloat = new DevExpress.Utils.PointFloat(0.2086813F, 114.4477F);
+            this.xrLine5.LocationFloat = new DevExpress.Utils.PointFloat(0.2086813F, 117.4477F);
             this.xrLine5.Name = "xrLine5";
             this.xrLine5.SizeF = new System.Drawing.SizeF(709.5613F, 14.20455F);
             this.xrLine5.StylePriority.UseBorderWidth = false;
@@ -787,9 +787,9 @@
             // 
             // xrPictureBox1
             // 
-            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(447.9167F, 24.61432F);
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(390.625F, 10.00001F);
             this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(250.4167F, 78.01895F);
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(307.7084F, 104.4477F);
             this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
             this.xrPictureBox1.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.xrPictureBox1_BeforePrint);
             // 

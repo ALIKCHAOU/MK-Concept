@@ -56,7 +56,7 @@ namespace Gestion_de_Stock.Forms
             Devis D = new Devis();
             TxTReference.Text = D.Reference;
          
-            dateEditValidite.DateTime = DateTime.Now.AddDays(7);
+            dateLivraison.DateTime = DateTime.Now.AddDays(7);
 
 
 
@@ -103,6 +103,7 @@ namespace Gestion_de_Stock.Forms
             devis.Reference = TxTReference.Text;          
             devis.Total_DevisHT = ListeGrid.Sum(x => x.TotalLigneHT);
             devis.Total_DevisTTC = decimal.Add(devis.Total_DevisHT, devis.TOTALTVA);// ListeGrid.Sum(x => x.TotalLigneTTC);
+            devis.Datelivraison = dateLivraison.DateTime;
             db.Devis.Add(devis);
             db.SaveChanges();
             XtraMessageBox.Show("Devis e a été  Ajouter", "Configuration de l'application", MessageBoxButtons.OK, MessageBoxIcon.Information);

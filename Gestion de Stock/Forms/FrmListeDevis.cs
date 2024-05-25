@@ -24,6 +24,7 @@ using System.Net.Mime;
 using Gestion_de_Stock.Model.Enumuration;
 using DevExpress.XtraPrinting;
 using System.Diagnostics;
+using DevExpress.XtraGrid;
 
 namespace Gestion_de_Stock.Forms
 {
@@ -45,8 +46,43 @@ namespace Gestion_de_Stock.Forms
         {
             InitializeComponent();
             db = new Model.ApplicationContext();
+            CustomDrawCell(gridControl1, gridView1);
         }
+        public static void CustomDrawCell(GridControl gridControl, GridView gridView)
+        {
+            // Handle this event to paint cells manually
+            GridView view = gridView;
+            gridView.CustomDrawCell += (s, e) => {
+                if (e.Column.VisibleIndex != 4 ) return;
+                if (e.Column.VisibleIndex == 4 && e.CellValue != null)
+                {
+                    DateTime DateExpiration = Convert.ToDateTime(e.CellValue);
+                    DateTime Date = DateTime.Now;
+                    if ((DateExpiration - Date).TotalDays < 7 && e.CellValue != null)
+                    {
+                        e.Cache.FillRectangle(Color.Salmon, e.Bounds);
+                        e.Appearance.DrawString(e.Cache, e.DisplayText, e.Bounds);
+                        e.Handled = true;
+                    }
+                }
+                //if (e.Column.VisibleIndex == 3 && e.CellValue != null)
+                //{
+                //    int Quantite = 0;
+                //    if (!string.IsNullOrEmpty(e.CellValue.ToString()))
+                //        Quantite = Convert.ToInt32(e.CellValue);
+                //    int colStockmin = Convert.ToInt32(view.GetRowCellValue(e.RowHandle, view.Columns[7]).ToString());
+                //    if (Quantite <= colStockmin)
+                //    {
 
+                //        e.Cache.FillRectangle(Color.Salmon, e.Bounds);
+                //        e.Appearance.DrawString(e.Cache, e.DisplayText, e.Bounds);
+                //        e.Handled = true;
+                //    }
+
+                //}
+
+            };
+        }
         private void FrmListeDevis_FormClosed(object sender, FormClosedEventArgs e)
         {
             _FrmListeDevis = null;
@@ -57,29 +93,7 @@ namespace Gestion_de_Stock.Forms
             devisBindingSource.DataSource = db.Devis.Include("Client").Include("ligneDevis").OrderByDescending(x => x.DateCreation).ToList();
         }
 
-        private void ViewDocument_Click(object sender, EventArgs e)
-        {
-            string CodeDevis = gridView1.GetFocusedRowCellValue("Code").ToString();
-            Devis GetDevisDB = db.Devis.Find(CodeDevis);
-
-            //PDFViewer PDFViewer1;
-            //byte[] baPDF; // load the decrypted PDF to this byte array
-
-            //PDFViewer1.LoadDocument(baPDF);
-            FrmViewPdf frmViewPdf = new FrmViewPdf();
-            FormshowNotParent(Gestion_de_Stock.Forms.FrmViewPdf.InstanceFrmViewPdf);
-            if (Application.OpenForms.OfType<FrmViewPdf>().FirstOrDefault() != null)
-                frmViewPdf = Application.OpenForms.OfType<FrmViewPdf>().First();
-
-            byte[] byteArray = GetDevisDB.Attachment;
-
-            frmViewPdf.pdfViewer1.DetachStreamAfterLoadComplete = true;
-            if (byteArray != null)
-            {
-                using (MemoryStream ms = new MemoryStream(byteArray))
-                    frmViewPdf.pdfViewer1.LoadDocument(ms);
-            }
-        }
+       
         public void FormshowNotParent(Form frm)
         {
             // waiting Form

@@ -371,6 +371,7 @@
             this.gridColumn1.Caption = "Date livraison";
             this.gridColumn1.FieldName = "Datelivraison";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 4;
             // 
