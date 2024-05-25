@@ -174,6 +174,7 @@ namespace Gestion_de_Stock.Forms
                 Application.OpenForms.OfType<FrmDetailsDevis>().FirstOrDefault().TxtTvaclient.Text = GetDevisDB.TVA.ToString();
 
             }
+        }
 
         private void BtnCreerFacture_Click(object sender, EventArgs e)
         {
