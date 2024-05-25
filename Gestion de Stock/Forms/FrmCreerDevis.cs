@@ -55,9 +55,7 @@ namespace Gestion_de_Stock.Forms
 
             Devis D = new Devis();
             TxTReference.Text = D.Reference;
-            Societe societe = db.Societes.FirstOrDefault();
-
-            TXTTVA.Text = societe != null ? societe.TVA.ToString() : "19";
+         
             dateEditValidite.DateTime = DateTime.Now.AddDays(7);
 
 
@@ -95,20 +93,14 @@ namespace Gestion_de_Stock.Forms
             Client client = db.Clients.Find(ClientSelected);
             Devis devis = new Devis();
             devis.Client = client;
-            devis.TVA = int.Parse(TXTTVA.Text);
+            
             foreach (var L in ListeGrid)
             {
-                L.TVA = devis.TVA;
+              // L.TVA = devis.TVA;
+                devis.TVA = L.TVA;
             }
             devis.ligneDevis = ListeGrid;
-            devis.Reference = TxTReference.Text;
-
-            if (!String.IsNullOrEmpty(filePath))
-            {
-                byte[] imag = File.ReadAllBytes(filePath);
-                devis.Attachment = imag;
-                devis.FileName = filePath;
-            }
+            devis.Reference = TxTReference.Text;          
             devis.Total_DevisHT = ListeGrid.Sum(x => x.TotalLigneHT);
             devis.Total_DevisTTC = decimal.Add(devis.Total_DevisHT, devis.TOTALTVA);// ListeGrid.Sum(x => x.TotalLigneTTC);
             db.Devis.Add(devis);

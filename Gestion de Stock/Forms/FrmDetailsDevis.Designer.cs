@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDetailsDevis));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
@@ -59,6 +59,8 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.TotalLigneTTC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TVA = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -171,12 +173,14 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.TotalLigneTTC,
             this.ColSupprimer,
             this.colLibelleServices,
             this.colPrixHT,
             this.colQty,
             this.colRemise,
-            this.colTotalLigneHt});
+            this.colTotalLigneHt,
+            this.TVA});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
@@ -193,14 +197,14 @@
             this.ColSupprimer.ColumnEdit = this.repositoryItemButtonDelete;
             this.ColSupprimer.Name = "ColSupprimer";
             this.ColSupprimer.Visible = true;
-            this.ColSupprimer.VisibleIndex = 5;
+            this.ColSupprimer.VisibleIndex = 7;
             // 
             // repositoryItemButtonDelete
             // 
             this.repositoryItemButtonDelete.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.repositoryItemButtonDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryItemButtonDelete.Name = "repositoryItemButtonDelete";
             this.repositoryItemButtonDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonDelete.Click += new System.EventHandler(this.repositoryItemButtonDelete_Click);
@@ -209,7 +213,6 @@
             // 
             this.colLibelleServices.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colLibelleServices.AppearanceHeader.Options.UseFont = true;
-            this.colLibelleServices.ColumnEdit = this.SearchLookUpPack;
             this.colLibelleServices.FieldName = "Description";
             this.colLibelleServices.Name = "colLibelleServices";
             this.colLibelleServices.Visible = true;
@@ -227,7 +230,6 @@
             this.SearchLookUpPack.NullText = "Sélectionner Pack";
             this.SearchLookUpPack.ValueMember = "Designation";
             this.SearchLookUpPack.View = this.repositoryItemSearchLookUpEdit1View;
-
             // 
             // packBindingSource
             // 
@@ -276,7 +278,7 @@
             this.colRemise.FieldName = "Remise";
             this.colRemise.Name = "colRemise";
             this.colRemise.Visible = true;
-            this.colRemise.VisibleIndex = 3;
+            this.colRemise.VisibleIndex = 4;
             // 
             // colTotalLigneHt
             // 
@@ -291,7 +293,7 @@
             this.colTotalLigneHt.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalLigneHT", "={0:n3}")});
             this.colTotalLigneHt.Visible = true;
-            this.colTotalLigneHt.VisibleIndex = 4;
+            this.colTotalLigneHt.VisibleIndex = 5;
             // 
             // layoutControlGroup2
             // 
@@ -376,6 +378,24 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
+            // TotalLigneTTC
+            // 
+            this.TotalLigneTTC.Caption = "Total TTC";
+            this.TotalLigneTTC.DisplayFormat.FormatString = "n3";
+            this.TotalLigneTTC.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.TotalLigneTTC.FieldName = "TotalLigneTTC";
+            this.TotalLigneTTC.Name = "TotalLigneTTC";
+            this.TotalLigneTTC.Visible = true;
+            this.TotalLigneTTC.VisibleIndex = 6;
+            // 
+            // TVA
+            // 
+            this.TVA.Caption = "TVA";
+            this.TVA.FieldName = "TVA";
+            this.TVA.Name = "TVA";
+            this.TVA.Visible = true;
+            this.TVA.VisibleIndex = 3;
+            // 
             // FrmDetailsDevis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -446,5 +466,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBoxListePrice;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonDelete;
         private DevExpress.XtraGrid.Columns.GridColumn ColSupprimer;
+        private DevExpress.XtraGrid.Columns.GridColumn TotalLigneTTC;
+        private DevExpress.XtraGrid.Columns.GridColumn TVA;
     }
 }
