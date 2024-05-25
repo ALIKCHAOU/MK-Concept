@@ -38,7 +38,7 @@ namespace Gestion_de_Stock.Forms
 
         private void FrmDetaisDevis_Load(object sender, EventArgs e)
         {
-          
+            clientBindingSource.DataSource = db.Clients.Where(x => x.Status == Status.Active).Select(x => new { x.Code, x.RaisonSociale, x.Adresse, x.Ville }).ToList();
         }
 
         private void FrmDetaisDevis_FormClosed(object sender, FormClosedEventArgs e)
@@ -79,7 +79,7 @@ namespace Gestion_de_Stock.Forms
                     Ld.PrixHT = L.PrixHT;
                     Ld.Remise = L.Remise;
                     Ld.Qty = L.Qty;                   
-                    Ld.TVA = GetDevisDB.TVA;
+                    Ld.TVA = L.TVA;
                     ligneDevis.Add(Ld);
                 }
                 var ListeLigne = GetDevisDB.ligneDevis.ToList();
@@ -91,10 +91,23 @@ namespace Gestion_de_Stock.Forms
                 }
 
                 GetDevisDB.ligneDevis = ligneDevis;
-
+                GetDevisDB.TVA = !string.IsNullOrEmpty(TxtTvaclient.Text) ? Convert.ToInt16(TxtTvaclient.Text) : GetDevisDB.TVA;
                 db.SaveChanges();
                 GetDevisDB.Total_DevisHT = ListeGrid.Sum(x => x.TotalLigneHT);
                 GetDevisDB.Total_DevisTTC = ListeGrid.Sum(x => x.TotalLigneTTC);
+                GridView view2 = searchLookUpEdit1.Properties.View;
+                int rowHandle2 = view2.FocusedRowHandle;
+                string fieldName2 = "Code"; // or other field name  
+                object ClientSelected = view2.GetRowCellValue(rowHandle2, fieldName2);
+                ///Condition existance Fournisseur
+                if (ClientSelected != null)
+                {
+
+                    Client client = db.Clients.Find(ClientSelected);
+
+                    GetDevisDB.Client = client;
+                }
+                
 
                 db.SaveChanges();
                 this.Hide();

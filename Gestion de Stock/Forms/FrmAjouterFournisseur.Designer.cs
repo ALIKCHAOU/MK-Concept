@@ -209,7 +209,7 @@
             // 
             this.TxtTelephone.Location = new System.Drawing.Point(201, 252);
             this.TxtTelephone.Name = "TxtTelephone";
-            this.TxtTelephone.Properties.Mask.EditMask = "(\\(\\d\\d\\d\\) )\\d{2}-\\d\\d\\d-\\d\\d\\d";
+            this.TxtTelephone.Properties.Mask.EditMask = "\\d{2}-\\d\\d\\d-\\d\\d\\d";
             this.TxtTelephone.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.TxtTelephone.Size = new System.Drawing.Size(338, 20);
             this.TxtTelephone.StyleController = this.layoutControl2;

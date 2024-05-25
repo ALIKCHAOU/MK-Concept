@@ -171,9 +171,9 @@ namespace Gestion_de_Stock.Forms
                 Application.OpenForms.OfType<FrmDetailsDevis>().FirstOrDefault().ligneDevisBindingSource.DataSource = GetDevisDB.ligneDevis.ToList();
                 Application.OpenForms.OfType<FrmDetailsDevis>().FirstOrDefault().TxtClient.Text = GetDevisDB.Client.RaisonSociale;
                 Application.OpenForms.OfType<FrmDetailsDevis>().FirstOrDefault().TxtCodeDevis.Text = GetDevisDB.Code;
-            }
+                Application.OpenForms.OfType<FrmDetailsDevis>().FirstOrDefault().TxtTvaclient.Text = GetDevisDB.TVA.ToString();
 
-        }
+            }
 
         private void BtnCreerFacture_Click(object sender, EventArgs e)
         {

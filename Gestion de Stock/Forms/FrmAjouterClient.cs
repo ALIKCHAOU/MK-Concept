@@ -123,8 +123,10 @@ namespace Gestion_de_Stock.Forms
 
             if (Application.OpenForms.OfType<FrmCreerFacture>().FirstOrDefault() != null)
                 Application.OpenForms.OfType<FrmCreerFacture>().First().clientBindingSource.DataSource = db.Clients.Where(x => x.Status == Status.Active).Select(x => new { x.Code, x.RaisonSociale, x.Adresse, x.Ville }).ToList();
-            
 
+            if (Application.OpenForms.OfType<FrmDetailsDevis>().FirstOrDefault() != null)
+                Application.OpenForms.OfType<FrmDetailsDevis>().First().clientBindingSource.DataSource = db.Clients.Where(x => x.Status == Status.Active).Select(x => new { x.Code, x.RaisonSociale, x.Adresse, x.Ville }).ToList();
+            
         }
 
         private void FrmAjouterClient_Load(object sender, EventArgs e)

@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListeDevis));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListeDevis));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.BtnExportPdF = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnExportExcel = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.DateFin = new DevExpress.XtraEditors.DateEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -54,6 +56,8 @@
             this.ColDetais = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonDetaisDevis = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Supprimer = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemSupprimer = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.DateDebutItem = new DevExpress.XtraLayout.LayoutControlItem();
@@ -61,14 +65,10 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.Supprimer = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemSupprimer = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.BtnExportExcel = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.BtnExportPdF = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -84,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImprimerItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonDetaisDevis)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSupprimer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateDebutItem)).BeginInit();
@@ -91,11 +92,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSupprimer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -133,6 +133,32 @@
             this.layoutControl2.Size = new System.Drawing.Size(937, 441);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
+            // 
+            // BtnExportPdF
+            // 
+            this.BtnExportPdF.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnExportPdF.Appearance.Options.UseFont = true;
+            this.BtnExportPdF.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnExportPdF.ImageOptions.Image")));
+            this.BtnExportPdF.Location = new System.Drawing.Point(703, 36);
+            this.BtnExportPdF.Name = "BtnExportPdF";
+            this.BtnExportPdF.Size = new System.Drawing.Size(222, 22);
+            this.BtnExportPdF.StyleController = this.layoutControl2;
+            this.BtnExportPdF.TabIndex = 12;
+            this.BtnExportPdF.Text = "Export PdF";
+            this.BtnExportPdF.Click += new System.EventHandler(this.BtnExportPdF_Click);
+            // 
+            // BtnExportExcel
+            // 
+            this.BtnExportExcel.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnExportExcel.Appearance.Options.UseFont = true;
+            this.BtnExportExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnExportExcel.ImageOptions.Image")));
+            this.BtnExportExcel.Location = new System.Drawing.Point(477, 36);
+            this.BtnExportExcel.Name = "BtnExportExcel";
+            this.BtnExportExcel.Size = new System.Drawing.Size(222, 22);
+            this.BtnExportExcel.StyleController = this.layoutControl2;
+            this.BtnExportExcel.TabIndex = 11;
+            this.BtnExportExcel.Text = "Export Excel";
+            this.BtnExportExcel.Click += new System.EventHandler(this.BtnExportExcel_Click);
             // 
             // simpleButton2
             // 
@@ -266,7 +292,7 @@
             this.colTotal_DevisHT.AppearanceHeader.Options.UseFont = true;
             this.colTotal_DevisHT.Caption = "Total HT";
             this.colTotal_DevisHT.FieldName = "Total_DevisHT";
-            this.colTotal_DevisHT.GroupFormat.FormatString = "f3";
+            this.colTotal_DevisHT.GroupFormat.FormatString = "N3";
             this.colTotal_DevisHT.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTotal_DevisHT.Name = "colTotal_DevisHT";
             this.colTotal_DevisHT.OptionsColumn.AllowEdit = false;
@@ -279,7 +305,7 @@
             this.colTotal_DevisTTC.AppearanceHeader.Options.UseFont = true;
             this.colTotal_DevisTTC.Caption = "Total TTC";
             this.colTotal_DevisTTC.FieldName = "Total_DevisTTC";
-            this.colTotal_DevisTTC.GroupFormat.FormatString = "f3";
+            this.colTotal_DevisTTC.GroupFormat.FormatString = "N3";
             this.colTotal_DevisTTC.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTotal_DevisTTC.Name = "colTotal_DevisTTC";
             this.colTotal_DevisTTC.OptionsColumn.AllowEdit = false;
@@ -347,6 +373,26 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 4;
+            // 
+            // Supprimer
+            // 
+            this.Supprimer.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Supprimer.AppearanceHeader.Options.UseFont = true;
+            this.Supprimer.Caption = "Supprimer";
+            this.Supprimer.ColumnEdit = this.repositoryItemSupprimer;
+            this.Supprimer.Name = "Supprimer";
+            this.Supprimer.Visible = true;
+            this.Supprimer.VisibleIndex = 10;
+            // 
+            // repositoryItemSupprimer
+            // 
+            this.repositoryItemSupprimer.AutoHeight = false;
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            this.repositoryItemSupprimer.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.repositoryItemSupprimer.Name = "repositoryItemSupprimer";
+            this.repositoryItemSupprimer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemSupprimer.Click += new System.EventHandler(this.repositoryItemSupprimer_Click);
             // 
             // layoutControlGroup2
             // 
@@ -423,6 +469,24 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.BtnExportExcel;
+            this.layoutControlItem6.Location = new System.Drawing.Point(465, 24);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(226, 26);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.BtnExportPdF;
+            this.layoutControlItem7.Location = new System.Drawing.Point(691, 24);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(226, 26);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.TextVisible = false;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -442,70 +506,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(945, 467);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // Supprimer
-            // 
-            this.Supprimer.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Supprimer.AppearanceHeader.Options.UseFont = true;
-            this.Supprimer.Caption = "Supprimer";
-            this.Supprimer.ColumnEdit = this.repositoryItemSupprimer;
-            this.Supprimer.Name = "Supprimer";
-            this.Supprimer.Visible = true;
-            this.Supprimer.VisibleIndex = 10;
-            // 
-            // repositoryItemSupprimer
-            // 
-            this.repositoryItemSupprimer.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
-            this.repositoryItemSupprimer.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
-            this.repositoryItemSupprimer.Name = "repositoryItemSupprimer";
-            this.repositoryItemSupprimer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryItemSupprimer.Click += new System.EventHandler(this.repositoryItemSupprimer_Click);
-            // 
-            // BtnExportExcel
-            // 
-            this.BtnExportExcel.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnExportExcel.Appearance.Options.UseFont = true;
-            this.BtnExportExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnExportExcel.ImageOptions.Image")));
-            this.BtnExportExcel.Location = new System.Drawing.Point(477, 36);
-            this.BtnExportExcel.Name = "BtnExportExcel";
-            this.BtnExportExcel.Size = new System.Drawing.Size(222, 22);
-            this.BtnExportExcel.StyleController = this.layoutControl2;
-            this.BtnExportExcel.TabIndex = 11;
-            this.BtnExportExcel.Text = "Export Excel";
-            this.BtnExportExcel.Click += new System.EventHandler(this.BtnExportExcel_Click);
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.BtnExportExcel;
-            this.layoutControlItem6.Location = new System.Drawing.Point(465, 24);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(226, 26);
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextVisible = false;
-            // 
-            // BtnExportPdF
-            // 
-            this.BtnExportPdF.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnExportPdF.Appearance.Options.UseFont = true;
-            this.BtnExportPdF.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnExportPdF.ImageOptions.Image")));
-            this.BtnExportPdF.Location = new System.Drawing.Point(703, 36);
-            this.BtnExportPdF.Name = "BtnExportPdF";
-            this.BtnExportPdF.Size = new System.Drawing.Size(222, 22);
-            this.BtnExportPdF.StyleController = this.layoutControl2;
-            this.BtnExportPdF.TabIndex = 12;
-            this.BtnExportPdF.Text = "Export PdF";
-            this.BtnExportPdF.Click += new System.EventHandler(this.BtnExportPdF_Click);
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.BtnExportPdF;
-            this.layoutControlItem7.Location = new System.Drawing.Point(691, 24);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(226, 26);
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem7.TextVisible = false;
             // 
             // FrmListeDevis
             // 
@@ -535,6 +535,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImprimerItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonDetaisDevis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSupprimer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateDebutItem)).EndInit();
@@ -542,11 +543,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSupprimer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
