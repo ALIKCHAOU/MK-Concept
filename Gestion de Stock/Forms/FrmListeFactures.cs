@@ -121,8 +121,9 @@ namespace Gestion_de_Stock.Forms
 
         private void repositoryLignefacture_Click(object sender, EventArgs e)
         {
+            db = new Model.ApplicationContext();
             string CodeFacture = gridView1.GetFocusedRowCellValue("Code").ToString();
-            Facture GetFactureDB = db.Factures.Find(CodeFacture);
+            Facture GetFactureDB = db.Factures.Include("Client").Include("ligneFactures").FirstOrDefault(x=>x.Code.Equals(CodeFacture));
             FormshowNotParent(Gestion_de_Stock.Forms.FrmDetailsFacture.InstanceFrmDetailsFacture);
             if (Application.OpenForms.OfType<FrmDetailsFacture>().FirstOrDefault() != null)
             {
