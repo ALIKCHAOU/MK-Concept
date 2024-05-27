@@ -36,10 +36,11 @@
             this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.TxtCodeDevis = new DevExpress.XtraEditors.TextEdit();
+            this.TxtCodeFacture = new DevExpress.XtraEditors.TextEdit();
             this.TxtClient = new DevExpress.XtraEditors.TextEdit();
             this.BtnEnregister = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.ligneFactureBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.TotalLigneTTC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColSupprimer = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,7 +64,6 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ligneFactureBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -74,9 +74,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtCodeDevis.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCodeFacture.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtClient.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ligneFactureBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBoxListePrice)).BeginInit();
@@ -92,7 +93,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ligneFactureBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -118,7 +118,7 @@
             // 
             this.layoutControl2.Controls.Add(this.TxtTvaclient);
             this.layoutControl2.Controls.Add(this.searchLookUpEdit1);
-            this.layoutControl2.Controls.Add(this.TxtCodeDevis);
+            this.layoutControl2.Controls.Add(this.TxtCodeFacture);
             this.layoutControl2.Controls.Add(this.TxtClient);
             this.layoutControl2.Controls.Add(this.BtnEnregister);
             this.layoutControl2.Controls.Add(this.gridControl1);
@@ -162,14 +162,14 @@
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // TxtCodeDevis
+            // TxtCodeFacture
             // 
-            this.TxtCodeDevis.Location = new System.Drawing.Point(80, 12);
-            this.TxtCodeDevis.Name = "TxtCodeDevis";
-            this.TxtCodeDevis.Properties.ReadOnly = true;
-            this.TxtCodeDevis.Size = new System.Drawing.Size(140, 20);
-            this.TxtCodeDevis.StyleController = this.layoutControl2;
-            this.TxtCodeDevis.TabIndex = 7;
+            this.TxtCodeFacture.Location = new System.Drawing.Point(80, 12);
+            this.TxtCodeFacture.Name = "TxtCodeFacture";
+            this.TxtCodeFacture.Properties.ReadOnly = true;
+            this.TxtCodeFacture.Size = new System.Drawing.Size(140, 20);
+            this.TxtCodeFacture.StyleController = this.layoutControl2;
+            this.TxtCodeFacture.TabIndex = 7;
             // 
             // TxtClient
             // 
@@ -206,6 +206,10 @@
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // ligneFactureBindingSource
+            // 
+            this.ligneFactureBindingSource.DataSource = typeof(Gestion_de_Stock.Model.ligneFacture);
             // 
             // gridView1
             // 
@@ -406,7 +410,7 @@
             // 
             this.layoutControlItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem5.Control = this.TxtCodeDevis;
+            this.layoutControlItem5.Control = this.TxtCodeFacture;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(212, 24);
@@ -455,10 +459,6 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // ligneFactureBindingSource
-            // 
-            this.ligneFactureBindingSource.DataSource = typeof(Gestion_de_Stock.Model.ligneFacture);
-            // 
             // FrmDetailsFacture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -481,9 +481,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtCodeDevis.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCodeFacture.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtClient.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ligneFactureBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBoxListePrice)).EndInit();
@@ -499,7 +500,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ligneFactureBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -525,7 +525,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        public DevExpress.XtraEditors.TextEdit TxtCodeDevis;
+        public DevExpress.XtraEditors.TextEdit TxtCodeFacture;
         public DevExpress.XtraEditors.TextEdit TxtClient;
         private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit SearchLookUpPack;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit1View;
@@ -540,6 +540,6 @@
         public System.Windows.Forms.BindingSource clientBindingSource;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         public DevExpress.XtraEditors.TextEdit TxtTvaclient;
-        private System.Windows.Forms.BindingSource ligneFactureBindingSource;
+        public System.Windows.Forms.BindingSource ligneFactureBindingSource;
     }
 }

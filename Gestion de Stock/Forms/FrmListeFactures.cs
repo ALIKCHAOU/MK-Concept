@@ -126,7 +126,10 @@ namespace Gestion_de_Stock.Forms
             FormshowNotParent(Gestion_de_Stock.Forms.FrmDetailsFacture.InstanceFrmDetailsFacture);
             if (Application.OpenForms.OfType<FrmDetailsFacture>().FirstOrDefault() != null)
             {
-             //   Application.OpenForms.OfType<FrmDetailsFacture>().FirstOrDefault().ligneFactureBindingSource.DataSource = GetFactureDB.ligneFactures.ToList();
+                Application.OpenForms.OfType<FrmDetailsFacture>().FirstOrDefault().ligneFactureBindingSource.DataSource = GetFactureDB.ligneFactures.ToList();
+                Application.OpenForms.OfType<FrmDetailsFacture>().FirstOrDefault().TxtClient.Text = GetFactureDB.Client.RaisonSociale;
+                Application.OpenForms.OfType<FrmDetailsFacture>().FirstOrDefault().TxtCodeFacture.Text = GetFactureDB.Code;
+                Application.OpenForms.OfType<FrmDetailsFacture>().FirstOrDefault().TxtTvaclient.Text = GetFactureDB.TVA.ToString();
 
 
             }

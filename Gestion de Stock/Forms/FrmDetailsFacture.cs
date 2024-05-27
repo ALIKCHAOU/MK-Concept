@@ -49,52 +49,52 @@ namespace Gestion_de_Stock.Forms
         private void BtnEnregister_Click(object sender, EventArgs e)
         {
 
-            // Devis DB
-            //  Devis GetDevisDB = gridView1.GetFocusedRow() as Devis;
-            string Code = TxtCodeDevis.Text;
-            Devis GetDevisDB = db.Devis.Include("Client").Include("ligneDevis").FirstOrDefault(x => x.Code.Equals(Code));
-            List<ligneDevis> ListeGrid = new List<ligneDevis>();
+            // Facture DB
+            //  Facture GetFactureDB = gridView1.GetFocusedRow() as Facture;
+            string Code = TxtCodeFacture.Text;
+            Facture GetFactureDB = db.Factures.Include("Client").Include("ligneFactures").FirstOrDefault(x => x.Code.Equals(Code));
+            List<ligneFacture> ListeGrid = new List<ligneFacture>();
 
             int rowHandleListeGrid = 0;
             while (gridView1.IsValidRowHandle(rowHandleListeGrid))
             {
-                var data = gridView1.GetRow(rowHandleListeGrid) as ligneDevis;
+                var data = gridView1.GetRow(rowHandleListeGrid) as ligneFacture;
                 ListeGrid.Add(data);
                 bool isSelected = gridView1.IsRowSelected(rowHandleListeGrid);
                 rowHandleListeGrid++;
             }
             if (ListeGrid.Count == 0)
             {
-                XtraMessageBox.Show("ligne Devis est Invalide", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                XtraMessageBox.Show("ligne Facture est Invalide", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 return;
             }
             else
             {
-                List<ligneDevis> ligneDevis = new List<ligneDevis>();
+                List<ligneFacture> ligneFacture = new List<ligneFacture>();
                 foreach (var L in ListeGrid)
                 {
-                    ligneDevis Ld = new ligneDevis();
+                    ligneFacture Ld = new ligneFacture();
                     Ld.Description = L.Description;
                     Ld.Description = L.Description;
                     Ld.PrixHT = L.PrixHT;
                     Ld.Remise = L.Remise;
                     Ld.Qty = L.Qty;
                     Ld.TVA = L.TVA;
-                    ligneDevis.Add(Ld);
+                    ligneFacture.Add(Ld);
                 }
-                var ListeLigne = GetDevisDB.ligneDevis.ToList();
-                foreach (var lignedevis in ListeLigne)
+                var ListeLigne = GetFactureDB.ligneFactures.ToList();
+                foreach (var ligne in ListeLigne)
                 {
-                    ligneDevis Ld = db.ligneDevis.Find(lignedevis.Id);
-                    db.ligneDevis.Remove(Ld);
+                    ligneFacture Ld = db.ligneFactures.Find(ligne.Id);
+                    db.ligneFactures.Remove(Ld);
                     db.SaveChanges();
                 }
 
-                GetDevisDB.ligneDevis = ligneDevis;
-                GetDevisDB.TVA = !string.IsNullOrEmpty(TxtTvaclient.Text) ? Convert.ToInt16(TxtTvaclient.Text) : GetDevisDB.TVA;
+                GetFactureDB.ligneFactures = ligneFacture;
+                GetFactureDB.TVA = !string.IsNullOrEmpty(TxtTvaclient.Text) ? Convert.ToInt16(TxtTvaclient.Text) : GetFactureDB.TVA;
                 db.SaveChanges();
-                GetDevisDB.Total_DevisHT = ListeGrid.Sum(x => x.TotalLigneHT);
-                GetDevisDB.Total_DevisTTC = ListeGrid.Sum(x => x.TotalLigneTTC);
+                GetFactureDB.Total_FactureHT = ListeGrid.Sum(x => x.TotalLigneHT);
+                GetFactureDB.Total_FactureTTC = ListeGrid.Sum(x => x.TotalLigneTTC);
                 GridView view2 = searchLookUpEdit1.Properties.View;
                 int rowHandle2 = view2.FocusedRowHandle;
                 string fieldName2 = "Code"; // or other field name  
@@ -105,7 +105,7 @@ namespace Gestion_de_Stock.Forms
 
                     Client client = db.Clients.Find(ClientSelected);
 
-                    GetDevisDB.Client = client;
+                    GetFactureDB.Client = client;
                 }
 
 
@@ -120,9 +120,9 @@ namespace Gestion_de_Stock.Forms
                 }
                 SplashScreenManager.CloseForm();
                 //waiting Form 
-                if (Application.OpenForms.OfType<FrmListeDevis>().FirstOrDefault() != null)
-                    Application.OpenForms.OfType<FrmListeDevis>().First().devisBindingSource.DataSource = db.Devis.Include("Client").Include("ligneDevis").OrderByDescending(x => x.DateCreation).ToList();
-                XtraMessageBox.Show("Devis e a été  Modifier", "Configuration de l'application", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (Application.OpenForms.OfType<FrmListeFactures>().FirstOrDefault() != null)
+                    Application.OpenForms.OfType<FrmListeFactures>().First().factureBindingSource.DataSource = db.Factures.Include("Client").Include("ligneFactures").OrderByDescending(x => x.DateCreation).ToList();
+                XtraMessageBox.Show("Facture e a été  Modifier", "Configuration de l'application", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
 

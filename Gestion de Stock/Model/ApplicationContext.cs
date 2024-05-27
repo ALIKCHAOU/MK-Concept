@@ -67,6 +67,7 @@ namespace Gestion_de_Stock.Model
         public DbSet<LigneAchats> LigneAchats { get; set; }
 
 
+        public DbSet<ligneFacture> ligneFactures { get; set; }
 
         public DbSet<LigneVente> LigneVentes { get; set; }
 
