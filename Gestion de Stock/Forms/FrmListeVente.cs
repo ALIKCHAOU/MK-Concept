@@ -122,7 +122,7 @@ namespace Gestion_de_Stock.Forms
 
             List<LigneVente> ListeLV = new List<LigneVente>();
 
-            ListeLV = VentetDb.LigneVentes;
+            ListeLV = VentetDb.LigneVentes.ToList();
 
             //  FrmDetailVente.ligneVenteBindingSource.DataSource = ListeLV;
 

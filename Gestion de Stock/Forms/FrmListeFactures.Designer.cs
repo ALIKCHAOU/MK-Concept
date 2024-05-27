@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListeFactures));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
@@ -54,7 +54,6 @@
             this.colClient = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCertificateRS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtoncolCertificateRS = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.GCViewDocuement = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditViewDocument = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.GcLIgnefacture = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryLignefacture = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -102,7 +101,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(977, 422);
+            this.layoutControl1.Size = new System.Drawing.Size(977, 479);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -111,7 +110,7 @@
             this.groupControl1.Controls.Add(this.layoutControl2);
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(953, 398);
+            this.groupControl1.Size = new System.Drawing.Size(953, 455);
             this.groupControl1.TabIndex = 4;
             // 
             // layoutControl2
@@ -125,7 +124,7 @@
             this.layoutControl2.Location = new System.Drawing.Point(2, 20);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(949, 376);
+            this.layoutControl2.Size = new System.Drawing.Size(949, 433);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -194,7 +193,7 @@
             this.repositoryItemButtonEditViewDocument,
             this.repositoryLignefacture,
             this.repositoryItemButtonEditImprimer});
-            this.gridControl1.Size = new System.Drawing.Size(925, 302);
+            this.gridControl1.Size = new System.Drawing.Size(925, 359);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -215,7 +214,6 @@
             this.colTotal_FactureTTC,
             this.colClient,
             this.colCertificateRS,
-            this.GCViewDocuement,
             this.GcLIgnefacture,
             this.GvImprimer});
             this.gridView1.GridControl = this.gridControl1;
@@ -336,23 +334,12 @@
             this.repositoryItemButtoncolCertificateRS.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtoncolCertificateRS.Click += new System.EventHandler(this.repositoryItemButtoncolCertificateRS_Click);
             // 
-            // GCViewDocuement
-            // 
-            this.GCViewDocuement.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GCViewDocuement.AppearanceHeader.Options.UseFont = true;
-            this.GCViewDocuement.Caption = "View Docuement";
-            this.GCViewDocuement.ColumnEdit = this.repositoryItemButtonEditViewDocument;
-            this.GCViewDocuement.Name = "GCViewDocuement";
-            this.GCViewDocuement.Visible = true;
-            this.GCViewDocuement.VisibleIndex = 9;
-            this.GCViewDocuement.Width = 72;
-            // 
             // repositoryItemButtonEditViewDocument
             // 
             this.repositoryItemButtonEditViewDocument.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
             this.repositoryItemButtonEditViewDocument.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions4, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryItemButtonEditViewDocument.Name = "repositoryItemButtonEditViewDocument";
             this.repositoryItemButtonEditViewDocument.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -364,15 +351,15 @@
             this.GcLIgnefacture.ColumnEdit = this.repositoryLignefacture;
             this.GcLIgnefacture.Name = "GcLIgnefacture";
             this.GcLIgnefacture.Visible = true;
-            this.GcLIgnefacture.VisibleIndex = 10;
+            this.GcLIgnefacture.VisibleIndex = 9;
             this.GcLIgnefacture.Width = 72;
             // 
             // repositoryLignefacture
             // 
             this.repositoryLignefacture.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.repositoryLignefacture.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryLignefacture.Name = "repositoryLignefacture";
             this.repositoryLignefacture.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryLignefacture.Click += new System.EventHandler(this.repositoryLignefacture_Click);
@@ -385,15 +372,15 @@
             this.GvImprimer.ColumnEdit = this.repositoryItemButtonEditImprimer;
             this.GvImprimer.Name = "GvImprimer";
             this.GvImprimer.Visible = true;
-            this.GvImprimer.VisibleIndex = 11;
+            this.GvImprimer.VisibleIndex = 10;
             this.GvImprimer.Width = 88;
             // 
             // repositoryItemButtonEditImprimer
             // 
             this.repositoryItemButtonEditImprimer.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.repositoryItemButtonEditImprimer.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions4, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryItemButtonEditImprimer.Name = "repositoryItemButtonEditImprimer";
             this.repositoryItemButtonEditImprimer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditImprimer.Click += new System.EventHandler(this.repositoryItemButtonEditImprimer_Click);
@@ -410,7 +397,7 @@
             this.layoutControlItem6});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(949, 376);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(949, 433);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem2
@@ -418,7 +405,7 @@
             this.layoutControlItem2.Control = this.gridControl1;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 50);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(929, 306);
+            this.layoutControlItem2.Size = new System.Drawing.Size(929, 363);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -470,7 +457,7 @@
             this.layoutControlItem1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(977, 422);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(977, 479);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -478,7 +465,7 @@
             this.layoutControlItem1.Control = this.groupControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(957, 402);
+            this.layoutControlItem1.Size = new System.Drawing.Size(957, 459);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -486,7 +473,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(977, 422);
+            this.ClientSize = new System.Drawing.Size(977, 479);
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmListeFactures";
@@ -550,7 +537,6 @@
         private DevExpress.XtraEditors.SimpleButton BtnExportPdF;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraGrid.Columns.GridColumn GCViewDocuement;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditViewDocument;
         private DevExpress.XtraGrid.Columns.GridColumn GcLIgnefacture;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryLignefacture;

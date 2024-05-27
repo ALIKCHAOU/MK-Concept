@@ -123,10 +123,10 @@ namespace Gestion_de_Stock.Forms
         {
             string CodeFacture = gridView1.GetFocusedRowCellValue("Code").ToString();
             Facture GetFactureDB = db.Factures.Find(CodeFacture);
-            FormshowNotParent(Gestion_de_Stock.Forms.FrmDetailsFactures.InstanceDetaisFactures);
-            if (Application.OpenForms.OfType<FrmDetailsFactures>().FirstOrDefault() != null)
+            FormshowNotParent(Gestion_de_Stock.Forms.FrmDetailsFacture.InstanceFrmDetailsFacture);
+            if (Application.OpenForms.OfType<FrmDetailsFacture>().FirstOrDefault() != null)
             {
-                Application.OpenForms.OfType<FrmDetailsFactures>().FirstOrDefault().ligneFactureBindingSource.DataSource = GetFactureDB.ligneFactures.ToList();
+             //   Application.OpenForms.OfType<FrmDetailsFacture>().FirstOrDefault().ligneFactureBindingSource.DataSource = GetFactureDB.ligneFactures.ToList();
 
 
             }

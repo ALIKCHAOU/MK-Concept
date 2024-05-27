@@ -58,7 +58,7 @@ namespace Gestion_de_Stock.Model
         public decimal TotalTTC { get; set; }
 
         public int QteVendue { get; set; }
-        public List<LigneVente> LigneVentes { get; set; }
+        public ICollection<LigneVente> LigneVentes { get; set; }
 
 
         public decimal MontantReglement { get; set; }

@@ -227,7 +227,15 @@ namespace Gestion_de_Stock.Forms
                             {
                                 D.Nature = NatureMouvement.STEG;
                             }
-                       
+                            if (comboBoxNature.SelectedItem.ToString().Equals("Loyer"))
+                            {
+                                D.Nature = NatureMouvement.Loyer;
+                            }
+                            if (comboBoxNature.SelectedItem.ToString().Equals("Internet"))
+                            {
+                                D.Nature = NatureMouvement.Internet;
+                            }
+
                             D.Montant = Montant;
                             D.ModePaiement = "Espèce";
                             D.Commentaire = TxtCommentaire.Text;
@@ -464,7 +472,15 @@ namespace Gestion_de_Stock.Forms
                 if (comboBoxNature.SelectedItem.ToString().Equals("STEG"))
                 {
                     Cheque.Nature = NatureMouvement.STEG;
-                }            
+                }
+                if (comboBoxNature.SelectedItem.ToString().Equals("Loyer"))
+                {
+                    D.Nature = NatureMouvement.Loyer;
+                }
+                if (comboBoxNature.SelectedItem.ToString().Equals("Internet"))
+                {
+                    D.Nature = NatureMouvement.Internet;
+                }
                 Cheque.DateEcheance = dateEchance.DateTime;
                 Cheque.Commentaire = TxtCommentaire.Text;
                 db.CoffreCheques.Add(Cheque);

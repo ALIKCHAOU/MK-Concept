@@ -65,21 +65,7 @@ namespace Gestion_de_Stock.Forms
                         e.Handled = true;
                     }
                 }
-                //if (e.Column.VisibleIndex == 3 && e.CellValue != null)
-                //{
-                //    int Quantite = 0;
-                //    if (!string.IsNullOrEmpty(e.CellValue.ToString()))
-                //        Quantite = Convert.ToInt32(e.CellValue);
-                //    int colStockmin = Convert.ToInt32(view.GetRowCellValue(e.RowHandle, view.Columns[7]).ToString());
-                //    if (Quantite <= colStockmin)
-                //    {
-
-                //        e.Cache.FillRectangle(Color.Salmon, e.Bounds);
-                //        e.Appearance.DrawString(e.Cache, e.DisplayText, e.Bounds);
-                //        e.Handled = true;
-                //    }
-
-                //}
+       
 
             };
         }
@@ -190,84 +176,7 @@ namespace Gestion_de_Stock.Forms
             }
         }
 
-        private void BtnCreerFacture_Click(object sender, EventArgs e)
-        {
-            db = new Model.ApplicationContext();
-            int FocusedRowHandle = gridView1.FocusedRowHandle;
-            int count = gridView1.SelectedRowsCount;
-            // si la ligne n'est pas seléctionner
-            if (count == 0)
-            {
-                XtraMessageBox.Show("Merci de sélectionner une ligne", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else
-            {
-
-                var D = gridView1.GetFocusedRow() as Devis;
-                Devis DevisDB = db.Devis.Include("ligneDevis").Include("Client").FirstOrDefault(x => x.Code.Equals(D.Code));
-                Facture Facture = new Facture();
-                Facture.NumeoDocument = DevisDB.Code;
-                Facture.Client = DevisDB.Client;
-                Facture.TVA = DevisDB.TVA;
-                Facture.Total_FactureHT = DevisDB.Total_DevisHT;
-                Facture.Total_FactureTTC = decimal.Add(Facture.Total_FactureHT, Facture.TOTALTVA);
-                Facture.ligneFactures = new List<ligneFacture>();
-                foreach (var LD in DevisDB.ligneDevis)
-                {
-                    ligneFacture LF = new ligneFacture();
-                    LF.Description = LD.Description;
-                    LF.PrixHT = LD.PrixHT;
-                    LF.Qty = LD.Qty;
-                    LF.Remise = LD.Remise;
-                    LF.TVA = LD.TVA;
-                    Facture.ligneFactures.Add(LF);
-
-
-                }
-                // verification  de Qty en stock 
-                foreach (var L in Facture.ligneFactures)
-                {
-
-                    Article Pack = db.Articles.FirstOrDefault(x => x.Designation.Equals(L.Description));
-                    int PackQuantity = Pack.Quantity; // Stock Disponible 
-
-                    int QtyRequired = L.Qty;
-                    if (QtyRequired <= 0)
-                    {
-
-                        XtraMessageBox.Show("Quantité Pack Invalide ", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    if (QtyRequired > PackQuantity)
-                    {
-                        decimal MissedQty = decimal.Subtract(QtyRequired, PackQuantity);
-                        XtraMessageBox.Show("Pack  : " + Pack.Designation + " Quantité Manquante :" + MissedQty, "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                }
-
-                Facture.Client = DevisDB.Client;
-
-                db.Factures.Add(Facture);
-                db.SaveChanges();
-                XtraMessageBox.Show("Creation de Facture a ètè termineè avec succès", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                //waiting Form  mise a jour des interfaces 
-
-                if (Application.OpenForms.OfType<FrmListeFactures>().FirstOrDefault() != null)
-                    Application.OpenForms.OfType<FrmListeFactures>().First().factureBindingSource.DataSource = db.Factures.Include("Client").Include("ligneFactures").OrderByDescending(x => x.DateCreation).ToList();
-
-
-
-
-            }
-
-
-
-
-        }
+    
 
         private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
         {
@@ -286,10 +195,7 @@ namespace Gestion_de_Stock.Forms
             view.EndSelection();
         }
 
-        private void BtnCreerBonDeCommande_Click(object sender, EventArgs e)
-        {
-
-        }
+    
         public void SendRapport()
         {
             db = new Model.ApplicationContext();
@@ -366,12 +272,9 @@ namespace Gestion_de_Stock.Forms
 
         }
 
-        private void BtnCreerBonDeLivraison_Click(object sender, EventArgs e)
-        {
+     
 
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void BtnConvertToVente_Click(object sender, EventArgs e)
         {
             db = new Model.ApplicationContext();
             int FocusedRowHandle = gridView1.FocusedRowHandle;
@@ -413,18 +316,30 @@ namespace Gestion_de_Stock.Forms
                 db.SaveChanges();
                 Vente.Numero = "V" + (Vente.Id).ToString("D8");
                 db.SaveChanges();
-                XtraMessageBox.Show("creation Vente terminée avec succès", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Création Vente terminée avec succès", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //waiting Form 
                 if (Application.OpenForms.OfType<FrmListeVente>().FirstOrDefault() != null)
                     Application.OpenForms.OfType<FrmListeVente>().First().venteBindingSource.DataSource = db.Vente.ToList();
 
-
+                // suppression de devis apres la creation du facture
+                var DevisDb = db.Devis.Include("ligneDevis").FirstOrDefault(x => x.Code == devis.Code);
+                List<ligneDevis> ligneDeviss = new List<ligneDevis>();
+                ligneDeviss = DevisDb.ligneDevis.ToList();
+                foreach (var Ld in ligneDeviss)
+                {
+                    ligneDevis lignesDevis = db.ligneDevis.Find(Ld.Id);
+                    db.ligneDevis.Remove(lignesDevis);
+                    db.SaveChanges();
+                }
+                db.Devis.Remove(DevisDb);
+                db.SaveChanges();
+                devisBindingSource.DataSource = db.Devis.OrderByDescending(x => x.DateCreation).ToList();
 
 
             }
         }
 
-        private void simpleButton2_Click(object sender, EventArgs e)
+        private void BtnConvertToFacture_Click(object sender, EventArgs e)
         {
             db = new Model.ApplicationContext();
             int FocusedRowHandle = gridView1.FocusedRowHandle;
@@ -502,11 +417,26 @@ namespace Gestion_de_Stock.Forms
                 Facture.Client = devis.Client;
                 db.Factures.Add(Facture);
                 db.SaveChanges();
+       
+
+                // suppression de devis apres la creation du facture
+                var DevisDb = db.Devis.Include("ligneDevis").FirstOrDefault(x => x.Code == devis.Code);
+                List<ligneDevis> ligneDeviss = new List<ligneDevis>();
+                ligneDeviss = DevisDb.ligneDevis.ToList();
+                foreach (var Ld in ligneDeviss)
+                {
+                    ligneDevis lignesDevis = db.ligneDevis.Find(Ld.Id);
+                    db.ligneDevis.Remove(lignesDevis);
+                    db.SaveChanges();
+                }
+                db.Devis.Remove(DevisDb);
+                db.SaveChanges();
+                devisBindingSource.DataSource = db.Devis.OrderByDescending(x => x.DateCreation).ToList();
+
                 XtraMessageBox.Show("Création Facture terminer avec succès", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //waiting Form 
                 if (Application.OpenForms.OfType<FrmListeFactures>().FirstOrDefault() != null)
                     Application.OpenForms.OfType<FrmListeFactures>().First().factureBindingSource.DataSource = db.Factures.Include("Client").Include("ligneFactures").OrderByDescending(x => x.DateCreation).ToList();
-
             }
 
 

@@ -10,6 +10,8 @@ namespace Gestion_de_Stock.Model.Enumuration
     {
         Salarié = 1,    
         STEG=2,
+        Internet = 3,
+        Loyer = 4,
         Autre = 6,
         ClôtureCaisse=7,
         Achat=8,

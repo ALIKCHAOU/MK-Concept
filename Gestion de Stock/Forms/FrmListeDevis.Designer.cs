@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListeDevis));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.BtnExportPdF = new DevExpress.XtraEditors.SimpleButton();
             this.BtnExportExcel = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnConvertToFacture = new DevExpress.XtraEditors.SimpleButton();
             this.DateFin = new DevExpress.XtraEditors.DateEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnConvertToVente = new DevExpress.XtraEditors.SimpleButton();
             this.DateDebut = new DevExpress.XtraEditors.DateEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.devisBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -121,9 +121,9 @@
             // 
             this.layoutControl2.Controls.Add(this.BtnExportPdF);
             this.layoutControl2.Controls.Add(this.BtnExportExcel);
-            this.layoutControl2.Controls.Add(this.simpleButton2);
+            this.layoutControl2.Controls.Add(this.BtnConvertToFacture);
             this.layoutControl2.Controls.Add(this.DateFin);
-            this.layoutControl2.Controls.Add(this.simpleButton1);
+            this.layoutControl2.Controls.Add(this.BtnConvertToVente);
             this.layoutControl2.Controls.Add(this.DateDebut);
             this.layoutControl2.Controls.Add(this.gridControl1);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -160,18 +160,18 @@
             this.BtnExportExcel.Text = "Export Excel";
             this.BtnExportExcel.Click += new System.EventHandler(this.BtnExportExcel_Click);
             // 
-            // simpleButton2
+            // BtnConvertToFacture
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(703, 62);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(222, 22);
-            this.simpleButton2.StyleController = this.layoutControl2;
-            this.simpleButton2.TabIndex = 10;
-            this.simpleButton2.Text = "Convertir en Facture";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.BtnConvertToFacture.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnConvertToFacture.Appearance.Options.UseFont = true;
+            this.BtnConvertToFacture.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.BtnConvertToFacture.Location = new System.Drawing.Point(703, 62);
+            this.BtnConvertToFacture.Name = "BtnConvertToFacture";
+            this.BtnConvertToFacture.Size = new System.Drawing.Size(222, 22);
+            this.BtnConvertToFacture.StyleController = this.layoutControl2;
+            this.BtnConvertToFacture.TabIndex = 10;
+            this.BtnConvertToFacture.Text = "Convertir en Facture";
+            this.BtnConvertToFacture.Click += new System.EventHandler(this.BtnConvertToFacture_Click);
             // 
             // DateFin
             // 
@@ -187,18 +187,18 @@
             this.DateFin.TabIndex = 7;
             this.DateFin.EditValueChanged += new System.EventHandler(this.DateFin_EditValueChanged);
             // 
-            // simpleButton1
+            // BtnConvertToVente
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(477, 62);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(222, 22);
-            this.simpleButton1.StyleController = this.layoutControl2;
-            this.simpleButton1.TabIndex = 9;
-            this.simpleButton1.Text = "Convertir en Vente";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.BtnConvertToVente.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnConvertToVente.Appearance.Options.UseFont = true;
+            this.BtnConvertToVente.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnConvertToVente.ImageOptions.Image")));
+            this.BtnConvertToVente.Location = new System.Drawing.Point(477, 62);
+            this.BtnConvertToVente.Name = "BtnConvertToVente";
+            this.BtnConvertToVente.Size = new System.Drawing.Size(222, 22);
+            this.BtnConvertToVente.StyleController = this.layoutControl2;
+            this.BtnConvertToVente.TabIndex = 9;
+            this.BtnConvertToVente.Text = "Convertir en Vente";
+            this.BtnConvertToVente.Click += new System.EventHandler(this.BtnConvertToVente_Click);
             // 
             // DateDebut
             // 
@@ -337,9 +337,9 @@
             // ImprimerItem
             // 
             this.ImprimerItem.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
             this.ImprimerItem.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions4, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.ImprimerItem.Name = "ImprimerItem";
             this.ImprimerItem.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.ImprimerItem.Click += new System.EventHandler(this.ImprimerItem_Click);
@@ -357,9 +357,9 @@
             // repositoryItemButtonDetaisDevis
             // 
             this.repositoryItemButtonDetaisDevis.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
             this.repositoryItemButtonDetaisDevis.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions5, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryItemButtonDetaisDevis.Name = "repositoryItemButtonDetaisDevis";
             this.repositoryItemButtonDetaisDevis.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonDetaisDevis.Click += new System.EventHandler(this.repositoryItemButtonDetaisDevis_Click);
@@ -388,9 +388,9 @@
             // repositoryItemSupprimer
             // 
             this.repositoryItemSupprimer.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
             this.repositoryItemSupprimer.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions6, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryItemSupprimer.Name = "repositoryItemSupprimer";
             this.repositoryItemSupprimer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemSupprimer.Click += new System.EventHandler(this.repositoryItemSupprimer_Click);
@@ -454,7 +454,7 @@
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.simpleButton1;
+            this.layoutControlItem3.Control = this.BtnConvertToVente;
             this.layoutControlItem3.Location = new System.Drawing.Point(465, 50);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(226, 26);
@@ -463,7 +463,7 @@
             // 
             // layoutControlItem4
             // 
-            this.layoutControlItem4.Control = this.simpleButton2;
+            this.layoutControlItem4.Control = this.BtnConvertToFacture;
             this.layoutControlItem4.Location = new System.Drawing.Point(691, 50);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(226, 26);
@@ -579,9 +579,9 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonDetaisDevis;
         public System.Windows.Forms.BindingSource devisBindingSource;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton BtnConvertToVente;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton BtnConvertToFacture;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn Supprimer;

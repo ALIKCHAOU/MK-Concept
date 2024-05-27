@@ -273,11 +273,11 @@
     <Compile Include="Forms\FrmDetailsDevis.Designer.cs">
       <DependentUpon>FrmDetailsDevis.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmDetailsFactures.cs">
+    <Compile Include="Forms\FrmDetailsFacture.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmDetailsFactures.Designer.cs">
-      <DependentUpon>FrmDetailsFactures.cs</DependentUpon>
+    <Compile Include="Forms\FrmDetailsFacture.Designer.cs">
+      <DependentUpon>FrmDetailsFacture.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmDetailVente.cs">
       <SubType>Form</SubType>
@@ -571,8 +571,6 @@
     <Compile Include="Model\ligneFacture.cs" />
     <Compile Include="Model\LigneVente.cs" />
     <Compile Include="Model\LoginInfo.cs" />
-    <Compile Include="Model\ModelImport\FounisseurImportMap.cs" />
-    <Compile Include="Model\ModelImport\ClientImportMap.cs" />
     <Compile Include="Model\MouvementCaisse.cs" />
     <Compile Include="Model\NumeriqueHelper.cs" />
     <Compile Include="Model\Article.cs" />
@@ -729,8 +727,8 @@
     <EmbeddedResource Include="Forms\FrmDetailsDevis.resx">
       <DependentUpon>FrmDetailsDevis.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmDetailsFactures.resx">
-      <DependentUpon>FrmDetailsFactures.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmDetailsFacture.resx">
+      <DependentUpon>FrmDetailsFacture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmDetailVente.resx">
       <DependentUpon>FrmDetailVente.cs</DependentUpon>
