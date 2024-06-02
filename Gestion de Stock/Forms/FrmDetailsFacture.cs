@@ -74,7 +74,7 @@ namespace Gestion_de_Stock.Forms
                 foreach (var L in ListeGrid)
                 {
                     ligneFacture Ld = new ligneFacture();
-                    Ld.Description = L.Description;                  
+                    Ld.Description = L.Description;
                     Ld.PrixHT = L.PrixHT;
                     Ld.Remise = L.Remise;
                     Ld.Qty = L.Qty;
@@ -103,7 +103,7 @@ namespace Gestion_de_Stock.Forms
                 if (ClientSelected != null)
                 {
 
-                     client = db.Clients.Find(ClientSelected);
+                    client = db.Clients.Find(ClientSelected);
 
                     GetFactureDB.Client = client;
                 }
@@ -113,7 +113,7 @@ namespace Gestion_de_Stock.Forms
                 // UPDATE VENTE
                 if (GetFactureDB.IdVentes != 0)
                 {
-                    Vente VenteDB = db.Vente.Include("LigneVentes").Include("Client").FirstOrDefault(x => x.Id == GetFactureDB.IdVentes);
+                    Vente VenteDB = db.Vente.Include("LigneVentes").FirstOrDefault(x => x.Id == GetFactureDB.IdVentes);
                     List<LigneVente> LigneVente = new List<LigneVente>();
                     foreach (var L in ListeGrid)
                     {
@@ -127,7 +127,7 @@ namespace Gestion_de_Stock.Forms
                     }
 
                     var LigneVentes = VenteDB.LigneVentes.ToList();
-                    foreach (var ligne in ListeLigne)
+                    foreach (var ligne in LigneVentes)
                     {
                         LigneVente Ld = db.LigneVentes.Find(ligne.Id);
                         db.LigneVentes.Remove(Ld);
@@ -135,16 +135,22 @@ namespace Gestion_de_Stock.Forms
                     }
 
                     VenteDB.LigneVentes = LigneVente;
-
-                    if (ClientSelected != null)
+                    VenteDB.IntituleClient = GetFactureDB.Client.RaisonSociale;
+                    VenteDB.NumClient = GetFactureDB.Client.Code;
+                    VenteDB.TotalHT = ListeGrid.Sum(x => x.TotalLigneHT);
+                    VenteDB.TotalTTC = ListeGrid.Sum(x => x.TotalLigneTTC);
+                    // UPDATE VENTE 
+                    List<HistoriquePaiementVente> HistoriquePaiementVentes = db.HistoriquePaiementVente.Where(x => x.IdVente == GetFactureDB.IdVentes).ToList();
+                    foreach (var ligne in HistoriquePaiementVentes)
                     {
-
-                        VenteDB.IntituleClient = client.RaisonSociale;
-                        VenteDB.NumClient = client.Code;
+                        HistoriquePaiementVente Ld = db.HistoriquePaiementVente.Find(ligne.Id);
+                        db.HistoriquePaiementVente.Remove(Ld);
+                        db.SaveChanges();
                     }
-
-                    // UPDATE VENTE
-                    db.SaveChanges(); 
+                    VenteDB.EtatVente = Model.Enumuration.EtatVente.NonReglee;
+                    VenteDB.MontantReglement = VenteDB.TotalTTC;
+                    VenteDB.MontantRegle = 0;
+                    db.SaveChanges();
                 }
                 this.Hide();
                 // waiting Form
@@ -158,6 +164,9 @@ namespace Gestion_de_Stock.Forms
                 //waiting Form 
                 if (Application.OpenForms.OfType<FrmListeFactures>().FirstOrDefault() != null)
                     Application.OpenForms.OfType<FrmListeFactures>().First().factureBindingSource.DataSource = db.Factures.Include("Client").Include("ligneFactures").OrderByDescending(x => x.DateCreation).ToList();
+                if (Application.OpenForms.OfType<FrmListeVente>().FirstOrDefault() != null)
+                    Application.OpenForms.OfType<FrmListeVente>().First().venteBindingSource.DataSource = db.Vente.OrderByDescending(x => x.Date).ToList();
+
                 XtraMessageBox.Show("Facture e a été  Modifier", "Configuration de l'application", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
