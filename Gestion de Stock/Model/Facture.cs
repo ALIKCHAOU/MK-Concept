@@ -33,7 +33,8 @@ namespace Gestion_de_Stock.Model
         public string Code { get; set; }
         public string Reference { get; set; }
         public string NumeoDocument { get; set; }
-     
+
+        public int IdVentes { get; set; }
 
         [Required(ErrorMessage = "Date Creation Commande is required")]
         public DateTime DateCreation { get; set; }

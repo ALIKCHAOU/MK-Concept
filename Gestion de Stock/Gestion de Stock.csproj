@@ -537,6 +537,10 @@
     <Compile Include="Migrations\202405252136389_TVA Ligne devis.designer.cs">
       <DependentUpon>202405252136389_TVA Ligne devis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202406020920080_add id vente.cs" />
+    <Compile Include="Migrations\202406020920080_add id vente.designer.cs">
+      <DependentUpon>202406020920080_add id vente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Achat.cs" />
     <Compile Include="Model\Alimentation.cs" />
@@ -863,6 +867,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202405252136389_TVA Ligne devis.resx">
       <DependentUpon>202405252136389_TVA Ligne devis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406020920080_add id vente.resx">
+      <DependentUpon>202406020920080_add id vente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
