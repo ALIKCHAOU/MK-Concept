@@ -415,6 +415,7 @@ namespace Gestion_de_Stock.Forms
 
                 }
                 Facture.Client = devis.Client;
+                Facture.IdVentes = Vente.Id;
                 db.Factures.Add(Facture);
                 db.SaveChanges();
        

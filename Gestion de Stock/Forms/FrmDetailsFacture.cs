@@ -74,8 +74,7 @@ namespace Gestion_de_Stock.Forms
                 foreach (var L in ListeGrid)
                 {
                     ligneFacture Ld = new ligneFacture();
-                    Ld.Description = L.Description;
-                    Ld.Description = L.Description;
+                    Ld.Description = L.Description;                  
                     Ld.PrixHT = L.PrixHT;
                     Ld.Remise = L.Remise;
                     Ld.Qty = L.Qty;
@@ -100,25 +99,62 @@ namespace Gestion_de_Stock.Forms
                 string fieldName2 = "Code"; // or other field name  
                 object ClientSelected = view2.GetRowCellValue(rowHandle2, fieldName2);
                 ///Condition existance Fournisseur
+                Client client = new Client();
                 if (ClientSelected != null)
                 {
 
-                    Client client = db.Clients.Find(ClientSelected);
+                     client = db.Clients.Find(ClientSelected);
 
                     GetFactureDB.Client = client;
                 }
 
 
                 db.SaveChanges();
+                // UPDATE VENTE
+                if (GetFactureDB.IdVentes != 0)
+                {
+                    Vente VenteDB = db.Vente.Include("LigneVentes").Include("Client").FirstOrDefault(x => x.Id == GetFactureDB.IdVentes);
+                    List<LigneVente> LigneVente = new List<LigneVente>();
+                    foreach (var L in ListeGrid)
+                    {
+                        LigneVente Ld = new LigneVente();
+                        Ld.NomArticle = L.Description;
+                        Ld.PrixHT = L.PrixHT;
+                        Ld.Remise = L.Remise;
+                        Ld.Quantity = L.Qty;
+                        Ld.TVA = L.TVA;
+                        LigneVente.Add(Ld);
+                    }
+
+                    var LigneVentes = VenteDB.LigneVentes.ToList();
+                    foreach (var ligne in ListeLigne)
+                    {
+                        LigneVente Ld = db.LigneVentes.Find(ligne.Id);
+                        db.LigneVentes.Remove(Ld);
+                        db.SaveChanges();
+                    }
+
+                    VenteDB.LigneVentes = LigneVente;
+
+                    if (ClientSelected != null)
+                    {
+
+                        VenteDB.IntituleClient = client.RaisonSociale;
+                        VenteDB.NumClient = client.Code;
+                    }
+
+                    // UPDATE VENTE
+                    db.SaveChanges(); 
+                }
                 this.Hide();
                 // waiting Form
-                SplashScreenManager.ShowForm(this, typeof(Forms.FrmWaitForm), true, true, false);
-                SplashScreenManager.Default.SetWaitFormCaption("Veuillez patienter .....");
-                for (int i = 0; i < 100; i++)
-                {
-                    Thread.Sleep(10);
-                }
-                SplashScreenManager.CloseForm();
+                //SplashScreenManager.ShowForm(this, typeof(Forms.FrmWaitForm), true, true, false);
+                //SplashScreenManager.Default.SetWaitFormCaption("Veuillez patienter .....");
+                //for (int i = 0; i < 100; i++)
+                //{
+                //    Thread.Sleep(10);
+                //}
+                //SplashScreenManager.CloseForm();
                 //waiting Form 
                 if (Application.OpenForms.OfType<FrmListeFactures>().FirstOrDefault() != null)
                     Application.OpenForms.OfType<FrmListeFactures>().First().factureBindingSource.DataSource = db.Factures.Include("Client").Include("ligneFactures").OrderByDescending(x => x.DateCreation).ToList();

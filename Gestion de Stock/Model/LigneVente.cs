@@ -22,7 +22,7 @@ namespace Gestion_de_Stock.Model
         public decimal TotalLigneTTC { get { return Math.Round(Decimal.Multiply(PrixHT, Quantity) + Decimal.Divide(Decimal.Multiply(Decimal.Multiply(PrixHT, Quantity), TVA), 100) - Decimal.Divide(Decimal.Multiply(Decimal.Multiply(PrixHT, Quantity), Remise), 100), 3); } }
         [Required]
         public decimal PrixHT { get; set; }
-        public int Metrage { get; set; }
+  
         public Vente Vente { get; set; }
       
     }
