@@ -288,6 +288,8 @@
             this.colTotal_FactureHT.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colTotal_FactureHT.AppearanceHeader.Options.UseFont = true;
             this.colTotal_FactureHT.Caption = "Total HT";
+            this.colTotal_FactureHT.DisplayFormat.FormatString = "n3";
+            this.colTotal_FactureHT.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTotal_FactureHT.FieldName = "Total_FactureHT";
             this.colTotal_FactureHT.Name = "colTotal_FactureHT";
             this.colTotal_FactureHT.OptionsColumn.AllowEdit = false;
@@ -300,6 +302,8 @@
             this.colTotal_FactureTTC.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colTotal_FactureTTC.AppearanceHeader.Options.UseFont = true;
             this.colTotal_FactureTTC.Caption = "Total TTC";
+            this.colTotal_FactureTTC.DisplayFormat.FormatString = "n3";
+            this.colTotal_FactureTTC.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTotal_FactureTTC.FieldName = "Total_FactureTTC";
             this.colTotal_FactureTTC.Name = "colTotal_FactureTTC";
             this.colTotal_FactureTTC.OptionsColumn.AllowEdit = false;
