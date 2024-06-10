@@ -216,5 +216,46 @@ namespace Gestion_de_Stock.Forms
         {
 
         }
+
+        private void repositorySupprimer_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Voulez vous supprimer cet élément ?", "Confirmation", MessageBoxButtons.YesNo) != DialogResult.No)
+            {
+
+                Facture C = gridView1.GetFocusedRow() as Facture;
+                if (C == null)
+                {
+                    XtraMessageBox.Show("La suppression a été annulé", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                var FacturesDb = db.Factures.Include("ligneFactures").FirstOrDefault(x => x.Code == C.Code);
+                List<ligneFacture> ligneFactures = new List<ligneFacture>();
+                ligneFactures = FacturesDb.ligneFactures.ToList();
+                foreach (var Ld in ligneFactures)
+                {
+                    ligneFacture ligneFacture = db.ligneFactures.Find(Ld.Id);
+                    db.ligneFactures.Remove(ligneFacture);
+                    db.SaveChanges();
+                }
+                db.Factures.Remove(FacturesDb);
+                db.SaveChanges();
+                factureBindingSource.DataSource = db.Factures.Include("Client").Include("ligneFactures").OrderByDescending(x => x.DateCreation).ToList();
+
+
+                // suppression de vente 
+
+
+
+                XtraMessageBox.Show("la Facture a été supprimée avec Succès", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+
+                XtraMessageBox.Show("La Suppression a été annulée", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+            }
+        }
     }
 }

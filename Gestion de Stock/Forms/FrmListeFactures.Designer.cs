@@ -31,9 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListeFactures));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
@@ -54,11 +55,13 @@
             this.colClient = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCertificateRS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtoncolCertificateRS = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.repositoryItemButtonEditViewDocument = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.GcLIgnefacture = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryLignefacture = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.GvImprimer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditImprimer = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.Supprimer = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositorySupprimer = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.repositoryItemButtonEditViewDocument = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -81,9 +84,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.factureBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtoncolCertificateRS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditViewDocument)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryLignefacture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditImprimer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositorySupprimer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditViewDocument)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
@@ -192,7 +196,8 @@
             this.repositoryItemButtoncolCertificateRS,
             this.repositoryItemButtonEditViewDocument,
             this.repositoryLignefacture,
-            this.repositoryItemButtonEditImprimer});
+            this.repositoryItemButtonEditImprimer,
+            this.repositorySupprimer});
             this.gridControl1.Size = new System.Drawing.Size(925, 359);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -215,7 +220,8 @@
             this.colClient,
             this.colCertificateRS,
             this.GcLIgnefacture,
-            this.GvImprimer});
+            this.GvImprimer,
+            this.Supprimer});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
@@ -334,15 +340,6 @@
             this.repositoryItemButtoncolCertificateRS.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtoncolCertificateRS.Click += new System.EventHandler(this.repositoryItemButtoncolCertificateRS_Click);
             // 
-            // repositoryItemButtonEditViewDocument
-            // 
-            this.repositoryItemButtonEditViewDocument.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
-            this.repositoryItemButtonEditViewDocument.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions4, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
-            this.repositoryItemButtonEditViewDocument.Name = "repositoryItemButtonEditViewDocument";
-            this.repositoryItemButtonEditViewDocument.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
             // GcLIgnefacture
             // 
             this.GcLIgnefacture.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -384,6 +381,35 @@
             this.repositoryItemButtonEditImprimer.Name = "repositoryItemButtonEditImprimer";
             this.repositoryItemButtonEditImprimer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditImprimer.Click += new System.EventHandler(this.repositoryItemButtonEditImprimer_Click);
+            // 
+            // Supprimer
+            // 
+            this.Supprimer.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Supprimer.AppearanceHeader.Options.UseFont = true;
+            this.Supprimer.Caption = "supprimer";
+            this.Supprimer.ColumnEdit = this.repositorySupprimer;
+            this.Supprimer.Name = "Supprimer";
+            this.Supprimer.Visible = true;
+            this.Supprimer.VisibleIndex = 11;
+            // 
+            // repositorySupprimer
+            // 
+            this.repositorySupprimer.AutoHeight = false;
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            this.repositorySupprimer.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions4, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.repositorySupprimer.Name = "repositorySupprimer";
+            this.repositorySupprimer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositorySupprimer.Click += new System.EventHandler(this.repositorySupprimer_Click);
+            // 
+            // repositoryItemButtonEditViewDocument
+            // 
+            this.repositoryItemButtonEditViewDocument.AutoHeight = false;
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            this.repositoryItemButtonEditViewDocument.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions5, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.repositoryItemButtonEditViewDocument.Name = "repositoryItemButtonEditViewDocument";
+            this.repositoryItemButtonEditViewDocument.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // layoutControlGroup2
             // 
@@ -494,9 +520,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.factureBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtoncolCertificateRS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditViewDocument)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryLignefacture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditImprimer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositorySupprimer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditViewDocument)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
@@ -544,5 +571,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditImprimer;
         public System.Windows.Forms.BindingSource factureBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn GCNdevis;
+        private DevExpress.XtraGrid.Columns.GridColumn Supprimer;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositorySupprimer;
     }
 }
