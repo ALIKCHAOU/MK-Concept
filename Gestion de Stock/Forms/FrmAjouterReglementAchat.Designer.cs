@@ -32,6 +32,7 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.DateReglemement = new DevExpress.XtraEditors.DateEdit();
             this.TxtAvance = new DevExpress.XtraEditors.TextEdit();
             this.TxtMontantOperation = new DevExpress.XtraEditors.TextEdit();
             this.BtnValider = new DevExpress.XtraEditors.SimpleButton();
@@ -56,16 +57,17 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlMtAPayer = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.DateReglemement = new DevExpress.XtraEditors.DateEdit();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DateReglemement.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DateReglemement.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtAvance.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMontantOperation.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMontantEncaisse.Properties)).BeginInit();
@@ -90,11 +92,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlMtAPayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DateReglemement.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DateReglemement.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -140,6 +140,22 @@
             this.layoutControl2.Size = new System.Drawing.Size(455, 383);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
+            // 
+            // DateReglemement
+            // 
+            this.DateReglemement.EditValue = null;
+            this.DateReglemement.Location = new System.Drawing.Point(151, 41);
+            this.DateReglemement.Name = "DateReglemement";
+            this.DateReglemement.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateReglemement.Properties.Appearance.Options.UseFont = true;
+            this.DateReglemement.Properties.AutoHeight = false;
+            this.DateReglemement.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DateReglemement.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DateReglemement.Size = new System.Drawing.Size(292, 31);
+            this.DateReglemement.StyleController = this.layoutControl2;
+            this.DateReglemement.TabIndex = 16;
             // 
             // TxtAvance
             // 
@@ -483,6 +499,20 @@
             this.layoutControlMtAPayer.Text = "Montant Règlement";
             this.layoutControlMtAPayer.TextSize = new System.Drawing.Size(135, 19);
             // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem4.Control = this.DateReglemement;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 29);
+            this.layoutControlItem4.MaxSize = new System.Drawing.Size(0, 35);
+            this.layoutControlItem4.MinSize = new System.Drawing.Size(193, 35);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(435, 35);
+            this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem4.Text = "Date Règlement";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(135, 19);
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -504,33 +534,6 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // DateReglemement
-            // 
-            this.DateReglemement.EditValue = null;
-            this.DateReglemement.Location = new System.Drawing.Point(151, 41);
-            this.DateReglemement.Name = "DateReglemement";
-            this.DateReglemement.Properties.AutoHeight = false;
-            this.DateReglemement.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DateReglemement.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DateReglemement.Size = new System.Drawing.Size(292, 31);
-            this.DateReglemement.StyleController = this.layoutControl2;
-            this.DateReglemement.TabIndex = 16;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem4.Control = this.DateReglemement;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 29);
-            this.layoutControlItem4.MinSize = new System.Drawing.Size(193, 24);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(435, 35);
-            this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem4.Text = "Date Règlement";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(135, 15);
-            // 
             // FrmAjouterReglementAchat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -551,6 +554,8 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DateReglemement.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DateReglemement.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtAvance.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMontantOperation.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMontantEncaisse.Properties)).EndInit();
@@ -575,11 +580,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlMtAPayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DateReglemement.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DateReglemement.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }
