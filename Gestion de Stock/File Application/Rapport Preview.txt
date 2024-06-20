@@ -1,5 +1,0 @@
-using (ReportPrintTool printTool = new ReportPrintTool(AchatIpression))
-                {
-                    printTool.ShowPreviewDialog();
-               
-                }

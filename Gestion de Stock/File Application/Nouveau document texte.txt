@@ -1,2 +1,0 @@
-SALARI2 JABNOUN 6 JOURS +180 DT   == montant à regler 210dt
-chute , stock suprression arbitraire

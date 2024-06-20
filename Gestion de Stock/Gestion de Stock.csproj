@@ -925,18 +925,7 @@
     <EmbeddedResource Include="Repport\RapportVenteHistorique.resx">
       <DependentUpon>RapportVenteHistorique.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="File Application\19_11_2023\GestiondeStockYessin_19_11_2023.bak" />
-    <None Include="File Application\DEVIS DCM.pdf" />
-    <None Include="File Application\GestiondeStockYessin_01_08_2023.bak" />
-    <None Include="File Application\GestiondeStockYessin_01_11_2023.bak" />
-    <None Include="File Application\GestiondeStockYessin_05_06_2023.bak" />
-    <None Include="File Application\GestiondeStockYessin_10_01_2024.bak" />
-    <None Include="File Application\GestiondeStockYessin_13_09_2023.bak" />
-    <None Include="File Application\GestiondeStockYessin_14_05_2023.bak" />
-    <None Include="File Application\GestiondeStockYessin_19_11_2023.bak" />
-    <None Include="File Application\GestiondeStockYessin_30_05_2023.bak" />
-    <None Include="File Application\Reclamation BSM 15_01_2024\GestiondeStockYessin_15_01_2024.bak" />
-    <None Include="File Application\Reclamation BSM 15_01_2024\GestiondeStockYessin_22_01_2024.bak" />
+    <None Include="File Application\Base de donner\MKConcept_20_06_2024.bak" />
     <None Include="GestiondeStockMedDataSet.xsc">
       <DependentUpon>GestiondeStockMedDataSet.xsd</DependentUpon>
     </None>
@@ -1026,21 +1015,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
-    <Content Include="File Application\19_11_2023\Image\BSM_Logo_RGB-1.png" />
-    <Content Include="File Application\19_11_2023\Image\Logo.ico" />
-    <Content Include="File Application\19_11_2023\Image\Logo.png" />
-    <Content Include="File Application\19_11_2023\Image\NonReglee_16x16.png" />
-    <Content Include="File Application\19_11_2023\Image\PR_16x16.png" />
-    <Content Include="File Application\19_11_2023\Image\Reglee_16x16.png" />
-    <Content Include="File Application\19_11_2023\Image\Termine.png" />
-    <Content Include="File Application\A modifier.txt" />
-    <Content Include="File Application\Nouveau document texte.txt" />
-    <Content Include="File Application\Rapport Preview.txt" />
-    <Content Include="File Application\Reclamation BSM 15_01_2024\bsm.JPG" />
-    <Content Include="File Application\Reclamation BSM 15_01_2024\chabouh bsm.JPG" />
-    <Content Include="File Application\Reclamation BSM 15_01_2024\rectification.JPG" />
-    <Content Include="File Application\Reclamation BSM 15_01_2024\Update database.txt" />
-    <Content Include="File Application\v3.txt" />
     <Content Include="Image\Logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
