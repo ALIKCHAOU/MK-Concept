@@ -298,5 +298,33 @@ namespace Gestion_de_Stock.Forms
                 XtraMessageBox.Show("La Suppression été annulé", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void repositoryItemBtnAjouterRemise_Click(object sender, EventArgs e)
+        {
+            Achat A = gridView1.GetFocusedRow() as Achat;
+
+            db = new Model.ApplicationContext();
+
+            Achat AchatDb = db.Achats.Find(A.id);
+
+            if (AchatDb.EtatAchat == EtatAchat.PartiellementReglee)
+            {
+                FormshowNotParent(Forms.FrmRemiseAchat.InstanceFrmRemiseAchat);
+
+                if (Application.OpenForms.OfType<FrmRemiseAchat>().FirstOrDefault() != null)
+                {
+                    Application.OpenForms.OfType<FrmRemiseAchat>().First().TxtCodeVente.Text = AchatDb.id.ToString();
+                    Application.OpenForms.OfType<FrmRemiseAchat>().First().TxtRemise.Text = AchatDb.ResteApayer.ToString();
+                    Application.OpenForms.OfType<FrmRemiseAchat>().First().TxtMtVente.Text = AchatDb.MontantReglement.ToString();
+                    Application.OpenForms.OfType<FrmRemiseAchat>().First().TxtMtReg.Text = AchatDb.MontantRegle.ToString();
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("Impossible de faire une remise!", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+        }
     }
 }

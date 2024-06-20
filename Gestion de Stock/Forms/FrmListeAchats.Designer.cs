@@ -36,6 +36,7 @@
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
@@ -44,6 +45,7 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.achatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFournisseur = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GCCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NFacture = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -74,7 +76,9 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gcDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColRemiseMontant = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Addremise = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemBtnAjouterRemise = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -103,6 +107,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemBtnAjouterRemise)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -180,7 +185,8 @@
             this.repositoryItemButtonEditCertificateRS,
             this.repositoryItemButtonAjouterReglement,
             this.repositoryItemHistoriquePaiement,
-            this.repositoryItemSupprimer});
+            this.repositoryItemSupprimer,
+            this.repositoryItemBtnAjouterRemise});
             this.gridControl1.Size = new System.Drawing.Size(1069, 322);
             this.gridControl1.TabIndex = 6;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -206,13 +212,26 @@
             this.colHistoriquePaiement,
             this.colAjouterReglement,
             this.colEtatAchat,
-            this.Supprimer});
+            this.Supprimer,
+            this.Addremise,
+            this.ColRemiseMontant});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
+            // 
+            // gcDate
+            // 
+            this.gcDate.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gcDate.AppearanceHeader.Options.UseFont = true;
+            this.gcDate.Caption = "Date";
+            this.gcDate.FieldName = "DateCreation";
+            this.gcDate.Name = "gcDate";
+            this.gcDate.OptionsColumn.AllowEdit = false;
+            this.gcDate.Visible = true;
+            this.gcDate.VisibleIndex = 2;
             // 
             // colFournisseur
             // 
@@ -535,16 +554,31 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // gcDate
+            // ColRemiseMontant
             // 
-            this.gcDate.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gcDate.AppearanceHeader.Options.UseFont = true;
-            this.gcDate.Caption = "Date";
-            this.gcDate.FieldName = "DateCreation";
-            this.gcDate.Name = "gcDate";
-            this.gcDate.OptionsColumn.AllowEdit = false;
-            this.gcDate.Visible = true;
-            this.gcDate.VisibleIndex = 2;
+            this.ColRemiseMontant.Caption = "Montant Remise";
+            this.ColRemiseMontant.FieldName = "MontantRemise";
+            this.ColRemiseMontant.Name = "ColRemiseMontant";
+            this.ColRemiseMontant.Visible = true;
+            this.ColRemiseMontant.VisibleIndex = 15;
+            // 
+            // Addremise
+            // 
+            this.Addremise.Caption = "Ajouter Remise";
+            this.Addremise.ColumnEdit = this.repositoryItemBtnAjouterRemise;
+            this.Addremise.Name = "Addremise";
+            this.Addremise.Visible = true;
+            this.Addremise.VisibleIndex = 14;
+            // 
+            // repositoryItemBtnAjouterRemise
+            // 
+            this.repositoryItemBtnAjouterRemise.AutoHeight = false;
+            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
+            this.repositoryItemBtnAjouterRemise.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions6, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.repositoryItemBtnAjouterRemise.Name = "repositoryItemBtnAjouterRemise";
+            this.repositoryItemBtnAjouterRemise.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemBtnAjouterRemise.Click += new System.EventHandler(this.repositoryItemBtnAjouterRemise_Click);
             // 
             // FrmListeAchats
             // 
@@ -585,6 +619,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemBtnAjouterRemise)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -630,5 +665,8 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemSupprimer;
         private DevExpress.XtraGrid.Columns.GridColumn Supprimer;
         private DevExpress.XtraGrid.Columns.GridColumn gcDate;
+        private DevExpress.XtraGrid.Columns.GridColumn Addremise;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemBtnAjouterRemise;
+        private DevExpress.XtraGrid.Columns.GridColumn ColRemiseMontant;
     }
 }

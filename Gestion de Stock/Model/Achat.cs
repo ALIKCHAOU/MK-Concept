@@ -59,7 +59,7 @@ namespace Gestion_de_Stock.Model
         public decimal MontantReglement { get; set; }
         public decimal MontantRegle { get; set; }
 
-        public decimal ResteApayer { get { return MontantReglement - MontantRegle; } }
+        public decimal ResteApayer { get { return Total_AchatTTC - (MontantRegle+ MontantRemise); } }
         public decimal Total_AchatHT { get; set; }
 
         public decimal Total_AchatTTC { get; set; }
@@ -68,6 +68,8 @@ namespace Gestion_de_Stock.Model
 
         public ICollection<LigneAchats> Lines { get; set; }
 
-       
+        public decimal MontantRemise { get; set; }
+
+
     }
 }
