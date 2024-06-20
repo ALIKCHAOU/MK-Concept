@@ -39,7 +39,7 @@ namespace Gestion_de_Stock.Forms
         private void FrmListeAlimentation_Load(object sender, EventArgs e)
         {
             if (db.Alimentations.Count() > 0)
-                alimentationBindingSource.DataSource = db.Alimentations.OrderByDescending(x => x.DateCreation).ToList();
+                alimentationBindingSource.DataSource = db.Alimentations.Include("Client").OrderByDescending(x => x.DateCreation).ToList();
         }
 
 

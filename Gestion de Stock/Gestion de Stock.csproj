@@ -783,6 +783,9 @@
     <EmbeddedResource Include="Forms\FrmListeAchats.resx">
       <DependentUpon>FrmListeAchats.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmListeAlimentation.resx">
+      <DependentUpon>FrmListeAlimentation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmListeDepenses.resx">
       <DependentUpon>FrmListeDepenses.cs</DependentUpon>
     </EmbeddedResource>

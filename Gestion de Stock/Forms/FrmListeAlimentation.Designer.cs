@@ -47,7 +47,7 @@
             this.colMontant = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCommentaire = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCodeClient = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCodeAgriculteur = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNomClient = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -123,7 +123,6 @@
             // 
             // label1
             // 
-           
             this.label1.Location = new System.Drawing.Point(12, 359);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(935, 25);
@@ -133,6 +132,7 @@
             // 
             this.BtnExportExcel.Appearance.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExportExcel.Appearance.Options.UseFont = true;
+            this.BtnExportExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnExportExcel.ImageOptions.Image")));
             this.BtnExportExcel.Location = new System.Drawing.Point(481, 38);
             this.BtnExportExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnExportExcel.Name = "BtnExportExcel";
@@ -146,7 +146,7 @@
             // 
             this.BtnExportPdF.Appearance.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExportPdF.Appearance.Options.UseFont = true;
-          
+            this.BtnExportPdF.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnExportPdF.ImageOptions.Image")));
             this.BtnExportPdF.Location = new System.Drawing.Point(714, 38);
             this.BtnExportPdF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnExportPdF.Name = "BtnExportPdF";
@@ -214,7 +214,7 @@
             this.colMontant,
             this.colCommentaire,
             this.colCodeClient,
-            this.colCodeAgriculteur});
+            this.colNomClient});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
@@ -296,24 +296,24 @@
             this.colCodeClient.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colCodeClient.AppearanceHeader.Options.UseFont = true;
             this.colCodeClient.Caption = "Code Client";
-            this.colCodeClient.FieldName = "Client.Numero";
+            this.colCodeClient.FieldName = "Client.Code";
             this.colCodeClient.MaxWidth = 120;
             this.colCodeClient.Name = "colCodeClient";
             this.colCodeClient.OptionsColumn.AllowEdit = false;
             this.colCodeClient.Visible = true;
-            this.colCodeClient.VisibleIndex = 4;
+            this.colCodeClient.VisibleIndex = 3;
             // 
-            // colCodeAgriculteur
+            // colNomClient
             // 
-            this.colCodeAgriculteur.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colCodeAgriculteur.AppearanceHeader.Options.UseFont = true;
-            this.colCodeAgriculteur.Caption = "Code Agriculteur";
-            this.colCodeAgriculteur.FieldName = "Agriculteur.Numero";
-            this.colCodeAgriculteur.MaxWidth = 120;
-            this.colCodeAgriculteur.Name = "colCodeAgriculteur";
-            this.colCodeAgriculteur.OptionsColumn.AllowEdit = false;
-            this.colCodeAgriculteur.Visible = true;
-            this.colCodeAgriculteur.VisibleIndex = 3;
+            this.colNomClient.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colNomClient.AppearanceHeader.Options.UseFont = true;
+            this.colNomClient.Caption = "Nom Client";
+            this.colNomClient.FieldName = "Client.FullName";
+            this.colNomClient.MaxWidth = 120;
+            this.colNomClient.Name = "colNomClient";
+            this.colNomClient.OptionsColumn.AllowEdit = false;
+            this.colNomClient.Visible = true;
+            this.colNomClient.VisibleIndex = 4;
             // 
             // layoutControlGroup2
             // 
@@ -490,6 +490,6 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraGrid.Columns.GridColumn colCodeClient;
-        private DevExpress.XtraGrid.Columns.GridColumn colCodeAgriculteur;
+        private DevExpress.XtraGrid.Columns.GridColumn colNomClient;
     }
 }
