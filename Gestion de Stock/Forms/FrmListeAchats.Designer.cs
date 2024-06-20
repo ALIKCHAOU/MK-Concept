@@ -30,13 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListeAchats));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions9 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions10 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions11 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions12 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
@@ -64,6 +63,9 @@
             this.colEtatAchat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Supprimer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemSupprimer = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.Addremise = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemBtnAjouterRemise = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.ColRemiseMontant = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditCertificateRS = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.DateDebut = new DevExpress.XtraEditors.DateEdit();
             this.DateFin = new DevExpress.XtraEditors.DateEdit();
@@ -76,9 +78,6 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ColRemiseMontant = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Addremise = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemBtnAjouterRemise = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -93,6 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHistoriquePaiement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonAjouterReglement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSupprimer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemBtnAjouterRemise)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditCertificateRS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateDebut.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateDebut.Properties)).BeginInit();
@@ -107,7 +107,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemBtnAjouterRemise)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -173,9 +172,6 @@
             // gridControl1
             // 
             this.gridControl1.DataSource = this.achatBindingSource;
-            gridLevelNode1.RelationName = "Level1";
-            this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(12, 62);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -278,9 +274,9 @@
             // ViewDocument
             // 
             this.ViewDocument.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions7.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions7.Image")));
             this.ViewDocument.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "View Doc", -1, true, true, false, editorButtonImageOptions1)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "View Doc", -1, true, true, false, editorButtonImageOptions7)});
             this.ViewDocument.Name = "ViewDocument";
             this.ViewDocument.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.ViewDocument.Click += new System.EventHandler(this.ViewDocument_Click);
@@ -298,9 +294,9 @@
             // repositoryItemButtonEditViewDetais
             // 
             this.repositoryItemButtonEditViewDetais.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions8.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions8.Image")));
             this.repositoryItemButtonEditViewDetais.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions8, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryItemButtonEditViewDetais.Name = "repositoryItemButtonEditViewDetais";
             this.repositoryItemButtonEditViewDetais.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditViewDetais.Click += new System.EventHandler(this.repositoryItemButtonEditViewDetais_Click);
@@ -357,7 +353,7 @@
             this.colResteApayer.Name = "colResteApayer";
             this.colResteApayer.OptionsColumn.AllowEdit = false;
             this.colResteApayer.Visible = true;
-            this.colResteApayer.VisibleIndex = 10;
+            this.colResteApayer.VisibleIndex = 11;
             // 
             // colHistoriquePaiement
             // 
@@ -367,14 +363,14 @@
             this.colHistoriquePaiement.ColumnEdit = this.repositoryItemHistoriquePaiement;
             this.colHistoriquePaiement.Name = "colHistoriquePaiement";
             this.colHistoriquePaiement.Visible = true;
-            this.colHistoriquePaiement.VisibleIndex = 11;
+            this.colHistoriquePaiement.VisibleIndex = 12;
             // 
             // repositoryItemHistoriquePaiement
             // 
             this.repositoryItemHistoriquePaiement.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions9.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions9.Image")));
             this.repositoryItemHistoriquePaiement.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions9, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryItemHistoriquePaiement.Name = "repositoryItemHistoriquePaiement";
             this.repositoryItemHistoriquePaiement.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemHistoriquePaiement.Click += new System.EventHandler(this.repositoryItemHistoriquePaiement_Click);
@@ -387,14 +383,14 @@
             this.colAjouterReglement.ColumnEdit = this.repositoryItemButtonAjouterReglement;
             this.colAjouterReglement.Name = "colAjouterReglement";
             this.colAjouterReglement.Visible = true;
-            this.colAjouterReglement.VisibleIndex = 12;
+            this.colAjouterReglement.VisibleIndex = 13;
             // 
             // repositoryItemButtonAjouterReglement
             // 
             this.repositoryItemButtonAjouterReglement.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions10.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions10.Image")));
             this.repositoryItemButtonAjouterReglement.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions4, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions10, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryItemButtonAjouterReglement.Name = "repositoryItemButtonAjouterReglement";
             this.repositoryItemButtonAjouterReglement.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonAjouterReglement.Click += new System.EventHandler(this.repositoryItemButtonAjouterReglement_Click);
@@ -413,21 +409,53 @@
             // 
             // Supprimer
             // 
+            this.Supprimer.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Supprimer.AppearanceHeader.Options.UseFont = true;
             this.Supprimer.Caption = "Supprimer";
             this.Supprimer.ColumnEdit = this.repositoryItemSupprimer;
             this.Supprimer.Name = "Supprimer";
             this.Supprimer.Visible = true;
-            this.Supprimer.VisibleIndex = 13;
+            this.Supprimer.VisibleIndex = 15;
             // 
             // repositoryItemSupprimer
             // 
             this.repositoryItemSupprimer.AutoHeight = false;
-            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            editorButtonImageOptions11.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions11.Image")));
             this.repositoryItemSupprimer.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions5, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions11, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryItemSupprimer.Name = "repositoryItemSupprimer";
             this.repositoryItemSupprimer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemSupprimer.Click += new System.EventHandler(this.repositoryItemSupprimer_Click);
+            // 
+            // Addremise
+            // 
+            this.Addremise.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Addremise.AppearanceHeader.Options.UseFont = true;
+            this.Addremise.Caption = "Ajouter Remise";
+            this.Addremise.ColumnEdit = this.repositoryItemBtnAjouterRemise;
+            this.Addremise.Name = "Addremise";
+            this.Addremise.Visible = true;
+            this.Addremise.VisibleIndex = 14;
+            // 
+            // repositoryItemBtnAjouterRemise
+            // 
+            this.repositoryItemBtnAjouterRemise.AutoHeight = false;
+            editorButtonImageOptions12.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions12.Image")));
+            this.repositoryItemBtnAjouterRemise.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions12, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.repositoryItemBtnAjouterRemise.Name = "repositoryItemBtnAjouterRemise";
+            this.repositoryItemBtnAjouterRemise.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemBtnAjouterRemise.Click += new System.EventHandler(this.repositoryItemBtnAjouterRemise_Click);
+            // 
+            // ColRemiseMontant
+            // 
+            this.ColRemiseMontant.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ColRemiseMontant.AppearanceHeader.Options.UseFont = true;
+            this.ColRemiseMontant.Caption = "Remise";
+            this.ColRemiseMontant.FieldName = "MontantRemise";
+            this.ColRemiseMontant.Name = "ColRemiseMontant";
+            this.ColRemiseMontant.Visible = true;
+            this.ColRemiseMontant.VisibleIndex = 10;
             // 
             // repositoryItemButtonEditCertificateRS
             // 
@@ -554,32 +582,6 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // ColRemiseMontant
-            // 
-            this.ColRemiseMontant.Caption = "Montant Remise";
-            this.ColRemiseMontant.FieldName = "MontantRemise";
-            this.ColRemiseMontant.Name = "ColRemiseMontant";
-            this.ColRemiseMontant.Visible = true;
-            this.ColRemiseMontant.VisibleIndex = 15;
-            // 
-            // Addremise
-            // 
-            this.Addremise.Caption = "Ajouter Remise";
-            this.Addremise.ColumnEdit = this.repositoryItemBtnAjouterRemise;
-            this.Addremise.Name = "Addremise";
-            this.Addremise.Visible = true;
-            this.Addremise.VisibleIndex = 14;
-            // 
-            // repositoryItemBtnAjouterRemise
-            // 
-            this.repositoryItemBtnAjouterRemise.AutoHeight = false;
-            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
-            this.repositoryItemBtnAjouterRemise.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions6, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
-            this.repositoryItemBtnAjouterRemise.Name = "repositoryItemBtnAjouterRemise";
-            this.repositoryItemBtnAjouterRemise.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryItemBtnAjouterRemise.Click += new System.EventHandler(this.repositoryItemBtnAjouterRemise_Click);
-            // 
             // FrmListeAchats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -605,6 +607,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHistoriquePaiement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonAjouterReglement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSupprimer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemBtnAjouterRemise)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditCertificateRS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateDebut.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateDebut.Properties)).EndInit();
@@ -619,7 +622,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemBtnAjouterRemise)).EndInit();
             this.ResumeLayout(false);
 
         }

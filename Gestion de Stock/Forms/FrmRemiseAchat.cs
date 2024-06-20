@@ -53,7 +53,7 @@ namespace Gestion_de_Stock.Forms
 
             db = new Model.ApplicationContext();
 
-            Vente VenteDb = db.Vente.Find(id);
+            Achat AchatDb = db.Achats.Find(id);
 
             decimal MontantVente;
             string MontantVenteStr = TxtMtVente.Text.Replace(",", decimalSeparator).Replace(".", decimalSeparator);
@@ -69,21 +69,21 @@ namespace Gestion_de_Stock.Forms
 
             if (decimal.Add(MontantRemise, MontantRegle) == MontantVente)
             {
-                VenteDb.EtatVente = Model.Enumuration.EtatVente.Reglee;
-                VenteDb.MontantRegle = VenteDb.MontantRegle;
-                VenteDb.MontantRemise = MontantRemise;
+                AchatDb.EtatAchat = Model.Enumuration.EtatAchat.Reglee;
+                AchatDb.MontantRegle = AchatDb.MontantRegle;
+                AchatDb.MontantRemise = MontantRemise;
                 db.SaveChanges();
 
 
                 #region  Historique paiement vente
                 HistoriquePaiementVente hpv = new HistoriquePaiementVente();
-                hpv.IdVente = VenteDb.Id;
-                hpv.IntituleClient = VenteDb.IntituleClient;
-                hpv.NumClient = VenteDb.NumClient;
+                hpv.IdVente = AchatDb.id;
+                hpv.IntituleClient = AchatDb.RaisonSociale;
+                hpv.NumClient = AchatDb.CodeFournisseur;
                 hpv.MontantRegle = MontantRemise;
-                hpv.MontantReglement = VenteDb.MontantReglement;
+                hpv.MontantReglement = AchatDb.MontantReglement;
                 hpv.ResteApayer = 0;
-                hpv.NumVente = VenteDb.Numero;
+                hpv.NumVente = AchatDb.Code;
                 hpv.Commentaire = "Remise";
                 hpv.ModeReglement = Model.Enumuration.ModeReglement.Remise;
                 db.HistoriquePaiementVente.Add(hpv);
@@ -101,8 +101,8 @@ namespace Gestion_de_Stock.Forms
             this.Hide();
             TxtRemise.Text = string.Empty;
 
-            if (Application.OpenForms.OfType<FrmListeVente>().FirstOrDefault() != null)
-                Application.OpenForms.OfType<FrmListeVente>().First().venteBindingSource.DataSource = db.Vente.OrderByDescending(x => x.Date).ToList();
+            if (Application.OpenForms.OfType<FrmListeAchats>().FirstOrDefault() != null)
+                Application.OpenForms.OfType<FrmListeAchats>().First().achatBindingSource.DataSource = db.Achats.OrderByDescending(x => x.DateCreation).ToList();
 
             XtraMessageBox.Show("Remise appliquée avec Succès", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
