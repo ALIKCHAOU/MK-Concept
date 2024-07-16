@@ -28,8 +28,10 @@ namespace Gestion_de_Stock.Model
         [Required(ErrorMessage = "Designation is required")]
         public string Designation { get; set; }
 
-        public decimal Prix { get; set; }    
-           
+        public decimal Prix { get; set; }
+
+        public decimal Prixdevente { get; set; }
+
 
         [Required]
         public DateTime DateCreation { get; set; }
