@@ -52,10 +52,19 @@ namespace Gestion_de_Stock.Forms
 
             dateEditDateDevis.DateTime = DateTime.Now;
             /***********************  Mode  Paiement Liste  ***********************/
-
-            Devis D = new Devis();
-            TxTReference.Text = D.Reference;
-         
+            string  lastCodestr = "";
+            if (db.Devis.Count() > 1)
+            {
+                lastCodestr = db.Devis.OrderByDescending(x => x.DateCreation).FirstOrDefault().Code.Replace("DV", "");
+             
+                TxTReference.Text = "DEVIS/MK CONCEPT/" + (Convert.ToInt32(lastCodestr) + 1).ToString("D8");
+            }
+            else
+            {
+               
+                TxTReference.Text = "DEVIS/MK CONCEPT/00000001";
+            }
+            
             dateLivraison.DateTime = DateTime.Now.AddDays(7);
 
 
@@ -90,8 +99,21 @@ namespace Gestion_de_Stock.Forms
                 return;
 
             }
+            string lastCodestr = "";
             Client client = db.Clients.Find(ClientSelected);
             Devis devis = new Devis();
+            if (db.Devis.Count() > 1)
+            {
+                lastCodestr = db.Devis.OrderByDescending(x => x.DateCreation).FirstOrDefault().Code.Replace("DV", "");
+                devis.Code = "DV" + (Convert.ToInt32(lastCodestr) + 1).ToString("D8");
+                devis.Reference = "DEVIS/MK CONCEPT/" + (Convert.ToInt32(lastCodestr) + 1).ToString("D8");
+            }
+            else
+            {
+                devis.Code = "DV00000001";
+                devis.Reference = "DEVIS/MK CONCEPT/00000001";
+            }
+
             devis.Client = client;
             
             foreach (var L in ListeGrid)
@@ -110,9 +132,20 @@ namespace Gestion_de_Stock.Forms
 
             for (int i = 0; i < gridView1.RowCount;)
                 gridView1.DeleteRow(i);
-         
-            Devis D = new Devis();
-            TxTReference.Text = D.Reference;
+
+          
+            if (db.Devis.Count() > 1)
+            {
+                lastCodestr = db.Devis.OrderByDescending(x => x.DateCreation).FirstOrDefault().Code.Replace("DV", "");
+
+                TxTReference.Text = "DEVIS/MK CONCEPT/" + (Convert.ToInt32(lastCodestr) + 1).ToString("D8");
+            }
+            else
+            {
+
+                TxTReference.Text = "DEVIS/MK CONCEPT/00000001";
+            }
+
             //waiting Form 
             if (Application.OpenForms.OfType<FrmListeDevis>().FirstOrDefault() != null)
                 Application.OpenForms.OfType<FrmListeDevis>().First().devisBindingSource.DataSource = db.Devis.Include("Client").Include("ligneDevis").OrderByDescending(x => x.DateCreation).ToList();

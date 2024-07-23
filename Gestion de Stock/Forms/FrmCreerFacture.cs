@@ -51,12 +51,20 @@ namespace Gestion_de_Stock.Forms
         {
             clientBindingSource.DataSource = db.Clients.Where(x => x.Status == Status.Active).Select(x => new { x.Code, x.RaisonSociale, x.Adresse, x.Ville }).ToList();
 
-          
-            /***********************  Mode  Paiement Liste  ***********************/
 
-            Facture D = new Facture();
-            TxTReference.Text = D.Reference;
-           
+            /***********************  Mode  Paiement Liste  ***********************/
+            string lastCodestr = "";
+            if (db.Factures.Count() > 1)
+            {
+                lastCodestr = db.Factures.OrderByDescending(x => x.DateCreation).FirstOrDefault().Code.Replace("F", "");
+             
+                TxTReference.Text = "Facture/MK CONCEPT/" + (Convert.ToInt32(lastCodestr) + 1).ToString("D8");
+            }
+            else
+            {
+                TxTReference.Text = "Facture/MK CONCEPT/00000001";
+            }
+
             TxtTimber.Text = db.Societes.FirstOrDefault().Timber.ToString();
            
 
@@ -129,6 +137,19 @@ namespace Gestion_de_Stock.Forms
 
        
             Facture Facture = new Facture();
+            string  lastCodestr = "";
+            if (db.Factures.Count() > 1)
+            {
+                lastCodestr = db.Factures.OrderByDescending(x => x.DateCreation).FirstOrDefault().Code.Replace("F", "");
+                Facture.Code = "F" + (Convert.ToInt32(lastCodestr) + 1).ToString("D8");
+                Facture.Reference = "Facture/MK CONCEPT/" + (Convert.ToInt32(lastCodestr) + 1).ToString("D8");
+            }
+            else
+            {
+                Facture.Code = "F00000001";
+                Facture.Reference = "Facture/MK CONCEPT/00000001";
+            }
+
             Facture.NumeoDocument = "";
             Facture.Client = client;
             Societe societe= db.Societes.FirstOrDefault();            
@@ -153,9 +174,20 @@ namespace Gestion_de_Stock.Forms
 
             for (int i = 0; i < gridView1.RowCount;)
                 gridView1.DeleteRow(i);
+
+             lastCodestr = "";
+            if (db.Factures.Count() > 1)
+            {
+                lastCodestr = db.Factures.OrderByDescending(x => x.DateCreation).FirstOrDefault().Code.Replace("F", "");
+
+                TxTReference.Text = "Facture/MK CONCEPT/" + (Convert.ToInt32(lastCodestr) + 1).ToString("D8");
+            }
+            else
+            {
+             
+                TxTReference.Text = "Facture/MK CONCEPT/00000001";
+            }
            
-            Facture D = new Facture();
-            TxTReference.Text = D.Reference;
             //waiting Form 
             if (Application.OpenForms.OfType<FrmListeFactures>().FirstOrDefault() != null)
                 Application.OpenForms.OfType<FrmListeFactures>().First().factureBindingSource.DataSource = db.Factures.Include("Client").Include("ligneFactures").OrderByDescending(x => x.DateCreation).ToList();

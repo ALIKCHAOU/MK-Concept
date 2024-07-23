@@ -395,6 +395,19 @@ namespace Gestion_de_Stock.Forms
 
 
                 Facture Facture = new Facture();
+               string lastCodestr = "";
+                if (db.Factures.Count() > 1)
+                {
+                    lastCodestr = db.Factures.OrderByDescending(x => x.DateCreation).FirstOrDefault().Code.Replace("F", "");
+                    Facture.Code = "F" + (Convert.ToInt32(lastCodestr) + 1).ToString("D8");
+                    Facture.Reference = "Facture/MK CONCEPT/" + (Convert.ToInt32(lastCodestr) + 1).ToString("D8");
+                }
+                else
+                {
+                    Facture.Code = "F00000001";
+                    Facture.Reference = "Facture/MK CONCEPT/00000001";
+                }
+
                 Facture.NumeoDocument = devis.Code;
                 Facture.Client = devis.Client;
                 Societe societe = db.Societes.FirstOrDefault();

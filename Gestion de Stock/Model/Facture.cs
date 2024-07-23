@@ -10,24 +10,13 @@ namespace Gestion_de_Stock.Model
 {
   public  class Facture
     {
-        private readonly ApplicationContext context;
+      
         public Facture()
         {
             DateCreation = DateTime.Now;
             DateFacture = DateTime.Now;
           
-            context = new ApplicationContext();
-            int lastCode = context.Factures.Count();
-            if (lastCode == 0)
-            {
-                Code = "F00000001";
-                Reference = "Facture/MK CONCEPT/00000001";
-            }
-            else
-            {
-                Code = "F" + (lastCode+1).ToString("D8");
-                Reference = "Facture/MK CONCEPT/" + (lastCode+1).ToString("D8");
-            }
+          
         }
         [Key]
         public string Code { get; set; }

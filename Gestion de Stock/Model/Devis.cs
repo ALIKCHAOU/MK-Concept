@@ -10,26 +10,12 @@ namespace Gestion_de_Stock.Model
 {
   public  class Devis
     {
-        private readonly ApplicationContext context;
+       
         public Devis()
         {
             DateCreation = DateTime.Now;
             DateDevis = DateTime.Now;
             Datelivraison = DateTime.Now.AddDays(7);
-           
-            context = new ApplicationContext();
-            int lastCode = context.Devis.Count();
-            if (lastCode == 0)
-            {
-                Code = "DV00000001";
-                Reference = "DEVIS/MK CONCEPT/00000001";
-            }
-            else
-            {
-                Code = "DV" + (lastCode+1).ToString("D8");
-                Reference = "DEVIS/MK CONCEPT/" + (lastCode+1).ToString("D8");
-            }
-
         }
 
 
