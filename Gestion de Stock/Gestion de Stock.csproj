@@ -951,6 +951,7 @@
     <EmbeddedResource Include="Repport\RapportVenteHistorique.resx">
       <DependentUpon>RapportVenteHistorique.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="File Application\Base de donner\MKConcept_19_08_2024.bak" />
     <None Include="File Application\Base de donner\MKConcept_20_06_2024.bak" />
     <None Include="GestiondeStockMedDataSet.xsc">
       <DependentUpon>GestiondeStockMedDataSet.xsd</DependentUpon>
