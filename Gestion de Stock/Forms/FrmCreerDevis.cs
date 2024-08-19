@@ -113,7 +113,7 @@ namespace Gestion_de_Stock.Forms
                 devis.Code = "DV00000001";
                 devis.Reference = "DEVIS/MK CONCEPT/00000001";
             }
-
+            
             devis.Client = client;
             
             foreach (var L in ListeGrid)
@@ -126,6 +126,7 @@ namespace Gestion_de_Stock.Forms
             devis.Total_DevisHT = ListeGrid.Sum(x => x.TotalLigneHT);
             devis.Total_DevisTTC = decimal.Add(devis.Total_DevisHT, devis.TOTALTVA);// ListeGrid.Sum(x => x.TotalLigneTTC);
             devis.Datelivraison = dateLivraison.DateTime;
+            devis.DateDevis = dateEditDateDevis.DateTime;
             db.Devis.Add(devis);
             db.SaveChanges();
             XtraMessageBox.Show("Devis e a été  Ajouter", "Configuration de l'application", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -145,7 +146,7 @@ namespace Gestion_de_Stock.Forms
 
                 TxTReference.Text = "DEVIS/MK CONCEPT/00000001";
             }
-
+            dateEditDateDevis.DateTime = DateTime.Now;
             //waiting Form 
             if (Application.OpenForms.OfType<FrmListeDevis>().FirstOrDefault() != null)
                 Application.OpenForms.OfType<FrmListeDevis>().First().devisBindingSource.DataSource = db.Devis.Include("Client").Include("ligneDevis").OrderByDescending(x => x.DateCreation).ToList();

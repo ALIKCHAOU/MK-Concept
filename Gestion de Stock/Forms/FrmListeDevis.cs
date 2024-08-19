@@ -118,7 +118,7 @@ namespace Gestion_de_Stock.Forms
             Devis GetDevisDB = db.Devis.Include("Client").Include("ligneDevis").FirstOrDefault(x => x.Code.Equals(CodeDevis));
             Societe societe = db.Societes.FirstOrDefault();
             DevisClient RFIpression = new DevisClient();
-            RFIpression.Parameters["Date"].Value = GetDevisDB.DateCreation.ToString("dd/MM/yyyy");
+            RFIpression.Parameters["Date"].Value = GetDevisDB.DateDevis.ToString("dd/MM/yyyy");
             RFIpression.Parameters["DateValiditeDevis"].Value = GetDevisDB.Datelivraison.ToString("dd/MM/yyyy");
 
             RFIpression.Parameters["Adresse"].Value = societe.Adresse;

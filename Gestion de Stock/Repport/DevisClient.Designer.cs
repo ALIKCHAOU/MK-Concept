@@ -631,7 +631,7 @@
             this.xrLabel3,
             this.xrPictureBox1,
             this.xrLabel7});
-            this.ReportHeader.HeightF = 446.3615F;
+            this.ReportHeader.HeightF = 440.6052F;
             this.ReportHeader.Name = "ReportHeader";
             this.ReportHeader.StylePriority.UseBorderWidth = false;
             // 
@@ -1084,7 +1084,7 @@
             this.xrLabel24.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding(this.TotalEnChiffre, "Text", "Total : {0}")});
             this.xrLabel24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel24.LocationFloat = new DevExpress.Utils.PointFloat(413.86F, 224.875F);
+            this.xrLabel24.LocationFloat = new DevExpress.Utils.PointFloat(417.6515F, 172.7917F);
             this.xrLabel24.Name = "xrLabel24";
             this.xrLabel24.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel24.SizeF = new System.Drawing.SizeF(332.1401F, 22.99999F);
