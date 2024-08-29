@@ -53,7 +53,7 @@ namespace Gestion_de_Stock.Forms
             dateEditDateDevis.DateTime = DateTime.Now;
             /***********************  Mode  Paiement Liste  ***********************/
             string  lastCodestr = "";
-            if (db.Devis.Count() > 1)
+            if (db.Devis.Count() >= 1)
             {
                 lastCodestr = db.Devis.OrderByDescending(x => x.DateCreation).FirstOrDefault().Code.Replace("DV", "");
              
@@ -102,7 +102,7 @@ namespace Gestion_de_Stock.Forms
             string lastCodestr = "";
             Client client = db.Clients.Find(ClientSelected);
             Devis devis = new Devis();
-            if (db.Devis.Count() > 1)
+            if (db.Devis.Count() >=1)
             {
                 lastCodestr = db.Devis.OrderByDescending(x => x.DateCreation).FirstOrDefault().Code.Replace("DV", "");
                 devis.Code = "DV" + (Convert.ToInt32(lastCodestr) + 1).ToString("D8");
